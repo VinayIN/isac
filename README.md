@@ -1,4 +1,4 @@
-# Who are we (ISAC) ?
+## Who are we (ISAC) ?
 
 ## Where / How to navigate in this website?
 
@@ -6,10 +6,10 @@
 ## How to Contribute? (Developers/Contributors)
 
 
-### Setting up your system
+### 1. Setting up your system
 
 
-### Commands and their usage:
+### 2. Commands and their usage:
 1. `npm start`
 
 - Runs the app in the development mode.
@@ -28,4 +28,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Updating SVN, before deploment
+### 3. Updating SVN, before deploment
