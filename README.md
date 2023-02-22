@@ -1,12 +1,5 @@
-## Who are we (ISAC) ?
-
-## Where / How to navigate in this website?
-
-
-## How to Contribute? (Developers/Contributors)
-
-
-### 1. Setting up your system
+## ISAC-BTU
+[![Deployment](https://github.com/VinayIN/isac/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/firebase-hosting-merge.yml)
 
 
 ### 2. Commands and their usage:
