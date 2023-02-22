@@ -31,9 +31,9 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className="flex flex-column text-sm text-gray-500 dark:text-gray-400">
-                <Link href="https://www.facebook.com/isacottbus/" target="_blank"><Image src='/images/youtube.svg' width="24" height="24"/>@isacottbus</Link>
-                <Link href="https://www.facebook.com/isacottbus/" target="_blank"><Image src='/images/facebook.svg' width="22" height="22"/>@isacottbus</Link>
-                <Link href="https://www.instagram.com/isac_cottbus/" target="_blank"><Image src='/images/instagram.svg' width="18" height="18"/>@isac_cottbus</Link>
+                <Link href="https://www.facebook.com/isacottbus/" target="_blank"><Image src='/images/youtube.svg' alt="youtube" width="24" height="24"/>@isacottbus</Link>
+                <Link href="https://www.facebook.com/isacottbus/" target="_blank"><Image src='/images/facebook.svg' alt="facebook" width="22" height="22"/>@isacottbus</Link>
+                <Link href="https://www.instagram.com/isac_cottbus/" target="_blank"><Image src='/images/instagram.svg' alt="instagram" width="18" height="18"/>@isac_cottbus</Link>
                 </div>
             </div>
             </div>

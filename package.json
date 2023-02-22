@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "eslint-config-next": "^13.1.6",
+    "firebase": "^9.17.1",
     "next": "^13.1.6",
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
@@ -16,23 +17,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "deploy": "firebase deploy"
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "next/core-web-vitals",
+      "next"
     ]
   },
   "devDependencies": {

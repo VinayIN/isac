@@ -107,7 +107,7 @@ const GalleryData = {
 
 
 
-function gallery() {
+function Gallery() {
   const [images, setImages] = useState(null);
 
   const responsiveOptions = [
@@ -132,7 +132,7 @@ function gallery() {
   useEffect(() => {GalleryData.getImages().then(data => setImages(data));}, []);
 
   const itemTemplate = (item) => {
-    return <Image src={item.itemImageSrc} alt={item.alt} width="720" height="520" preview/>
+    return <Image src={item.itemImageSrc} alt={item.alt} width="720" height="520"/>
   }
 
   const thumbnailTemplate = (item) => {
@@ -156,4 +156,4 @@ function gallery() {
   )
 };
 
-export default gallery;
+export default Gallery;

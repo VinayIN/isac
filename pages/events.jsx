@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
@@ -11,7 +11,7 @@ const EventData = {
 };
 
 
-function events() {
+function Events() {
   const [event, setNextEvent]= useState([]);
   useEffect(() => {EventData.getEvents().then(data => setNextEvent(data));}, []);
   const header = (
@@ -31,4 +31,4 @@ function events() {
   );
 }
   
-export default events
+export default Events

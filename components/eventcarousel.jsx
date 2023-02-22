@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
+import Image from 'next/image';
 
 const EventData = {
     getEvents() {
@@ -13,7 +14,7 @@ function EventTemplate(event) {
         <div className='event-carousel'>
             <div className='event-content'>
                 <div className="event-image mb-3">
-                    <img src="" alt={event.id}/>
+                    <Image src="" alt={event.id}/>
                 </div>
                 <div>
                     <p className="mb-1">{event.name}</p>
