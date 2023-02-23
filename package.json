@@ -5,6 +5,7 @@
   "dependencies": {
     "eslint-config-next": "^13.1.6",
     "firebase": "^9.17.1",
+    "firebase-tools": "^11.23.1",
     "next": "^13.1.6",
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
