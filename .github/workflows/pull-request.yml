@@ -3,11 +3,10 @@
 
 name: Testing & Preview
 'on':
-  pull_request
+  [pull_request, workflow_dispatch]
 
 jobs:
   build_and_preview:
-    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     environment: TEST
 
@@ -20,5 +19,6 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ISAC_BTU_TEST }}'
+          channelId: '${{ github.actor }}'
           expires: 1d
           projectId: isac-btu-test

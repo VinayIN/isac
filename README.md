@@ -30,7 +30,7 @@ firebase init
 
 - Refer this documentation to install nextjs https://beta.nextjs.org/docs/installation. (optional)
 - Requires node.js version 16+ (Install using this link: https://nodejs.org/en/)
-- Cd into isac/ and run `npm install`
+- `cd` into isac/ and run `npm install`
 
 ### Some commands
 1. `npm run lint`: Check the linting of the source code.
