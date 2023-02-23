@@ -1,7 +1,7 @@
 ## ISAC-BTU
-[![Deployment](https://github.com/VinayIN/isac/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/firebase-hosting-merge.yml)
+[![Deployment](https://github.com/VinayIN/isac/actions/workflows/merge.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/merge.yml)
 
-[![Testing & Preview](https://github.com/VinayIN/isac/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/firebase-hosting-pull-request.yml)
+[![Testing & Preview](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml)
 
 
 ### Development guidelines
