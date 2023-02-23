@@ -3,7 +3,7 @@ import 'primereact/resources/primereact.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import '../styles/global.css';
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 import { initializeApp } from "firebase/app";
 
 // Firebase configuration
