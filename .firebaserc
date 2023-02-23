@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "isac-btu"
+    "default": "isac-btu-test",
+    "test": "isac-btu-test"
   }
 }
