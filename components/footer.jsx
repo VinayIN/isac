@@ -7,9 +7,10 @@ function Footer() {
           <h3></h3>
         </div>
         <div className="mb-2 flex flex-column flex-auto space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>Copyright © 2023, All Rights Reserved.</div>
+          <div>Copyright © 2023</div>
           <div>Indian Students Association Cottbus (ISAC)</div>
           <div>BTU (Cottbus-Seftenberg)</div>
+          <div>All Rights Reserved</div>
         </div>
         <div className='flex-auto space-x-2 text-sm text-gray-500 dark:text-gray-400'>
             <div>Developed by: <mark>Binay Kumar Pradhan</mark></div>
