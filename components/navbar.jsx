@@ -1,45 +1,64 @@
 import Link from "next/link";
-import Image from 'next/image'
+import { Menubar } from 'primereact/menubar';
+import { useRouter } from 'next/router'
+import { InputText } from 'primereact/inputtext';
+import { Divider } from 'primereact/divider';
 
-function Navbar() {
+export default function Navbar() {
+    const router = useRouter()
+    const items = [
+        {
+            label: 'Events',
+            icon: 'pi pi-fw pi-heart',
+            command: ()=>{ router.push('/events') }
+        },
+        {
+            label: 'Gallery',
+            icon: "pi pi-fw pi-images",
+            command: ()=>{ router.push('/gallery') }
+        },
+        {
+            label: 'links',
+            icon: "pi pi-fw pi-link",
+            command: ()=>{ router.push('/links') }
+        },
+        {
+            label: 'Sponser ISAC',
+            command: ()=>{ router.push('/sponser') }
+        },
+        {
+            label: 'Teams',
+            icon: "pi pi-w pi-users",
+            items: [
+                {
+                    label: '2022',
+                    command: ()=>{ router.push('/teams') }
+                },
+                {
+                    label: '2023',
+                    command: ()=>{ router.push('/teams') }
+                },
+
+            ]
+        }
+    ]
+
+    const logo = <Link href="/"> <img src="/images/ISAC.svg" alt="" width="100" height="85" className="mr-2"/> </Link>;
+    const social = <div className="flex gap-2">
+                        <InputText placeholder="Search" type="text" />
+                        <div className="flex flex-column gap-2">
+                            <Link href="#"><i className="pi pi-youtube px-2"/></Link>
+                            <Link href="https://www.facebook.com/isacottbus/" target="_blank"><i className="pi pi-facebook px-2"/></Link>
+                            <Link href="https://www.instagram.com/isac_cottbus/" target="_blank"><i className="pi pi-instagram px-2"/></Link>
+                        </div>
+                    </div>
+
     return (
-        <nav className="flex">
-            <div className="flex-auto">
-            <Link href="/">
-                <Image src="/images/ISAC.svg" alt="" width="100" height="85"/>
-            </Link>
-            <div className="flex-auto">
-                <div>
-                    <Link href="/events">Events</Link>
-                </div>
-                <div>
-                    <Link href="/gallery">Gallery</Link>
-                </div>
-                <div>
-                    <Link href="/links">Links</Link>
-                </div>
-                <div>
-                    <Link href="#">Sponser ISAC</Link>
-                </div>
-                <div>
-                    <Link href="/teams">
-                    Team
-                    </Link>
-                    <ul>
-                    <li><Link href="#">2023</Link></li>
-                    <li><Link href="#">2022</Link></li>
-                    </ul>
-                </div>
-                <div className="flex flex-column text-sm text-gray-500 dark:text-gray-400">
-                <Link href="https://www.facebook.com/isacottbus/" target="_blank"><Image src='/images/youtube.svg' alt="youtube" width="24" height="24"/>@isacottbus</Link>
-                <Link href="https://www.facebook.com/isacottbus/" target="_blank"><Image src='/images/facebook.svg' alt="facebook" width="22" height="22"/>@isacottbus</Link>
-                <Link href="https://www.instagram.com/isac_cottbus/" target="_blank"><Image src='/images/instagram.svg' alt="instagram" width="18" height="18"/>@isac_cottbus</Link>
-                </div>
+        <div className="navigation">
+            <div className="card gap-3">
+                <Menubar model={items} start={logo} end={social} style={{height: "150px"}}/>
             </div>
-            </div>
-      </nav>  
-    )
-};
-
-export default Navbar;
-
+            <Divider/>
+        </div>
+    );
+}
