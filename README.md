@@ -3,7 +3,8 @@
 
 [![Testing & Preview](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml)
 
-
+### Want to Contribute?
+- Todo
 ### Development guidelines
 1. Never push to `main` branch. Always merge PR to this branch.
     - Doing a merge will automatically deploy the recent build code to production
