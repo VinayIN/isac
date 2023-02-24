@@ -132,7 +132,11 @@ function Gallery() {
   useEffect(() => {GalleryData.getImages().then(data => setImages(data));}, []);
 
   const itemTemplate = (item) => {
-    return <Image src={item.itemImageSrc} alt={item.alt} width="720" height="520"/>
+    return <Image 
+    src={item.itemImageSrc}
+    alt={item.alt}
+    width="820" height="720"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
   }
 
   const thumbnailTemplate = (item) => {
@@ -140,14 +144,14 @@ function Gallery() {
   }
 
   return (
-  <div className='flex flex-column md:flex-row lg:flex-row justify-content-center'>
+  <div className='flex flex-column md:flex-row lg:flex-row justify-content-center py-6'>
     <Card title="Kuch lamhe">
     <p className="m-0">
       <Galleria 
         value={images}
         responsiveOptions={responsiveOptions}
         numVisible={7}
-        circular style={{ maxWidth: '720px'}}
+        circular style={{ maxWidth: '820px'}}
         item={itemTemplate}
         thumbnail={thumbnailTemplate} />
     </p>
