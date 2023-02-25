@@ -1,9 +1,13 @@
+import { useState } from "react";
 import Link from "next/link";
 import { Menubar } from 'primereact/menubar';
 import { useRouter } from 'next/router'
 import { InputText } from 'primereact/inputtext';
 import { Divider } from 'primereact/divider';
 import { Button } from 'primereact/button';
+import RequestLogin from "./request";
+import Login from "./login";
+        
 
 export default function Navbar() {
     const router = useRouter()
@@ -43,6 +47,8 @@ export default function Navbar() {
             ]
         }
     ]
+    const [visibleRegister, setVisibleRegister] = useState(false);
+    const [visibleLogin, setVisibleLogin] = useState(false);
 
     const logo = <Link href="/"> <img src="/images/ISAC.svg" alt="" width="100" height="85" className="mr-2"/> </Link>;
     const social = <div className="flex flex-column gap-2">
@@ -55,8 +61,10 @@ export default function Navbar() {
                             </div>
                         </div>
                         <div className="flex flex-row gap-2">
-                            <Button label="Request" icon="pi pi-user-plus" text raised />
-                            <Button label="Login" severity="success" icon="pi pi-sign-in" iconPos="right" text raised />
+                            <Button label="Request" icon="pi pi-user-plus" onClick={() => setVisibleRegister(true)} text raised />
+                            <RequestLogin visible={visibleRegister} setVisible={setVisibleRegister}/>
+                            <Button label="Login" severity="success" icon="pi pi-sign-in" onClick={() => setVisibleLogin(true)} iconPos="right" text raised />
+                            <Login visible={visibleLogin} setVisible={setVisibleLogin}/>
                         </div>
                     </div>
 

@@ -10,10 +10,15 @@ function Footer() {
           <div>Copyright © 2023</div>
           <div>Indian Students Association Cottbus (ISAC)</div>
           <div>BTU (Cottbus-Seftenberg)</div>
-          <div>All Rights Reserved</div>
+          <div>All Rights Reserved.</div>
         </div>
         <div className='flex-auto space-x-2 text-sm text-gray-500 dark:text-gray-400'>
-            <div>Developed by: <mark>Binay Kumar Pradhan</mark></div>
+            <div>
+              Developers:
+              <p>
+                <Link href="https://github.com/VinayIN/isac" target='_blank'><i className="pi pi-github px-2"/></Link><mark>Binay Kumar Pradhan</mark>
+              </p>
+              </div>
         </div>
       </div>
     </footer>
