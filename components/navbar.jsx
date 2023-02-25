@@ -53,7 +53,7 @@ export default function Navbar() {
     const logo = <Link href="/"> <img src="/images/ISAC.svg" alt="" width="100" height="85" className="mr-2"/> </Link>;
     const social = <div className="flex flex-column gap-2">
                         <div className="flex flex-row">
-                            <InputText placeholder="Search" type="text" />
+                            <InputText placeholder="Not yet available" type="text" />
                             <div className="flex flex-column gap-2">
                                 <Link href="#"><i className="pi pi-youtube px-2"/></Link>
                                 <Link href="https://www.facebook.com/isacottbus/" target="_blank"><i className="pi pi-facebook px-2"/></Link>
