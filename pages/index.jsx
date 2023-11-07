@@ -72,8 +72,53 @@ function home() {
               And lastly trying to make your time in Cottbus more fun.</p>
             </AccordionTab>
             <AccordionTab header="How can you participate with ISAC?">
+            <p>
+              Participating with ISAC is as easy as joining us for an event and helping us with the preparations needed for the event.
+              At ISAC, Celebrating a cultural event and representing INDIA is the only requirement!
+              Here you get a chance to be a part of something truly extraordinary. Your involvement is pivotal, as we engage with 100's of students on the day of event to make it an unforgettable experience.
+              </p>
+              There are a couple of ways through which you can join us.
+              <ol>
+                <li className='py-4'>Membership</li>
+                  Every year towards the end (Ideally after the Diwali event) we roll-out form to form ISAC with new members and advisory.
+                  The advisors consist of former ISAC members whose role is to only provide guidance and assist in team organisation.
+                  <p>
+                    The ISAC members has the freedom for every decision making and shape the club.
+                  </p>
+                <Button label="Enrol for membership" icon="pi pi-file" severity="info" text raised disabled/>
+                
+                <li className='py-4'>Volunteer</li>
+                  During each event, we ask for volunteers to help us with the preparations.
+                  Coordinating with audience during dance, decorations and cooking are some of the activities where you a volunteer could help us out.
+                  Please look at out social media platforms for such request.
+                  <p>
+                    However, you can also directly leave us your contact detail through e-mail.
+                    We will contact you at every event, or if you prefer will give a knock at your door.
+                  </p>
+                <Button label="Become a Volunteer" icon="pi pi-envelope" severity="info" text raised/>
+                
+                <li className='py-4'>Feedback</li>
+                In case you have an opinion that you want us to discuss before our planning, please leave a constructive feedback here.
+                <p>
+                  We read your feedback before every event starts.
+                </p>
+                <Button label="Leave a Feedback" icon="pi pi-file" severity="info" text raised/>
+              </ol>
             </AccordionTab>
             <AccordionTab header="How can you contact ISAC?">
+              <p>
+                We are reachable only through elctronic medium as of now, due to unavailability of a physical office at the university.
+                <ul>
+                  <li>Admistrative queries: <Link className="px-1" href='mailto:isacottbus@gmail.com' target='_blank'><i className="pi pi-envelope"/> isacottbus@gmail.com</Link></li>
+                  <li>Seeking Information/Assistance: <Link className="px-1" href='mailto:ask.isacottbus@gmail.com' target='_blank'><i className="pi pi-envelope"/> ask.isacottbus@gmail.com</Link></li>
+                </ul>
+
+                <p>
+                  In case you need quick response from us, Instagram (<Link className="px-1" href='https://www.instagram.com/isac_cottbus/' target='_blank'><i className="pi pi-instagram"/> @isac_cottbus</Link>) is the best option.
+                </p>
+                
+                <strong>Please Note: Any communication you receive other than the above mentioned medium must be not be trusted and reported.</strong>
+              </p>
             </AccordionTab>
         </Accordion>
       </div>
