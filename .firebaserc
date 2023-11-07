@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "isacottbus-btu",
+    "testing": "isacottbus-btu-test"
+  },
+  "targets": {},
+  "etags": {}
+}
