@@ -1,8 +1,9 @@
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import EventCarousel from '../components/eventcarousel';
 import { ScrollPanel } from 'primereact/scrollpanel';
-import { Divider } from 'primereact/divider'
+import { Divider } from 'primereact/divider';
 import { Button } from 'primereact/button';
+import { Link } from "next/link";
         
 function home() {
   return (
