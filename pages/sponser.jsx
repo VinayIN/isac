@@ -8,7 +8,10 @@ import { Checkbox } from 'primereact/checkbox';
 import { Dialog } from 'primereact/dialog';
 import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
+<<<<<<< HEAD
 import { Card } from 'primereact/card';
+=======
+>>>>>>> 76fd06c (added community joining link and sponser link)
 
 function Sponser () {
     const [showMessage, setShowMessage] = useState(false);
@@ -51,12 +54,16 @@ function Sponser () {
             formik.resetForm();
         }
     });
+<<<<<<< HEAD
     const sponsors = [
         { src: '/images/sponsor/11.png', alt: 'Sponsor 1' },
         { src: '/images/sponsor/3.PNG', alt: 'Sponsor 3' },
         { src: '/images/sponsor/4.JPG', alt: 'Sponsor 4' },
         // ... add more sponsors here
     ];
+=======
+
+>>>>>>> 76fd06c (added community joining link and sponser link)
     const isFormFieldValid = (name) => !!(formik.touched[name] && formik.errors[name]);
     const getFormErrorMessage = (name) => {
         return isFormFieldValid(name) && <small className="p-error">{formik.errors[name]}</small>;
@@ -155,7 +162,11 @@ function Sponser () {
                             <Checkbox inputId="accept" name="accept" checked={formik.values.accept} onChange={formik.handleChange} className={classNames({ 'p-invalid': isFormFieldValid('accept') })} />
                             <label htmlFor="accept" className={classNames({ 'p-error': isFormFieldValid('accept') })}>I agree to be contacted by member of ISAC *</label>
                         </div>
+<<<<<<< HEAD
                         <Button type="submit" label="Submit" className="mt-2" disabled/>
+=======
+                        <Button type="submit" label="Submit" className="mt-2" />
+>>>>>>> 76fd06c (added community joining link and sponser link)
                     </form>
                 </div>
             </div>
