@@ -2,13 +2,76 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import { Galleria } from 'primereact/galleria';
 import { Card } from 'primereact/card';
+import { Carousel } from 'primereact/carousel';
+import { Dialog } from 'primereact/dialog';
 import Image from 'next/image';
 
 const MyGallery = () => {
 
     const [inside, setInside] = useState(false);
     const [position, setPosition] = useState('bottom');
+    const [visible, setVisible] = useState(false);
+    const [selectedImages, setSelectedImages] = useState([]);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+    const imagesData = [
+        {
+          title: 'Card 1',
+          images: [
+            'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+            'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+            'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+            // Add more images for Card 1
+          ],
+        },
+        {
+          title: 'Card 2',
+          images: [
+            'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+            'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+            'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+            // Add more images for Card 2
+          ]
+        },
+        {
+            title: 'Card 2',
+            images: [
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              // Add more images for Card 2
+            ]
+          },
+          {
+            title: 'Card 2',
+            images: [
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              // Add more images for Card 2
+            ]
+          },
+          {
+            title: 'Card 2',
+            images: [
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              // Add more images for Card 2
+            ]
+          },
+          {
+            title: 'Card 2',
+            images: [
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
+              'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              // Add more images for Card 2
+            ]
+          }
+        // Add more cards with their images
+      ];
+    
 
   const images = [
     {
@@ -124,11 +187,64 @@ const MyGallery = () => {
     return <img src={item.previewImageSrc} alt={item.alt} style={{ width: '100%', height: 'calc(100vh - 100px)' }} />;
   };
 
- 
+  const showImagesInCarousel = (images) => {
+    setSelectedImages(images);
+    setCurrentImageIndex(0);
+    setVisible(true);
+  };
+
+  const hideImage = () => {
+    setVisible(false);
+  };
+
+  const cards = imagesData.map((card, index) => (
+    <Card
+      key={index}
+      title={card.title}
+      style={{ cursor: 'pointer' }}
+      onClick={() => showImagesInCarousel(card.images)}
+      className="custom-card"
+    >
+      <img src={card.images[0]} alt={card.title} style={{ width: '100%' }} />
+    </Card>
+  ));
+
   return (
 
-              <Galleria value={images} circular autoPlay transitionInterval={1000} responsiveOptions={responsiveOptions} style={{ width: '100%', height: 'calc(100vh - 100px)' }} showThumbnails={false} showIndicators 
-                    showIndicatorsOnItem={inside} indicatorsPosition={position} item={itemTemplate} />
+    <><Galleria value={images} circular autoPlay transitionInterval={1000} responsiveOptions={responsiveOptions} style={{ width: '100%', height: 'calc(100vh - 100px)' }} showThumbnails={false} showIndicators
+          showIndicatorsOnItem={inside} indicatorsPosition={position} item={itemTemplate} />
+          <div style={{ paddingTop: '6%' }}>
+
+              <div className="gallery_card grid-container">{cards}
+
+                  <Dialog
+                      visible={visible}
+                      onHide={hideImage}
+                      style={{ width: '70%' }}
+                                        >
+                      <Carousel
+                          value={selectedImages}
+                          itemTemplate={(imageSrc) => (
+                              <img src={imageSrc} alt={`Image ${currentImageIndex + 1}`} style={{ width: '100%' }} />
+                          )}
+                          numVisible={1}
+                          numScroll={1}
+                          responsiveOptions={[
+                              {
+                                  breakpoint: '1024px',
+                                  numVisible: 1,
+                                  numScroll: 1,
+                              },
+                          ]}
+                          circular
+                          autoPlay
+                          stopAutoPlayOnSlide={selectedImages.length - 1}
+                          onTransitionEnd={(e) => setCurrentImageIndex(e.index)} />
+                  </Dialog>
+
+              </div>
+              </div>
+          </>
         
   );
 };

@@ -61,8 +61,8 @@ const Footer = () => {
               <div>
                 <h2>Developers:</h2> 
                 <div className='developer-list flex flex-column'>
+                <Link href="https://github.com/jagruti261" target='_blank'><i className="pi pi-github px-2"/>Jagruti Vekariya</Link>
                   <Link href="https://github.com/VinayIN/isac" target='_blank'><i className="pi pi-github px-2"/>Binay Kumar Pradhan</Link>
-                  <Link href="https://github.com/jagruti261" target='_blank'><i className="pi pi-github px-2"/>Jagruti Vekariya</Link>
                   </div>
                 </div>
           </div>

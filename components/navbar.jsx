@@ -66,7 +66,7 @@ export default function Navbar() {
       };
 
       
-    const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="100" height="85" className="mr-2"/> </Link>;
+    const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="145" height="80" className="mr-2"/> </Link>;
     const social = <div className="flex flex-row gap-2">
                         {/* <div className="flex flex-row align-items-center">
                             <div className="flex flex-row gap-2">
@@ -91,7 +91,7 @@ export default function Navbar() {
         
         <div className="nevigation">
            
-                <Menubar model={items} start={logo} end={social} style={{height: "auto"}}/>
+                <Menubar model={items} start={logo} end={social}/>
                
                  </div>
     );
