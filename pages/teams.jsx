@@ -143,84 +143,94 @@ import 'primeicons/primeicons.css';
 // Mock data for the team members
 const teamMembers = [
   {
-    name: 'Samira Hadid',
-    title: 'CEO',
+    name: 'Sushmita Godayal',
+    title: 'Admin',
+    imageUrl: '/images/team/Sushmita.png'
+  },
+  {
+    name: 'Suryakant Singh',
+    title: 'Admin',
     imageUrl: '/images/team/a1.png'
   },
   {
-    name: 'Olivia Wilson',
-    title: 'CTO',
+    name: 'Sujan Reddy',
+    title: 'Admin',
     imageUrl: '/images/team/a3.png'
   },
   {
-    name: 'Samira Hadid',
-    title: 'CEO',
+    name: 'Janya Kapahi',
+    title: 'Events ',
+    imageUrl: '/images/team/Janya.png'
+  },
+  {
+    name: 'Anju Koyippilly Rathnan',
+    title: 'Events',
+    imageUrl: '/images/team/Anju.png'
+  },
+  {
+    name: 'Amal Babu  ',
+    title: 'Events',
+    imageUrl: '/images/team/Amal.png'
+  },
+  {
+    name: 'Tarani Narukurti',
+    title: 'Events',
     imageUrl: '/images/team/a3.png'
   },
   {
-    name: 'Olivia Wilson',
-    title: 'CTO',
-    imageUrl: '/images/team/a3.png'
-  },
-  {
-    name: 'Samira Hadid',
-    title: 'CEO',
-    imageUrl: '/images/team/a3.png'
-  },
-  {
-    name: 'Olivia Wilson',
-    title: 'CTO',
-    imageUrl: '/images/team/a3.png'
-  },
-  {
-    name: 'Samira Hadid',
-    title: 'CEO',
-    imageUrl: '/images/team/a3.png'
-  },
-  {
-    name: 'Olivia Wilson',
-    title: 'CTO',
+    name: 'Akshatha Ramesh Patkar',
+    title: 'Events',
     imageUrl: '/images/team/a3.png'
   }, {
-    name: 'Samira Hadid',
-    title: 'CEO',
+    name: 'Binay Kumar Pradhan',
+    title: 'Events',
+    imageUrl: '/images/team/Binay.png'
+  },
+  {
+    name: 'Taliya Theresa Joseph',
+    title: 'Social Media ',
+    imageUrl: '/images/team/Taliya.png'
+  },
+  {
+    name: 'Arun Kumar Thommandru',
+    title: 'Social Media ',
     imageUrl: '/images/team/a3.png'
   },
   {
-    name: 'Olivia Wilson',
-    title: 'CTO',
+    name: 'Abhirami Vinod Manju',
+    title: 'Social Media',
     imageUrl: '/images/team/a3.png'
   },
   {
-    name: 'Samira Hadid',
-    title: 'CEO',
+    name: 'Tony Thomas',
+    title: 'Finance',
     imageUrl: '/images/team/a3.png'
   },
   {
-    name: 'Olivia Wilson',
-    title: 'CTO',
-    imageUrl: '/images/team/a3.png'
+    name: 'Sabith Bin Salam',
+    title: 'Finance ',
+    imageUrl: '/images/team/sabith.png'
   },
   {
-    name: 'Samira Hadid',
-    title: 'CEO',
-    imageUrl: '/images/team/a3.png'
+    name: 'Kavinprakash madheswaran',
+    title: 'ADVISORY',
+    imageUrl: '/images/team/Kavin.png'
   },
   {
-    name: 'Olivia Wilson',
-    title: 'CTO',
-    imageUrl: '/images/team/a3.png'
+    name: 'Kevin Johny Joseph',
+    title: 'ADVISORY',
+    imageUrl: '/images/team/Kavin.png'
   },
   {
-    name: 'Samira Hadid',
-    title: 'CEO',
-    imageUrl: '/images/team/a3.png'
+    name: 'Amruta Kulkarni',
+    title: 'ADVISORY',
+    imageUrl: '/images/team/Kavin.png'
   },
   {
-    name: 'Olivia Wilson',
-    title: 'CTO',
-    imageUrl: '/images/team/a3.png'
-  }
+    name: 'Anusua Ray',
+    title: 'ADVISORY',
+    imageUrl: '/images/team/Kavin.png'
+  },
   // ... add other members here
 ];
 
