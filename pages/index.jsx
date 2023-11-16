@@ -13,7 +13,7 @@ function home() {
    
    const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
-    canvas.height = 560;
+    canvas.height = 550;
 
     const backgroundImage = new Image();
     backgroundImage.src = '/images/D_B.png'; // Replace with your background image
@@ -74,12 +74,12 @@ function home() {
     }
 
     // Create fireworks at intervals
-    setInterval(() => createFirework(), 1000);
+    setInterval(() => createFirework(), 300);
   }, []); 
   return (
    
     <div className=''>
-      <canvas id="hero-banner" width="400" height="560" style={{position: 'absolute'}}></canvas>
+      <canvas id="hero-banner" width="400" height="540" style={{position: 'absolute'}}></canvas>
       <div className="hero-banner" style={{ backgroundImage: 'url(/images/D_B.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', color: 'white' }}>
             <h1 className='banner-main-text fadeInUp '>Welcome to ISAC Cottbus</h1>
             <p className="p-m-3 banner-subtext fadeInUp ">Connecting Indian Students at BTU Cottbus-Senftenberg</p>
@@ -178,21 +178,39 @@ function home() {
                 <Button label="Leave a Feedback" icon="pi pi-file" severity="info" text raised/>
               </ol>
             </AccordionTab>
-            <AccordionTab header="How can you contact ISAC?">
-              <p>
-                We are reachable only through elctronic medium as of now, due to unavailability of a physical office at the university.
-                <ul>
-                  <li>Admistrative queries: <Link className="px-1" href='mailto:isacottbus@gmail.com' target='_blank'><i className="pi pi-envelope"/> isacottbus@gmail.com</Link></li>
-                  <li>Seeking Information/Assistance: <Link className="px-1" href='mailto:ask.isacottbus@gmail.com' target='_blank'><i className="pi pi-envelope"/> ask.isacottbus@gmail.com</Link></li>
-                </ul>
+            <AccordionTab header="How can you contact ISAC??">
+            <p>
+            We are reachable only through electronic medium as of now, due to unavailability of a physical office at the university.
+            </p>
+              <ul>
+                <li className='py-4'> 
+                <p> Admistrative queries:{" "}</p>
 
-                <p>
-                  In case you need quick response from us, Instagram (<Link className="px-1" href='https://www.instagram.com/isac_cottbus/' target='_blank'><i className="pi pi-instagram"/> @isac_cottbus</Link>) is the best option.
-                </p>
-                
-                <strong>Please Note: Any communication you receive other than the above mentioned medium must be not be trusted and reported.</strong>
-              </p>
+                <a  href="mailto:isacottbus@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <Button className="mt-5" icon="pi pi-envelope" label="isacottbus@gmail.com" text raised/>
+                </a>
+              </li>
+                <li className='py-4'>
+                  <p>Seeking Information/Assistance:{" "}</p>
+                  
+                  <a  href="mailto:ask.isacottbus@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <Button className="mt-5" icon="pi pi-envelope" label="ask.isacottbus@gmail.com" text raised/>
+                </a>
+                </li>
+                </ul>
+                  <p>In case you need a quick response from us, Instagram (
+                <a  href="https://www.instagram.com/isac_cottbus/" target="_blank" rel="noopener noreferrer">
+                  @isac_cottbus
+                </a>
+                ) is the best option.</p>
+              
+             
+              <p>
+      <strong>Please Note: Any communication you receive other than the above-mentioned medium must not be trusted and reported.</strong>
+    </p>
             </AccordionTab>
+            
+
         </Accordion>
       </div>
     </div>

@@ -16,56 +16,66 @@ const MyGallery = () => {
 
     const imagesData = [
         {
-          title: 'Card 1',
+          title: 'Holi 2023',
           images: [
-            'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-            'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-            'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+            '/images/Holi/1.jpg',
+            '/images/Holi/2.jpg'
             // Add more images for Card 1
           ],
         },
         {
-          title: 'Card 2',
+          title: 'Independent Day 2023',
           images: [
-            'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-            'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-            'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+            '/images/independent/1.JPG',
+            '/images/independent/2.JPG',
+            '/images/independent/3.JPG',
+            '/images/independent/4.JPG',
+            '/images/independent/5.JPG',
+            '/images/independent/6.JPG',
+            '/images/independent/7.JPG',
+            '/images/independent/8.JPG',
+            '/images/independent/9.JPG',
+            '/images/independent/10.JPG',
+
             // Add more images for Card 2
           ]
         },
         {
-            title: 'Card 2',
+            title: 'Navratri 2023',
             images: [
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              '/images/Navratri/1.JPG',
+              '/images/Navratri/2.JPG',
+              '/images/Navratri/3.JPG',
+              '/images/Navratri/4.JPG',
+              '/images/Navratri/5.JPG',
+              '/images/Navratri/6.JPG',
+              '/images/Navratri/7.JPG',
+              '/images/Navratri/8.JPG',
+              '/images/Navratri/9.JPG',
+              '/images/Navratri/10.JPG',
+              '/images/Navratri/11.JPG',
+              '/images/Navratri/12.JPG',
+              '/images/Navratri/13.JPG',
+              '/images/Navratri/14.jpg',
+              '/images/Navratri/16.jpg',
               // Add more images for Card 2
             ]
           },
           {
-            title: 'Card 2',
+            title: 'Senftenberg Beach',
             images: [
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-              // Add more images for Card 2
-            ]
-          },
-          {
-            title: 'Card 2',
-            images: [
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-              // Add more images for Card 2
-            ]
-          },
-          {
-            title: 'Card 2',
-            images: [
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-              'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
+              '/images/Senftenberg Beach/1.jpg',
+              '/images/Senftenberg Beach/2.jpeg',
+              '/images/Senftenberg Beach/3.jpeg',
+              '/images/Senftenberg Beach/4.jpg',
+              '/images/Senftenberg Beach/5.JPG',
+              '/images/Senftenberg Beach/6.JPG',
+              '/images/Senftenberg Beach/7.JPG',
+              '/images/Senftenberg Beach/8.JPG',
+              '/images/Senftenberg Beach/9.JPG',
+              '/images/Senftenberg Beach/10.JPG',
+              '/images/Senftenberg Beach/11.JPG',
+              '/images/Senftenberg Beach/12.JPG',
               // Add more images for Card 2
             ]
           }
@@ -75,94 +85,94 @@ const MyGallery = () => {
 
   const images = [
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria1s.jpg',
-        alt: 'Description for Image 1',
-        title: 'Title 1'
+        previewImageSrc: '/images/Senftenberg Beach/1.jpg',
+        thumbnailImageSrc: '/images/Senftenberg Beach/1.jpg',
+        alt: 'Senftenberg Beach',
+        title: 'Senftenberg Beach'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria2s.jpg',
-        alt: 'Description for Image 2',
-        title: 'Title 2'
+        previewImageSrc: '/images/Navratri/1.JPG',
+        thumbnailImageSrc: '/images/Navratri/1.JPG',
+        alt: 'Navratri',
+        title: 'Navratri'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria3s.jpg',
-        alt: 'Description for Image 3',
-        title: 'Title 3'
+        previewImageSrc: '/images/independent/1.JPG',
+        thumbnailImageSrc: '/images/independent/1.JPG',
+        alt: 'independent',
+        title: 'independent'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria4.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria4s.jpg',
-        alt: 'Description for Image 4',
-        title: 'Title 4'
+        previewImageSrc: '/images/Holi/1.jpg',
+        thumbnailImageSrc: '/images/Holi/1.jpg',
+        alt: 'Holi',
+        title: 'Holi'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria5.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria5s.jpg',
-        alt: 'Description for Image 5',
-        title: 'Title 5'
+        previewImageSrc: '/images/independent/2.JPG',
+        thumbnailImageSrc: '/images/independent/2.JPG',
+        alt: 'independent',
+        title: 'independent'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria6.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria6s.jpg',
-        alt: 'Description for Image 6',
-        title: 'Title 6'
+      previewImageSrc: '/images/Navratri/3.JPG',
+      thumbnailImageSrc: '/images/Navratri/3.JPG',
+      alt: 'Navratri',
+      title: 'Navratri'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria7.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria7s.jpg',
-        alt: 'Description for Image 7',
-        title: 'Title 7'
+      previewImageSrc: '/images/Holi/2.jpg',
+      thumbnailImageSrc: '/images/Holi/2.jpg',
+      alt: 'Holi',
+      title: 'Holi'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria8.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria8s.jpg',
-        alt: 'Description for Image 8',
-        title: 'Title 8'
+      previewImageSrc: '/images/Navratri/10.JPG',
+      thumbnailImageSrc: '/images/Navratri/10.JPG',
+      alt: 'Navratri',
+      title: 'Navratri'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria9.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria9s.jpg',
-        alt: 'Description for Image 9',
-        title: 'Title 9'
+      previewImageSrc: '/images/Senftenberg Beach/4.jpg',
+      thumbnailImageSrc: '/images/Senftenberg Beach/4.jpg',
+      alt: 'Senftenberg Beach',
+      title: 'Senftenberg Beach'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria10.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria10s.jpg',
-        alt: 'Description for Image 10',
-        title: 'Title 10'
+      previewImageSrc: '/images/Holi/2.jpg',
+      thumbnailImageSrc: '/images/Holi/2.jpg',
+      alt: 'Holi',
+      title: 'Holi'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria11.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria11s.jpg',
-        alt: 'Description for Image 11',
-        title: 'Title 11'
+      previewImageSrc: '/images/Senftenberg Beach/10.JPG',
+      thumbnailImageSrc: '/images/Senftenberg Beach/10.JPG',
+      alt: 'Senftenberg Beach',
+      title: 'Senftenberg Beach'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria12.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria12s.jpg',
-        alt: 'Description for Image 12',
-        title: 'Title 12'
+      previewImageSrc: '/images/Navratri/16.jpg',
+      thumbnailImageSrc: '/images/Navratri/16.jpg',
+      alt: 'Navratri',
+      title: 'Navratri'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria13.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria13s.jpg',
-        alt: 'Description for Image 13',
-        title: 'Title 13'
+      previewImageSrc: '/images/Navratri/7.JPG',
+      thumbnailImageSrc: '/images/Navratri/7.JPG',
+      alt: 'Navratri',
+      title: 'Navratri'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria14.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria14s.jpg',
-        alt: 'Description for Image 14',
-        title: 'Title 14'
+      previewImageSrc: '/images/Navratri/4.JPG',
+      thumbnailImageSrc: '/images/Navratri/4.JPG',
+      alt: 'Navratri',
+      title: 'Navratri'
     },
     {
-        previewImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria15.jpg',
-        thumbnailImageSrc: 'https://primefaces.org/cdn/primereact/images/galleria/galleria15s.jpg',
-        alt: 'Description for Image 15',
-        title: 'Title 15'
+      previewImageSrc: '/images/Senftenberg Beach/8.JPG',
+      thumbnailImageSrc: '/images/Senftenberg Beach/8.JPG',
+      alt: 'Senftenberg Beach',
+      title: 'Senftenberg Beach'
     }
     
     // ... more images
@@ -184,7 +194,7 @@ const MyGallery = () => {
   ];
 
   const itemTemplate = (item) => {
-    return <img src={item.previewImageSrc} alt={item.alt} style={{ width: '100%', height: 'calc(100vh - 100px)' }} />;
+    return <img src={item.previewImageSrc} alt={item.alt} style={{ width: '80%', height: 'calc(100vh - 100px)' }} />;
   };
 
   const showImagesInCarousel = (images) => {
@@ -211,36 +221,35 @@ const MyGallery = () => {
 
   return (
 
-    <><Galleria value={images} circular autoPlay transitionInterval={1000} responsiveOptions={responsiveOptions} style={{ width: '100%', height: 'calc(100vh - 100px)' }} showThumbnails={false} showIndicators
+    <>
+    <Galleria value={images} circular autoPlay transitionInterval={1000} responsiveOptions={responsiveOptions} style={{ width: '100%', height: 'calc(100vh - 100px)' }} showThumbnails={false} showIndicators
           showIndicatorsOnItem={inside} indicatorsPosition={position} item={itemTemplate} />
           <div style={{ paddingTop: '6%' }}>
 
               <div className="gallery_card grid-container">{cards}
 
-                  <Dialog
-                      visible={visible}
-                      onHide={hideImage}
-                      style={{ width: '70%' }}
-                                        >
-                      <Carousel
-                          value={selectedImages}
-                          itemTemplate={(imageSrc) => (
-                              <img src={imageSrc} alt={`Image ${currentImageIndex + 1}`} style={{ width: '100%' }} />
-                          )}
-                          numVisible={1}
-                          numScroll={1}
-                          responsiveOptions={[
-                              {
-                                  breakpoint: '1024px',
-                                  numVisible: 1,
-                                  numScroll: 1,
-                              },
-                          ]}
-                          circular
-                          autoPlay
-                          stopAutoPlayOnSlide={selectedImages.length - 1}
-                          onTransitionEnd={(e) => setCurrentImageIndex(e.index)} />
-                  </Dialog>
+              <Dialog
+  visible={visible}
+  onHide={hideImage}
+  style={{ width: '70%', maxHeight: '100vh' }} // Set a maximum height
+  className="dialog-without-scrollbar"
+>
+  <Galleria
+    value={selectedImages}
+    circular
+    autoPlay
+    transitionInterval={1500}
+    responsiveOptions={responsiveOptions}
+    style={{ width: '100%' }}
+    showThumbnails={false}
+    showIndicators
+    showIndicatorsOnItem={inside}
+    indicatorsPosition={position}
+    item={(imageSrc) => (
+      <img src={imageSrc} alt={`Image ${currentImageIndex + 1}`} style={{ width: '80%', height: '70vh' , objectFit: 'contain'}} />
+    )}
+  />
+</Dialog>
 
               </div>
               </div>

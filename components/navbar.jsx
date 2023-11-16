@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menubar } from 'primereact/menubar';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { Divider } from 'primereact/divider';
 import { Avatar } from 'primereact/avatar';
@@ -47,7 +48,7 @@ export default function Navbar() {
     ]
     const accountMenu = [
         { label: 'Login', icon: 'pi pi-fw pi-user-plus mx-10', command: () => {router.push('/login')} },
-        { label: 'Register', icon: 'pi pi-fw pi-sign-in mx-10', command: () => {router.push('/register')} },
+        { label: 'Register', icon: 'pi pi-fw pi-sign-in mx-10', command: () => {router.push('/register')} }
     ];
     const [selectedAccount, setSelectedAccount] = useState(null);
 
@@ -65,7 +66,7 @@ export default function Navbar() {
         );
       };
 
-      
+     
     const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="145" height="80" className="mr-2"/> </Link>;
     const social = <div className="flex flex-row gap-2">
                         {/* <div className="flex flex-row align-items-center">
@@ -81,10 +82,15 @@ export default function Navbar() {
                             <Button label="Login" severity="success" icon="pi pi-sign-in" onClick={() => setVisibleLogin(true)} iconPos="right" text raised />
                             <Login visible={visibleLogin} setVisible={setVisibleLogin}/>
                         </div> */}
-                        <Dropdown value={selectedAccount} options={accountMenu} 
+                        {/* <Dropdown value={selectedAccount} options={accountMenu} 
                             onChange={onAccountChange} optionLabel="label" 
                             itemTemplate={accountItemTemplate}
-                            placeholder= "User" />
+                            placeholder= "User" /> */}
+                            <div className="whatsapp-link">
+          <a  href="https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK" target="_blank" rel="noopener noreferrer">
+            <Button icon="pi pi-whatsapp" label="Join WhatsApp Community" />
+          </a>
+        </div>
                     </div>
 
     return (

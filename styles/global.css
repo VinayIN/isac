@@ -124,3 +124,335 @@ h1.banner-main-text.fadeInUp {
     margin-bottom: 16px;
     /* Adjust the card margin as needed */
 }
+
+/* team */
+
+
+
+.team_page header {
+    height: 20%;
+    margin: 0 36px;
+}
+
+.team_page .title h1 {
+    font-size: 60px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.team_page .content {
+    margin-top: 20px;
+}
+
+.team_page .content h2 {
+    margin: 0 !important;
+    animation: 3s fadeInUpImage;
+    font-size: 30px;
+}
+
+.team_page .content p {
+    margin: 2px !important;
+    font-size: 20px;
+    animation: 5s fadeInUpImage;
+}
+
+.team_page .content p strong {
+    font-size: 22px;
+    color: #93C5FD;
+}
+
+.slide-right {
+    animation: 2s slide-right;
+}
+
+@keyframes slide-right {
+    from {
+        margin-left: -100%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+
+
+.team_page main {
+    display: grid;
+    grid-template-columns: repeat(8, 2fr);
+    column-gap: 50px;
+    row-gap: 70px;
+    padding: 50px 50px;
+}
+
+.team_page main .profile {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.team_page main .profile figure {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+}
+
+.team_page main .profile figure img {
+
+    width: 70%;
+    animation: 4s fadeInUpImage;
+}
+
+.team_page main .profile figure figcaption {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 12px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.team_page main .profile figure::after {
+    content: attr(data-value);
+    width: 100%;
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 12px;
+    right: -65%;
+}
+
+.team_page main .profile:nth-child(2) {
+    margin-top: 70px;
+}
+
+.team_page main .profile:nth-child(5) {
+    margin-top: -70px;
+}
+
+.team_page main .profile:nth-child(7) {
+    margin-top: -70px;
+}
+
+@keyframes fadeInUpImage {
+    from {
+        transform: translate3d(0, 40px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+
+
+/* .profile {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        figure {
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            img {
+                width: 80%;
+            }
+
+            figcaption {
+                font-size: 16px;
+                font-weight: 500;
+                margin-top: 12px;
+                text-transform: capitalize;
+                cursor: pointer;
+            }
+
+            &::after {
+                content: attr(data-value);
+                width: 100%;
+                transform-origin: 0 0;
+                transform: rotate(90deg);
+                position: absolute;
+                text-transform: uppercase;
+                font-size: 12px;
+                right: -92%;
+            }
+        }
+
+
+        &:nth-child(2) {
+            margin-top: 70px;
+        }
+
+        &:nth-child(4) {
+            margin-top: -70px;
+        }
+
+        &:nth-child(6) {
+            margin-top: -70px;
+        }
+    } */
+
+
+footer {
+    height: 5%;
+    color: #BDBDBD;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+
+@media screen and (max-width: 1440px) {
+
+    main {
+        column-gap: 50px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        column-gap: 35px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    main {
+        column-gap: 25px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+
+        height: auto;
+        margin: 50px auto 10px;
+
+        header {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 20px;
+
+            .title {
+                align-self: flex-start;
+
+                h3 {
+                    font-size: 30px;
+                }
+            }
+
+        }
+
+        main {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 0px;
+            row-gap: 0px;
+
+            .profile {
+
+                &:nth-child(2),
+                &:nth-child(4),
+                &:nth-child(6) {
+                    margin-top: 50px;
+                }
+
+                &:nth-child(3),
+                &:nth-child(5) {
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+}
+
+/* Custom styles for the profile cards */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.team-grid .card-content {
+    padding-top: 1em;
+}
+
+.team-grid .p-card-header {
+    padding-top: 30px;
+}
+
+
+/* Styles for the header (image) of the card */
+.team-grid .p-card .p-card-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 25%;
+    margin: 0 auto;
+}
+
+/* Styles for the card title and subtitle */
+.team-grid .p-card-title {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+}
+
+.team-grid .p-card-subtitle {
+    color: #555;
+    margin-bottom: 0.5em;
+}
+
+.app-container {
+    text-align: center;
+    margin: 2em;
+}
+
+/* Styles for the heading */
+.app-container .heading-container {
+    margin-bottom: 2em;
+}
+
+.app-container .heading {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.app-container .subheading {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.Link_page.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.dialog-without-scrollbar .p-dialog-content {
+    overflow: hidden !important;
+}
+
+.dialog-without-scrollbar .p-dialog-content>div {
+    overflow-y: hidden !important;
+}
+
+.p-menubar {
+    padding: 1rem;
+}
