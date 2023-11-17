@@ -22,12 +22,12 @@ export default function Navbar() {
             command: ()=>{ router.push('/gallery') }
         },
         {
-            label: 'links',
+            label: 'Links',
             icon: "pi pi-fw pi-link",
             command: ()=>{ router.push('/links') }
         },
         {
-            label: 'Sponser ISAC',
+            label: 'Sponsor ISAC',
             command: ()=>{ router.push('/sponser') }
         },
         {
@@ -47,7 +47,7 @@ export default function Navbar() {
             command: ()=>{ router.push('/teams') }
         },
         {
-            label: 'Join the community',
+            label: 'Join the Community !',
             icon: "pi pi-fw pi-whatsapp",
             command: ()=>{ router.push('https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK') }
         },

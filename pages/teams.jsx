@@ -110,7 +110,7 @@ const teams = () => {
   return (
     <div className="app-container">
       <div className="heading-container">
-        <h1 className="heading">Meet Our team</h1>
+        <h1 className="heading">Meet Our Team</h1>
         <p className="subheading">ISAC is one of the student bodies at
 BTU Cottbus-Senftenberg and one
 of 16 Indian student bodies in
