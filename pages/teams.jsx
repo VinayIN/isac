@@ -71,7 +71,7 @@ const teamMembers = [
     imageUrl: '/images/team/Sabith.png'
   },
   {
-    name: 'Kavinprakash madheswaran',
+    name: 'Kavinprakash Madheswaran',
     title: 'ADVISORY',
     imageUrl: '/images/team/Kavin.png'
   },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
-
+import { Image } from 'primereact/image';
 import Link from "next/link";
 const Footer = () => {
       
@@ -10,6 +10,8 @@ const Footer = () => {
       <Card className="p-mt-4">
         <div className="footer p-mt-4 flex flex-row align-items-start justify-content-between">
           <div className="p-text-center information" >
+          <Image src="/images/logo.png" alt="Logo" className="footer-logo" />
+           
             <div>Indian Students Association Cottbus (ISAC)</div>
             <div>BTU (Cottbus-Seftenberg)</div>
             <div>Copyright © 2023</div><div>All Rights Reserved.</div>

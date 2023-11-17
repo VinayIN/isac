@@ -51,7 +51,12 @@ function Sponser () {
             formik.resetForm();
         }
     });
-
+    const sponsors = [
+        { src: '/images/sponsor/logo1.png', alt: 'Sponsor 1' },
+        { src: '/images/sponsor/logo1.png', alt: 'Sponsor 2' },
+        { src: '/images/sponsor/logo1.png', alt: 'Sponsor 3' },
+        // ... add more sponsors here
+    ];
     const isFormFieldValid = (name) => !!(formik.touched[name] && formik.errors[name]);
     const getFormErrorMessage = (name) => {
         return isFormFieldValid(name) && <small className="p-error">{formik.errors[name]}</small>;
@@ -72,9 +77,13 @@ function Sponser () {
             </Dialog>
             <Card title="Our previous Sponsers !" subTitle="" className="flex justify-content-center">
               <div>
-                <p className="m-0">
-                  
-                </p>
+              <div className="sponsor-logos p-m-3">
+            {sponsors.map(sponsor => (
+                <div className="p-col-12 p-md-3 p-lg-2">
+                    <img src={sponsor.src} alt={sponsor.alt} className="sponsor-logo" />
+                </div>
+            ))}
+        </div>
               </div>
             </Card>
             <div className="flex justify-content-center">

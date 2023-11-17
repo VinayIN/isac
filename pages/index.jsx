@@ -12,7 +12,7 @@ function home() {
    
    
    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
+    canvas.width = 1200;
     canvas.height = 550;
 
     const backgroundImage = new Image();

@@ -456,3 +456,25 @@ footer {
 .p-menubar {
     padding: 1rem;
 }
+
+.footer-logo img {
+    width: 150px;
+}
+
+.p-card .p-card-title {
+    text-align: center;
+}
+
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sponsor-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
