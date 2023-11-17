@@ -8,8 +8,8 @@ function Resources() {
         <Card title="Admission Procedure at Brandenburg Technical University" className='m-2'>
           <div style={{height: '400px', 'overflow': 'auto' }}>
             <p className="m-0">
-              Please note that the admission procedures for international students at Brandenburg University of Technology Cottbus-Senftenberg (BTU Cottbus-Senftenberg) may change over time, and it's essential to check the official university website or contact the university's admissions office for the most up-to-date information.
-              Here's a general overview of the admission procedure for international students at BTU for both the summer and winter intakes:
+              Please note that the admission procedures for international students at Brandenburg University of Technology Cottbus-Senftenberg (BTU Cottbus-Senftenberg) may change over time, and it&apos;s essential to check the official university website or contact the university&apos;s admissions office for the most up-to-date information.
+              Here&apos;s a general overview of the admission procedure for international students at BTU for both the summer and winter intakes:
             </p>
             <p>
               Summer Intake (Starting in April) & Winter Intake (Starting in October)
@@ -17,11 +17,11 @@ function Resources() {
             <ul>
               <li>
                   Choose a Program: 
-                  Ensure that you meet the program's admission requirements, including ECTS requirements and language proficiency.
+                  Ensure that you meet the program&apos;s admission requirements, including ECTS requirements and language proficiency.
               </li>
               <li>
                   Check Application Deadlines:
-                  Every degree program has a different deadline. Pay attention to the perspective international student's deadline.
+                  Every degree program has a different deadline. Pay attention to the perspective international student&apos;s deadline.
               </li>
               <li>
                   Online Application:
@@ -38,7 +38,7 @@ function Resources() {
               </li>
               <li>
                   Admission Evaluation:
-                  The university's admissions committee will review your application and documents. If you meet the requirements, you will receive an offer of admission. Upon which you can then proceed to search for accommodation.
+                  The university&apos;s admissions committee will review your application and documents. If you meet the requirements, you will receive an offer of admission. Upon which you can then proceed to search for accommodation.
               </li>
             </ul>
             <p>

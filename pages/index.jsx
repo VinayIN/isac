@@ -148,7 +148,7 @@ function home() {
             <p>
               Participating with ISAC is as easy as joining us for an event and helping us with the preparations needed for the event.
               At ISAC, Celebrating a cultural event and representing INDIA is the only requirement!
-              Here you get a chance to be a part of something truly extraordinary. Your involvement is pivotal, as we engage with 100's of students on the day of event to make it an unforgettable experience.
+              Here you get a chance to be a part of something truly extraordinary. Your involvement is pivotal, as we engage with 100&apos;s of students on the day of event to make it an unforgettable experience.
               </p>
               There are a couple of ways through which you can join us.
               <ol>
