@@ -45,7 +45,12 @@ export default function Navbar() {
 
             // ]
             command: ()=>{ router.push('/teams') }
-        }
+        },
+        {
+            label: 'Join the community',
+            icon: "pi pi-fw pi-whatsapp",
+            command: ()=>{ router.push('https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK') }
+        },
     ]
     const accountMenu = [
         { label: 'Login', icon: 'pi pi-fw pi-user-plus mx-10', command: () => {router.push('/login')} },
@@ -69,36 +74,14 @@ export default function Navbar() {
 
      
     const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="145" height="80" className="mr-2"/> </Link>;
-    const social = <div className="flex flex-row gap-2">
-                        {/* <div className="flex flex-row align-items-center">
-                            <div className="flex flex-row gap-2">
-                                <Link href="#"><i className="pi pi-youtube px-2"/></Link>
-                                <Link href="https://www.facebook.com/isacottbus/" target="_blank"><i className="pi pi-facebook px-2"/></Link>
-                                <Link href="https://www.instagram.com/isac_cottbus/" target="_blank"><i className="pi pi-instagram px-2"/></Link>
-                            </div>
-                        </div> */}
-                        {/* <div className="flex flex-row gap-2">
-                            <Button label="Request" icon="pi pi-user-plus" onClick={() => setVisibleRegister(true)} text raised />
-                            <RequestLogin visible={visibleRegister} setVisible={setVisibleRegister}/>
-                            <Button label="Login" severity="success" icon="pi pi-sign-in" onClick={() => setVisibleLogin(true)} iconPos="right" text raised />
-                            <Login visible={visibleLogin} setVisible={setVisibleLogin}/>
-                        </div> */}
-                        {/* <Dropdown value={selectedAccount} options={accountMenu} 
-                            onChange={onAccountChange} optionLabel="label" 
-                            itemTemplate={accountItemTemplate}
-                            placeholder= "User" /> */}
-                            <div className="whatsapp-link">
-          <a  href="https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK" target="_blank" rel="noopener noreferrer">
-            <Button icon="pi pi-whatsapp" label="Join WhatsApp Community" />
-          </a>
-        </div>
+    const account = <div className="flex flex-row gap-2">
                     </div>
 
     return (
         
         <div className="nevigation">
            
-                <Menubar model={items} start={logo} end={social}/>
+                <Menubar model={items} start={logo} end={account}/>
                
                  </div>
     );
