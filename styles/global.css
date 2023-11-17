@@ -478,3 +478,13 @@ footer {
     border-radius: 50%;
     object-fit: cover;
 }
+
+.sponsor-squre {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sponsor-logo-squ {
+    width: 30%;
+}

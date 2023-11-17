@@ -52,9 +52,9 @@ function Sponser () {
         }
     });
     const sponsors = [
-        { src: '/images/sponsor/logo1.png', alt: 'Sponsor 1' },
-        { src: '/images/sponsor/logo1.png', alt: 'Sponsor 2' },
-        { src: '/images/sponsor/logo1.png', alt: 'Sponsor 3' },
+        { src: '/images/sponsor/11.png', alt: 'Sponsor 1' },
+        { src: '/images/sponsor/3.PNG', alt: 'Sponsor 3' },
+        { src: '/images/sponsor/4.JPG', alt: 'Sponsor 4' },
         // ... add more sponsors here
     ];
     const isFormFieldValid = (name) => !!(formik.touched[name] && formik.errors[name]);
@@ -83,7 +83,11 @@ function Sponser () {
                     <img src={sponsor.src} alt={sponsor.alt} className="sponsor-logo" />
                 </div>
             ))}
+             
         </div>
+        <div className="sponsor-squre">
+                    <img src='/images/sponsor/2.JPG' alt='Sponsor 2' className="sponsor-logo-squ" />
+                </div>
               </div>
             </Card>
             <div className="flex justify-content-center">
