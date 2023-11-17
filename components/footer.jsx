@@ -13,6 +13,7 @@ const Footer = () => {
             <div>Indian Students Association Cottbus (ISAC)</div>
             <div>BTU (Cottbus-Seftenberg)</div>
             <div>Copyright © 2023</div><div>All Rights Reserved.</div>
+
           </div>
           <div className="contact-us">
           <div className='flex-auto space-x-2 text-sm text-gray-500 dark:text-gray-400 justify-content-center'>
@@ -20,6 +21,7 @@ const Footer = () => {
             <div className='mx-10'>
               <Link href="https://www.facebook.com/isacottbus/" target="_blank"><i className="pi pi-facebook p-mr-2 mx-10" style={{'fontSize': '1.5em'}}></i></Link>
               <Link href="https://www.instagram.com/isac_cottbus/" target="_blank"><i className="pi pi-instagram mx-10" style={{'fontSize': '1.5em'}}></i></Link>
+              <Link href="https://github.com/VinayIN/isac" target="_blank"><i className="pi pi-github mx-10" style={{'fontSize': '1.5em'}}></i></Link>
             </div>
           </div>
           </div>
@@ -28,7 +30,7 @@ const Footer = () => {
                 <div>
                   <h2>Developers:</h2> 
                   <div className='developer-list flex flex-column'>
-                    <Link href="https://github.com/VinayIN/isac" target='_blank'><i className="pi pi-github px-2 py-1"/>Binay Kumar Pradhan</Link>
+                    <Link href="https://wezn.github.io/" target='_blank'><i className="pi pi-globe px-2 py-1"/>Binay Kumar Pradhan</Link>
                     <Link href="https://github.com/jagruti261" target='_blank'><i className="pi pi-github px-2 py-1"/>Jagruti Vekariya</Link>
                     </div>
                   </div>
