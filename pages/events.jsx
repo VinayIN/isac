@@ -21,11 +21,12 @@ function Events() {
   return (
       <Card className='justify-content-center m-6'>
           <DataTable value={event} sortField="name" header={header} footer={footer} sortOrder={-1} responsiveLayout="scroll">
-              <Column field="name" header="Name" sortable></Column>
-              <Column field="category" header="Category" sortable></Column>
-              <Column field="id" header="Id"></Column>
-              <Column field="code" header="Code"></Column>
-              <Column field="description" header="Description"></Column>
+              <Column field="Year" header="Year" sortable></Column>
+              <Column field="Event Name" header="Event Name" sortable></Column>
+              <Column field="Status" header="Status" sortable></Column>
+              <Column field="Date" header="Date"></Column>
+              <Column field="Location" header="Location"></Column>
+              <Column field="Description" header="Description"></Column>
           </DataTable>
       </Card>
   );

@@ -33,17 +33,18 @@ export default function Navbar() {
         {
             label: 'Teams',
             icon: "pi pi-w pi-users",
-            items: [
-                {
-                    label: '2022',
-                    command: ()=>{ router.push('/teams') }
-                },
-                {
-                    label: '2023',
-                    command: ()=>{ router.push('/teams') }
-                },
+            // items: [
+            //     {
+            //         label: '2022',
+            //         command: ()=>{ router.push('/teams') }
+            //     },
+            //     {
+            //         label: '2023',
+            //         command: ()=>{ router.push('/teams') }
+            //     },
 
-            ]
+            // ]
+            command: ()=>{ router.push('/teams') }
         }
     ]
     const accountMenu = [
