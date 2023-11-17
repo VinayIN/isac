@@ -12,8 +12,8 @@ function home() {
    
    
    const ctx = canvas.getContext('2d');
-    canvas.width = 1200;
-    canvas.height = 550;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight - 100;
 
     const backgroundImage = new Image();
     backgroundImage.src = '/images/D_B.png'; // Replace with your background image
@@ -79,7 +79,7 @@ function home() {
   return (
    
     <div className=''>
-      <canvas id="hero-banner" width="400" height="540" style={{position: 'absolute'}}></canvas>
+      <canvas id="hero-banner" width="400" height='540' style={{position: 'absolute'}}></canvas>
       <div className="hero-banner" style={{ backgroundImage: 'url(/images/D_B.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', color: 'white' }}>
             <h1 className='banner-main-text fadeInUp '>Welcome to ISAC Cottbus</h1>
             <p className="p-m-3 banner-subtext fadeInUp ">Connecting Indian Students at BTU Cottbus-Senftenberg</p>

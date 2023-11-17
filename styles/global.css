@@ -488,3 +488,14 @@ footer {
 .sponsor-logo-squ {
     width: 30%;
 }
+
+@media screen and (min-width: 2500px) {
+    h1.banner-main-text.fadeInUp {
+        font-size: 56px;
+        margin-bottom: 0;
+    }
+
+    #hero-banner {
+        height: 1100px;
+    }
+}
