@@ -77,12 +77,12 @@ function Sponsors () {
                     </p>
                 </div>
             </Dialog>
-            <Card title="Our previous Sponsers !" subTitle="" className="flex justify-content-center">
+            <Card title="Our previous Sponsors !" subTitle="" className="flex justify-content-center">
               <div>
               <div className="sponsor-logos p-m-3">
             {sponsors.map(sponsor => (
-                <div className="p-col-12 p-md-3 p-lg-2">
-                    <img key={sponsor.key} src={sponsor.src} alt={sponsor.alt} className="sponsor-logo" />
+                <div className="p-col-12 p-md-3 p-lg-2" key={sponsor.key}>
+                    <img src={sponsor.src} alt={sponsor.alt} key={sponsor.key} className="sponsor-logo" />
                 </div>
             ))}
              
@@ -96,6 +96,9 @@ function Sponsors () {
                 <div className="card">
                     <h2 className="text-center">Help us speading cultural diversity around Cottbus.</h2>
                     <h3 className='text-center'>Can you please share your details?</h3>
+                    <p className='text-center'>
+                        The form feature is not available for now, send us a mail at <mark>isacottbus@gmail.com</mark>
+                    </p>
                     <form onSubmit={formik.handleSubmit} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label">
