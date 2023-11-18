@@ -12,7 +12,7 @@ import { classNames } from 'primereact/utils';
 import { Card } from 'primereact/card';
 
 
-function Sponser () {
+function Sponsors () {
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
 
@@ -82,7 +82,7 @@ function Sponser () {
               <div className="sponsor-logos p-m-3">
             {sponsors.map(sponsor => (
                 <div className="p-col-12 p-md-3 p-lg-2">
-                    <img src={sponsor.src} alt={sponsor.alt} className="sponsor-logo" />
+                    <img key={sponsor.key} src={sponsor.src} alt={sponsor.alt} className="sponsor-logo" />
                 </div>
             ))}
              
@@ -165,4 +165,4 @@ function Sponser () {
     );
 }
 
-export default Sponser;
+export default Sponsors;

@@ -17,7 +17,7 @@ function Events() {
   const header = (
     <Button className='item-end' icon="pi pi-refresh">Reload</Button>
   );
-  const footer = `Today's date is: ${new Date().toLocaleDateString("hi-IN", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}.`;
+  const footer = `Today's date: ${new Date().toLocaleDateString("hi-IN", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}.`;
   return (
       <Card className='justify-content-center m-6'>
           <DataTable value={event} sortField="name" header={header} footer={footer} sortOrder={-1} responsiveLayout="scroll">

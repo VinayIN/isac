@@ -28,7 +28,7 @@ export default function Navbar() {
         },
         {
             label: 'Sponsor ISAC',
-            command: ()=>{ router.push('/sponser') }
+            command: ()=>{ router.push('/sponsor') }
         },
         {
             label: 'Teams',

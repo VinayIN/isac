@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'primereact/card';
+import { Button } from 'primereact/button';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
@@ -106,7 +107,7 @@ const ProfileCard = ({ name, title, imageUrl, statusDots }) => {
 };
 
 
-const teams = () => {
+const Teams = () => {
   return (
     <div className="app-container">
       <div className="heading-container">
@@ -126,9 +127,14 @@ their role is to hosts events that represents the cultural diversity of India.</
           <ProfileCard key={index} {...member} />
         ))}
       </div>
-    </div>
+  <div className='flex justify-content-center'>
+    <a href="https://forms.gle/SNjjBJvXrqSNcqfK8" target="_blank" rel="noopener noreferrer">
+      <Button label="Are you a member of ISAC?" icon="pi pi-user" severity="info" text raised/>
+    </a>
+  </div>
+  </div>
   );
 };
 
-export default teams;
+export default Teams;
 
