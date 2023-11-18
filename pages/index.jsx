@@ -6,12 +6,11 @@ import { Divider } from 'primereact/divider';
 import { Button } from 'primereact/button';
 import { Link } from "next/link";
         
-function home() {
+function Home() {
   useEffect(() => {
     const canvas = document.getElementById('hero-banner');
-   
-   
-   const ctx = canvas.getContext('2d');
+
+    const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight - 100;
 
@@ -158,8 +157,10 @@ function home() {
                   <p>
                     The ISAC members has the freedom for every decision making and shape the club.
                   </p>
-                <Button label="Enrol for membership" icon="pi pi-file" severity="info" text raised disabled/>
-                
+                  <a href="mailto:ask.isacottbus@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <Button label="Enrol for membership" icon="pi pi-file" severity="info" text raised disabled/>
+                  </a>
+
                 <li className='py-4'>Volunteer</li>
                   During each event, we ask for volunteers to help us with the preparations.
                   Coordinating with audience during dance, decorations and cooking are some of the activities where you a volunteer could help us out.
@@ -168,14 +169,18 @@ function home() {
                     However, you can also directly leave us your contact detail through e-mail.
                     We will contact you at every event, or if you prefer will give a knock at your door.
                   </p>
-                <Button label="Become a Volunteer" icon="pi pi-envelope" severity="info" text raised/>
+                  <a href="mailto:ask.isacottbus@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <Button label="Become a Volunteer" icon="pi pi-envelope" severity="info" text raised/>
+                  </a>
                 
                 <li className='py-4'>Feedback</li>
                 In case you have an opinion that you want us to discuss before our planning, please leave a constructive feedback here.
                 <p>
                   We read your feedback before every event starts.
                 </p>
-                <Button label="Leave a Feedback" icon="pi pi-file" severity="info" text raised/>
+                <a href="https://forms.gle/B9sNgVu5KqdjcZVaA" target="_blank" rel="noopener noreferrer">
+                  <Button label="Leave a Feedback" icon="pi pi-file" severity="info" text raised/>
+                </a>
               </ol>
             </AccordionTab>
             <AccordionTab header="How can you contact ISAC??">
@@ -193,9 +198,9 @@ function home() {
                 <li className='py-4'>
                   <p>Seeking Information/Assistance:{" "}</p>
                   
-                  <a  href="mailto:ask.isacottbus@gmail.com" target="_blank" rel="noopener noreferrer">
-                  <Button className="mt-5" icon="pi pi-envelope" label="ask.isacottbus@gmail.com" text raised/>
-                </a>
+                  <a href="mailto:ask.isacottbus@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <Button className="mt-5" icon="pi pi-envelope" label="ask.isacottbus@gmail.com" text raised/>
+                  </a>
                 </li>
                 </ul>
                   <p>In case you need a quick response from us, Instagram (
@@ -217,4 +222,4 @@ function home() {
   )
   };
 
-export default home;
+export default Home;

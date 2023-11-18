@@ -2,7 +2,7 @@ import { Card } from 'primereact/card';
 import { ScrollTop } from 'primereact/scrolltop';
 import { Button } from 'primereact/button';
 
-function Resources() {
+function Links() {
     return (
         <div className='flex flex-column py-6'>
         <Card title="Admission Procedure at Brandenburg Technical University" className='m-2'>
@@ -110,4 +110,4 @@ function Resources() {
     )
   };
   
-  export default Resources
+  export default Links
