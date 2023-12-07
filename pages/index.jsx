@@ -5,7 +5,9 @@ import { ScrollPanel } from 'primereact/scrollpanel';
 import { Divider } from 'primereact/divider';
 import { Button } from 'primereact/button';
 import { Link } from "next/link";
-        
+import { Card } from 'primereact/card';
+
+
 function Home() {
   useEffect(() => {
     const canvas = document.getElementById('hero-banner');
@@ -127,6 +129,18 @@ function Home() {
               ISAC is one of the 16 student organizations in Germany recognized by the embassy.</p>
               <p>
               We welcome you to be a part of this organization and to receive benefits.</p>
+              <Card title="ISAC Constitution and Working Guidelines" subTitle="Subjected to change" className="flex justify-content-center">
+                <div>
+                  <p className="m-0">
+                    <a href="/docs/Constitution_ISAC_2021.pdf" className="no-underline px-2">
+                      <Button icon="pi pi-file" label="Open Constitution" iconPos="right"/>
+                    </a>
+                    <a href="/docs/Working Guidelines_ISAC_2021.pdf" className="no-underline px-2">
+                      <Button icon="pi pi-file" label="Open Guidelines" iconPos="right"/>
+                    </a>
+                  </p>
+                </div>
+              </Card>
             </AccordionTab>
             <AccordionTab header="How can ISAC help you?">
               <p>
@@ -157,8 +171,8 @@ function Home() {
                   <p>
                     The ISAC members has the freedom for every decision making and shape the club.
                   </p>
-                  <a href="mailto:ask.isacottbus@gmail.com" target="_blank" rel="noopener noreferrer">
-                    <Button label="Enrol for membership" icon="pi pi-file" severity="info" text raised disabled/>
+                  <a href="https://forms.gle/7LRzgvv4CQVsvLr97" target="_blank" rel="noopener noreferrer">
+                    <Button label="Enrol for membership" icon="pi pi-file" severity="info" text raised/>
                   </a>
 
                 <li className='py-4'>Volunteer</li>
