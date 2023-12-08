@@ -20,6 +20,7 @@ function Sponsors () {
         initialValues: {
             name: '',
             email: '',
+            street: '',
             description: '',
             plz: '',
             ort: '',
@@ -37,7 +38,7 @@ function Sponsors () {
                 errors.email = 'Email is required.';
             }
             else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data.email)) {
-                errors.email = 'Invalid email address. E.g. example@email.com';
+                errors.email = 'Invalid email address. E.g. example@gmail.com';
             }
 
             if (!data.accept) {
@@ -46,12 +47,38 @@ function Sponsors () {
 
             return errors;
         },
-        onSubmit: (data) => {
-            setFormData(data);
-            setShowMessage(true);
+        onSubmit: async (data) => {
+            const jsonValues = JSON.stringify(data);
+            const file = new Blob([jsonValues], { type: 'application/json' });
+            const uploadformData = new FormData();
+            uploadformData.append('file', file, `${data.name}.json`);
 
+            try {
+                const description = "The sponser data can be found here: https://deta.space/builder/a0yMYmbrGQQL/develop?tab=data"
+                const response = await fetch('https://isacapi-1-r3703096.deta.app/uploadfile?description=' + encodeURIComponent(`${data.description}\n${description}`), {
+                    method: 'POST',
+                    body: uploadformData,
+                    headers: {
+                        'Accept': 'application/json',
+                    },
+                });
+                console.log("Response received", response);
+                if (response.ok) {
+                    const responseBody = await response.json();
+                    if (responseBody.status === 200) {
+                        setFormData(data);
+                        setShowMessage(true);
+                    } else {
+                        console.error('Server processed request, but returned non-success status');
+                    }
+                } else {
+                    console.error('Request failed');
+                }
+            } catch (error) {
+                console.error('Error occurred during fetch operation:', error);
+            }
             formik.resetForm();
-        }
+        }        
     });
     const sponsors = [
         { src: '/images/sponsor/11.png', alt: 'Sponsor 1' },
@@ -96,9 +123,6 @@ function Sponsors () {
                 <div className="card">
                     <h2 className="text-center">Help us speading cultural diversity around Cottbus.</h2>
                     <h3 className='text-center'>Can you please share your details?</h3>
-                    <p className='text-center'>
-                        The form feature is not available for now, send us a mail at <mark>isacottbus@gmail.com</mark>
-                    </p>
                     <form onSubmit={formik.handleSubmit} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label">
@@ -160,7 +184,7 @@ function Sponsors () {
                             <Checkbox inputId="accept" name="accept" checked={formik.values.accept} onChange={formik.handleChange} className={classNames({ 'p-invalid': isFormFieldValid('accept') })} />
                             <label htmlFor="accept" className={classNames({ 'p-error': isFormFieldValid('accept') })}>I agree to be contacted by member of ISAC *</label>
                         </div>
-                        <Button type="submit" label="Submit" className="mt-2" disabled/>
+                        <Button type="submit" label="Submit" className="mt-2"/>
                     </form>
                 </div>
             </div>

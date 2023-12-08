@@ -56,6 +56,9 @@ function Links() {
                 <a href="https://www.b-tu.de/en/students/admissions-registrars-office/dates-and-deadlines" className="no-underline px-2">
                   <Button icon="pi pi-arrow-right" label="Check deadlines here" iconPos="right"/>
                 </a>
+                <a href="https://www.b-tu.de/en/international/news/events" className="no-underline px-2" >
+                  <Button icon="pi pi-arrow-right" label="International Events" iconPos="right"/>
+                </a>
               </p>
             </div>
           </Card>
