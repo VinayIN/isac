@@ -14,47 +14,47 @@ export default function Navbar() {
         {
             label: 'Events',
             icon: 'pi pi-fw pi-heart',
-            command: ()=>{ router.push('/events') }
+            command: () => { router.push('/events') }
         },
         {
             label: 'Gallery',
             icon: "pi pi-fw pi-images",
-            command: ()=>{ router.push('/gallery') }
+            command: () => { router.push('/gallery') }
         },
         {
             label: 'Links',
             icon: "pi pi-fw pi-link",
-            command: ()=>{ router.push('/links') }
+            command: () => { router.push('/links') }
         },
         {
             label: 'Sponsor ISAC',
-            command: ()=>{ router.push('/sponsor') }
+            command: () => { router.push('/sponsor') }
         },
         {
             label: 'Teams',
             icon: "pi pi-w pi-users",
-            // items: [
-            //     {
-            //         label: '2022',
-            //         command: ()=>{ router.push('/teams') }
-            //     },
-            //     {
-            //         label: '2023',
-            //         command: ()=>{ router.push('/teams') }
-            //     },
-
-            // ]
-            command: ()=>{ router.push('/teams') }
+            command: () => { router.push('/teams') }
         },
         {
-            label: 'Join the Community !',
-            icon: "pi pi-fw pi-whatsapp",
-            command: ()=>{ router.push('https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK') }
+            label: 'Join the Community',
+            icon: "pi pi-fw pi-info-circle",
+            items: [
+                {
+                    label: 'Whatsapp',
+                    icon: "pi pi-fw pi-whatsapp",
+                    command: () => { router.push('https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK') }
+                },
+                {
+                    label: 'Facebook',
+                    icon: "pi pi-fw pi-facebook",
+                    command: () => { router.push('https://www.facebook.com/groups/BTUIndians/') }
+                },
+            ]
         },
     ]
     const accountMenu = [
-        { label: 'Login', icon: 'pi pi-fw pi-user-plus mx-10', command: () => {router.push('/login')} },
-        { label: 'Register', icon: 'pi pi-fw pi-sign-in mx-10', command: () => {router.push('/register')} }
+        { label: 'Login', icon: 'pi pi-fw pi-user-plus mx-10', command: () => { router.push('/login') } },
+        { label: 'Register', icon: 'pi pi-fw pi-sign-in mx-10', command: () => { router.push('/register') } }
     ];
     const [selectedAccount, setSelectedAccount] = useState(null);
 
@@ -65,24 +65,23 @@ export default function Navbar() {
     };
     const accountItemTemplate = (option) => {
         return (
-          <div className="p-flex p-ai-center">
-            <i className={option.icon} ></i>
-            <span className="p-ml-2">{option.label}</span>
-          </div>
+            <div className="p-flex p-ai-center">
+                <i className={option.icon} ></i>
+                <span className="p-ml-2">{option.label}</span>
+            </div>
         );
-      };
+    };
 
-     
-    const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="145" height="80" className="mr-2"/> </Link>;
-    const account = <div className="flex flex-row gap-2">
-                    </div>
+
+    const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="145" height="80" className="mr-2" /> </Link>;
+    const account = <div className="flex flex-row gap-2"></div>
 
     return (
-        
+
         <div className="nevigation">
-           
-                <Menubar model={items} start={logo} end={account}/>
-               
-                 </div>
+
+            <Menubar model={items} start={logo} end={account} />
+
+        </div>
     );
 }
