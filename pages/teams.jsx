@@ -8,98 +8,78 @@ import { TabView, TabPanel } from 'primereact/tabview';
 // Mock data for the team members
 const adminteam = [
   {
-    name: 'Sushmita Godayal',
+    name: 'Sharanbasava Dandge',
     title: 'Admin',
-    imageUrl: '/images/team/Sushmita.png'
+    imageUrl: '/images/team/Sharanbasava.png'
   },
   {
-    name: 'Suryakant Singh',
+    name: 'Vamsi Bommanaboyuna',
     title: 'Admin',
-    imageUrl: '/images/team/Suryakant.png'
-  },
-  {
-    name: 'Sujan Reddy',
-    title: 'Admin',
-    imageUrl: '/images/team/Sujan.png'
+    imageUrl: '/images/team/Vamsi.png'
   },
 ]
 const socialmediateam = [
   {
-    name: 'Taliya Theresa Joseph',
-    title: 'Social Media ',
-    imageUrl: '/images/team/Taliya.png'
+    name: 'Fuad Ahamed Fazaludin',
+    title: 'Social Media & Technology',
+    imageUrl: '/images/team/Fuad.png'
   },
   {
-    name: 'Arun Kumar Thommandru',
-    title: 'Social Media ',
-    imageUrl: '/images/team/Arun.png'
+    name: 'Vibhangi Ameta',
+    title: 'Social Media & Technology',
+    imageUrl: '/images/team/Vibhangi.png'
   },
 ]
 const financeteam = [
 {
-  name: 'Tony Thomas',
+  name: 'Harikrishnan Radhakrishnan',
   title: 'Finance',
-  imageUrl: '/images/team/Tony.png'
+  imageUrl: '/images/team/Hari.png'
 },
 {
-  name: 'Sabith Bin Salam',
-  title: 'Finance ',
-  imageUrl: '/images/team/Sabith.png'
+  name: 'Jefin Johny',
+  title: 'Finance',
+  imageUrl: '/images/team/Jeffin.png'
 },
 ]
 const eventteam = [
   {
-    name: 'Janya Kapahi',
-    title: 'Events ',
-    imageUrl: '/images/team/Janya.png'
+    name: 'Gauri Mehra',
+    title: 'Event Management',
+    imageUrl: '/images/team/Gauri.png'
   },
   {
-    name: 'Anju Koyippilly Rathnan',
-    title: 'Events',
-    imageUrl: '/images/team/Anju.png'
+    name: 'Ananya Babu',
+    title: 'Event Management',
+    imageUrl: '/images/team/Ananya.png'
   },
   {
-    name: 'Amal Babu  ',
-    title: 'Events',
-    imageUrl: '/images/team/Amal.png'
+    name: 'Sithara Sethunath',
+    title: 'Event Management',
+    imageUrl: '/images/team/Sithara.png'
   },
   {
-    name: 'Tarani Narukurti',
-    title: 'Events',
-    imageUrl: '/images/team/Tarani.png'
-  },
-  {
-    name: 'Akshatha Ramesh Patkar',
-    title: 'Events',
-    imageUrl: '/images/team/Akshatha.png'
-  },
-  {
-    name: 'Binay Kumar Pradhan',
-    title: 'Events',
-    imageUrl: '/images/team/Binay.png'
+    name: 'Prateek Kalyani',
+    title: 'Event Management',
+    imageUrl: '/images/team/Prateek.png'
   },
 ]
 const advisory = [
   {
-    name: 'Kavinprakash Madheswaran',
-    title: 'ADVISORY',
-    imageUrl: '/images/team/Kavin.png'
+    name: 'Janya Kapahi',
+    title: 'Advisory - Event Management',
+    imageUrl: '/images/team/Janya.png'
   },
   {
-    name: 'Kevin Johny Joseph',
-    title: 'ADVISORY',
-    imageUrl: '/images/team/Kevin.png'
+    name: 'Tony Thomas',
+    title: 'Advisory - Finance',
+    imageUrl: '/images/team/Tony.png'
   },
   {
-    name: 'Amruta Kulkarni',
-    title: 'ADVISORY',
-    imageUrl: '/images/team/Amrutha.png'
-  },
-  {
-    name: 'Anusua Ray',
-    title: 'ADVISORY',
-    imageUrl: '/images/team/Anusua.png'
-  },
+    name: 'Binay Kumar Pradhan',
+    title: 'Advisory - Social Media & Technology',
+    imageUrl: '/images/team/Binay.png'
+  }
 ]
 
 // The ProfileCard component
@@ -108,7 +88,7 @@ const ProfileCard = ({ name, title, imageUrl, statusDots }) => {
 
 
   return (
-    <Card title={name} subTitle={title} style={{ width: '15em', textAlign: 'center', margin: '1em' }} header={header}>
+    <Card title={name} subTitle={title} style={{ height: '20em', width: '15em', textAlign: 'center', margin: '1em' }} header={header}>
 
     </Card>
   );
