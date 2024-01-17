@@ -13,7 +13,8 @@ import { Card } from 'primereact/card';
 
 
 function Sponsors () {
-    const [showMessage, setShowMessage] = useState(false);
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [showErrorMessage, setShowErrorMessage] = useState(false);
     const [formData, setFormData] = useState({});
 
     const formik = useFormik({
@@ -67,15 +68,18 @@ function Sponsors () {
                     const responseBody = await response.json();
                     if (responseBody.status === 200) {
                         setFormData(data);
-                        setShowMessage(true);
+                        setShowSuccessMessage(true);
                     } else {
                         console.error('Server processed request, but returned non-success status');
+                        setShowErrorMessage(true);
                     }
                 } else {
                     console.error('Request failed');
+                    setShowErrorMessage(true);
                 }
             } catch (error) {
                 console.error('Error occurred during fetch operation:', error);
+                setShowErrorMessage(true);
             }
             formik.resetForm();
         }        
@@ -91,19 +95,24 @@ function Sponsors () {
         return isFormFieldValid(name) && <small className="p-error">{formik.errors[name]}</small>;
     };
 
-    const dialogFooter = <div className="flex justify-content-center"><Button label="Ok" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
-
+    const successDialogFooter = (
+        <Button label="Ok" className="p-button-text" onClick={() => setShowSuccessMessage(false)} />
+    );
+    
+    const errorDialogFooter = (
+        <Button label="Ok" className="p-button-text" onClick={() => setShowErrorMessage(false)} />
+    );
     return (
         <div className="form-demo pb-4">
-            <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
-                <div className="flex align-items-center flex-column pt-6 px-3">
-                    <i className="pi pi-check-circle" style={{ fontSize: '5rem', color: 'var(--green-500)' }}></i>
-                    <h5>Your message has been send!</h5>
-                    <p style={{ lineHeight: 1.5, textIndent: '1rem' }}>
-                        Thank you for showing interest in us <b>{formData.name}</b>. We will contact you soon. 🙏🏽 Namaste, We will use <b>{formData.email}</b> for contacting you.
-                    </p>
-                </div>
+            <Dialog visible={showSuccessMessage} onHide={() => setShowSuccessMessage(false)} footer={successDialogFooter} header="Success">
+                <p>Your form has been submitted successfully!</p>
             </Dialog>
+
+            <Dialog visible={showErrorMessage} onHide={() => setShowErrorMessage(false)} footer={errorDialogFooter} header="Error">
+                <p>There was an error submitting the form. Server is busy!</p>
+                <p>Please send us a mail at isacottbus@gmail.com.</p>
+            </Dialog>
+            
             <Card title="Our previous Sponsors !" subTitle="" className="flex justify-content-center">
               <div>
               <div className="sponsor-logos p-m-3">
