@@ -101,7 +101,7 @@ const MyGallery = () => {
       setSelectedImageData(data);
       setDisplayDialog(true);
     }}>
-      <div className="card">
+      <div className="card mb-1" style={{ textAlign: 'center' }}>
         <img src={getRandomThumbnail(data.images)} alt={data.title} style={{ width: 'auto', height: '180px', objectFit: 'cover'}} />
         <h4 style={{ textAlign: 'center' }}>{data.title}</h4>
       </div>
@@ -113,7 +113,7 @@ const MyGallery = () => {
       setSelectedImageData(data);
       setDisplayDialog(true);
     }}>
-      <div className="card" style={{ display: 'flex', alignItems: 'center', padding: '1rem' }}>
+      <div className="card" style={{ display: 'flex', padding: '1rem' }}>
         <img src={getRandomThumbnail(data.images)} alt={data.title} style={{ width: '80px', height: '120px', objectFit: 'cover' }} />
         <h4>{data.title}</h4>
       </div>
@@ -125,8 +125,10 @@ const MyGallery = () => {
   };
 
   const renderGalleriaDialog = () => (
-    <Dialog header={selectedImageData?.title} visible={displayDialog} onHide={() => setDisplayDialog(false)} style={{ width: '50vw' }} modal>
-      <Galleria value={selectedImageData?.images} item={(item) => <img src={item} alt={selectedImageData?.title} style={{ width: '100%' }} />} showThumbnails autoPlay transitionInterval={3000} />
+    <Dialog header={selectedImageData?.title} visible={displayDialog} onHide={() => setDisplayDialog(false)} style={{ width: '75vw' }} modal>
+      <Galleria value={selectedImageData?.images}
+                item={(item) => <img src={item} alt={selectedImageData?.title} style={{ width: '100%' }} />}
+                circular showIndicators showItemNavigators showThumbnails={false} autoPlay transitionInterval={2000} />
     </Dialog>
   );
 
