@@ -11,11 +11,10 @@ function GreetingDialog() {
       const response = await fetch('/calender.json');
       const data = await response.json();
 
-      const currentDate = new Date().toISOString().slice(4, 10);
+      const currentDate = new Date().toISOString().slice(5, 10);
       const matchingEntry = data.find(
         (entry) => entry.date === currentDate || entry.flag === "active"
       );
-
       setPopupData(matchingEntry);
     };
 
