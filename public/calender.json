@@ -1,15 +1,184 @@
 [
    {
      "tag": "new",
-     "date": "2024-02-14",
+     "date": "02-13",
      "description": "Please bookmark the url. Once a stable website is created, the website can be searched from all search engine.",
      "title": "New ISAC website",
      "flag": "active"
    },
    {
-     "tag": "isac",
-     "date": "2024-02-13",
-     "description": "This is a description",
-     "title": "This is a title"
+     "tag": "normal",
+     "date": "02-14",
+     "description": "Valentines day",
+     "title": "Happy Valentines day"
+   },
+   {
+     "tag": "normal",
+     "date": "01-14",
+     "title": "Makar Sankranti",
+     "description": "Celebrates the harvest and the beginning of spring. Symbolizes new beginnings and prosperity. **Social message:** Share and cherish the bounty with those less fortunate."
+   },
+   {
+     "tag": "normal",
+     "date": "02-10",
+     "title": "Basant Panchami",
+     "description": "Welcomes spring and the goddess Saraswati. Celebrated with flying kites and yellow attire. **Social message:** Embrace knowledge and creativity, let your dreams take flight."
+   },
+   {
+     "tag": "isac-event",
+     "date": "03-17",
+     "title": "Holi",
+     "description": "Festival of colors, celebrating love, forgiveness, and the victory of good over evil. **Social message:** Spread joy and unity, embrace diversity."
+   },
+   {
+     "tag": "normal",
+     "date": "04-14",
+     "title": "Vaisakhi",
+     "description": "Sikh New Year, celebrating the harvest and the founding of the Khalsa. **Social message:** Live with equality, valor, and community spirit."
+   },
+   {
+     "tag": "normal",
+     "date": "08-31",
+     "title": "Ganesh Chaturthi",
+     "description": "Honors Lord Ganesha, the god of wisdom and auspicious beginnings. **Social message:** Remove obstacles, embrace knowledge and wisdom."
+   },
+   {
+     "tag": "normal",
+     "date": "10-24",
+     "date_alt": "10-26",
+     "title": "Dussehra",
+     "description": "Celebrates the victory of good over evil, marked by the burning of effigies of Ravana. **Social message:** Stand up for righteousness, conquer inner demons."
+   },
+   {
+     "tag": "isac-event",
+     "date": "11-04",
+     "title": "Diwali",
+     "description": "Festival of lights, symbolizing the triumph of light over darkness and knowledge over ignorance. **Social message:** Share the light of knowledge, dispel negativity."
+   },
+   {
+     "tag": "normal",
+     "date": "12-25",
+     "title": "Christmas",
+     "description": "Celebrates the birth of Jesus Christ, promoting love, peace, and goodwill. **Social message:** Spread kindness and compassion, embrace the spirit of giving."
+   },
+   {
+     "tag": "normal",
+     "date": "02-17",
+     "title": "Mahashivratri",
+     "description": "Honors Lord Shiva, celebrating creation and overcoming temptation. **Social message:** Cultivate inner strength, conquer negative desires."
+   },
+   {
+     "tag": "normal",
+     "date": "03-10",
+     "title": "Gudi Padwa",
+     "description": "Marathi New Year, marking the beginning of spring and celebrating victory. **Social message:** Embrace new beginnings, honor traditions with a modern twist."
+   },
+   {
+     "tag": "normal",
+     "date": "04-29",
+     "title": "Eid al-Fitr",
+     "description": "Islamic festival marking the end of Ramadan, celebrating self-discipline and community. **Social message:** Foster empathy, share blessings with others."
+   },
+   {
+     "tag": "normal",
+     "date": "07-17",
+     "title": "Guru Purnima",
+     "description": "Honors spiritual teachers and gurus. **Social message:** Respect and seek knowledge, appreciate guidance."
+   },
+   {
+     "tag": "normal",
+     "date": "08-20",
+     "title": "Onam",
+     "description": "Kerala harvest festival, celebrating King Mahabali and prosperity. **Social message:** Honor nature's bounty, share prosperity with all."
+   },
+   {
+     "tag": "normal",
+     "date": "09-17",
+     "title": "Durga Puja",
+     "description": "Honors Goddess Durga, celebrating the triumph of good over evil. **Social message:** Empower yourself and others, fight for justice."
+   },
+   {
+     "tag": "normal",
+     "date": "03-24",
+     "title": "Palm Sunday",
+     "description": "Celebrates the triumphant entry of Jesus into Jerusalem.",
+     "social_message": "Reflect on humility and service."
+   },
+   {
+     "tag": "normal",
+     "date": "05-30",
+     "title": "Ascension Day",
+     "description": "Commemorates the ascension of Jesus into heaven.",
+     "social_message": "Celebrate hope and new beginnings."
+   },
+   {
+     "tag": "normal",
+     "date": "06-09",
+     "title": "Pentecost",
+     "description": "Celebrates the descent of the Holy Spirit upon the disciples.",
+     "social_message": "Embrace inspiration and community."
+   },
+   {
+     "tag": "normal",
+     "date": "03-09",
+     "title": "Laylat al-Qadr",
+     "description": "Night of Power within Ramadan, considered the holiest night in Islam.",
+     "social_message": "Deepen faith, seek forgiveness, and pray for blessings."
+   },
+   {
+     "tag": "normal",
+     "date": "09-09",
+     "title": "Islamic New Year",
+     "description": "Marks the beginning of the Islamic calendar year.",
+     "social_message": "Reflect on renewal, commit to good deeds, and celebrate community."
+   },
+   {
+     "tag": "normal",
+     "date": "10-28",
+     "title": "Mawlid al-Nabi",
+     "description": "Celebrates the birthday of Prophet Muhammad.",
+     "social_message": "Honor the Prophet's teachings, show compassion, and promote unity."
+   },
+   {
+     "tag": "normal",
+     "description": "Days of special observance and meditation. Dates vary based on lunar calendar.",
+     "title": "Uposatha Days",
+     "social_message": "Practice mindfulness, cultivate virtue, and connect with the community."
+   },
+   {
+     "tag": "normal",
+     "date": "02-03",
+     "title": "Magha Puja",
+     "description": "Commemorates the gathering of 1,250 enlightened disciples before the Buddha.",
+     "social_message": "Seek harmony, unity, and the teachings of the Buddha."
+   },
+   {
+     "tag": "normal",
+     "date": "10-27",
+     "title": "Katina Ceremony",
+     "description": "Offering of new robes to monks at the end of the monsoon season.",
+     "social_message": "Practice generosity, gratitude, and support for the monastic community."
+   },
+   {
+     "tag": "normal",
+     "date": "08-26",
+     "date_alt": "09-03",
+     "title": "Paryushan Mahaparva",
+     "description": "Eight-day period of spiritual introspection and fasting.",
+     "social_message": "Practice non-violence, forgiveness, and self-purification."
+   },
+   {
+     "tag": "normal",
+     "date": "04-17",
+     "title": "Mahavir Jayanti",
+     "description": "Celebrates the birthday of Lord Mahavira, the last Jain Tirthankara (spiritual leader).",
+     "social_message": "Honor Lord Mahavira's teachings, embrace non-violence and compassion."
+   },
+   {
+     "tag": "normal",
+     "date": "11-07",
+     "title": "Samvatsari",
+     "description": "Jain New Year, celebrating the liberation of the first Tirthankara.",
+     "social_message": "Reflect on spiritual progress, commit to ahimsa (non-violence), and celebrate new beginnings."
    }
  ]
