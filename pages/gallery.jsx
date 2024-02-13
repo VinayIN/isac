@@ -127,10 +127,18 @@ const MyGallery = () => {
   const renderGalleriaDialog = () => (
     <Dialog header={selectedImageData?.title} visible={displayDialog} onHide={() => setDisplayDialog(false)} style={{ width: '75vw' }} modal>
       <Galleria value={selectedImageData?.images}
-                item={(item) => <img src={item} alt={selectedImageData?.title} style={{ width: '100%' }} />}
-                circular showIndicators showItemNavigators showThumbnails={false} autoPlay transitionInterval={2000} />
+                item={(item) => (
+                  <div>
+                    <img src={item} alt={selectedImageData?.title} style={{ width: '100%' }} />
+                    <a href={item} download={`${selectedImageData?.title}.jpg`}>
+                      <button className="p-button p-button-primary p-button-text">Download</button>
+                    </a>
+                  </div>
+                )}
+                circular showIndicators showItemNavigators showThumbnails={false}>
+      </Galleria>
     </Dialog>
-  );
+  );  
 
   const renderDropdown = () => {
     const years = ['All', ...new Set(imagesData.map(item => item.year))].sort();
