@@ -120,18 +120,6 @@ h1.banner-main-text.fadeInUp {
     }
 }
 
-.gallery_card.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.gallery_card .custom-card {
-    width: calc(33.33% - 16px);
-    /* Adjust the card width as needed */
-    margin-bottom: 16px;
-    /* Adjust the card margin as needed */
-}
 
 /* team */
 
