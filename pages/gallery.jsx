@@ -3,6 +3,7 @@ import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
 import { Dialog } from 'primereact/dialog';
 import { Galleria } from 'primereact/galleria';
 import { Dropdown } from 'primereact/dropdown';
+import Image from 'next/image';
 
 
 const MyGallery = () => {
@@ -125,11 +126,11 @@ const MyGallery = () => {
   };
 
   const renderGalleriaDialog = () => (
-    <Dialog header={selectedImageData?.title} visible={displayDialog} onHide={() => setDisplayDialog(false)} style={{ width: '75vw' }} modal>
+    <Dialog header={selectedImageData?.title} visible={displayDialog} onHide={() => setDisplayDialog(false)} style={{ width: '65vw' }} modal>
       <Galleria value={selectedImageData?.images}
                 item={(item) => (
-                  <div>
-                    <img src={item} alt={selectedImageData?.title} style={{ width: '100%' }} />
+                  <div style={{ width: '100%', height: 'auto', position: 'relative' }}>
+                    <Image src={item} alt={selectedImageData?.title} width={900} height={800} quality={70} style={{ width: '100%', height: 'auto' }}/>
                     <a href={item} download={`${selectedImageData?.title}.jpg`}>
                       <button className="p-button p-button-primary p-button-text">Download</button>
                     </a>
