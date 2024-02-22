@@ -1,90 +1,17 @@
 import React, { useEffect } from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
-import EventCarousel from '../components/eventcarousel';
-import { ScrollPanel } from 'primereact/scrollpanel';
-import { Divider } from 'primereact/divider';
 import { Button } from 'primereact/button';
 import { Link } from "next/link";
 import { Card } from 'primereact/card';
+import Fireworks from '../components/firework';
 
 
 function Home() {
-  useEffect(() => {
-    const canvas = document.getElementById('hero-banner');
-
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight - 100;
-
-    const backgroundImage = new Image();
-    backgroundImage.src = '/images/D_B.png'; // Replace with your background image
-
-    backgroundImage.onload = () => {
-      ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
-      animate();
-    }
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function createFirework() {
-      const x = random(0, canvas.width);
-      const y = canvas.height;
-      const color = `hsl(${random(0, 360)}, 100%, 50%)`;
-
-      for (let i = 0; i < 100; i++) {
-        const angle = Math.PI * 2 * random(0, 1);
-        const speed = 2 + random(0, 5);
-        const radius = 2;
-
-        fireworks.push({
-          x,
-          y,
-          color,
-          radius,
-          speed,
-          angle,
-          life: 100,
-        });
-      }
-    }
-
-    const fireworks = [];
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      fireworks.forEach((firework, index) => {
-        ctx.beginPath();
-        ctx.arc(firework.x, firework.y, firework.radius, 0, Math.PI * 2);
-        ctx.fillStyle = firework.color;
-        ctx.fill();
-
-        firework.x += Math.cos(firework.angle) * firework.speed;
-        firework.y += Math.sin(firework.angle) * firework.speed;
-        firework.speed -= 0.05;
-        firework.life -= 1;
-
-        if (firework.life <= 0) {
-          fireworks.splice(index, 1);
-        }
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    // Create fireworks at intervals
-    setInterval(() => createFirework(), 300);
-  }, []);
   return (
 
     <div className='container-fluid m-0'>
-      <canvas id="hero-banner" width="400" height='540' style={{ position: 'absolute' }}></canvas>
-      <div className="hero-banner" style={{ backgroundImage: 'url(/images/D_B.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', color: 'white'}}>
-        <h1 className='banner-main-text fadeInUp '>Welcome to ISAC Cottbus</h1>
-        <p className="p-m-3 banner-subtext fadeInUp ">Connecting Indian Students at BTU Cottbus-Senftenberg</p>
-
+      <Fireworks id="hero-banner" />
+      <div className="hero-banner" style={{ backgroundImage: 'url(/images/banner.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       </div>
       <div className='py-6 mx-2'>
         <Accordion multiple activeIndex={[0]}>
