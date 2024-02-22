@@ -7,10 +7,10 @@ const Footer = () => {
       
 
     return (
-      <Card className="p-mt-4">
+      <Card className="p-mt-4 px-4">
         <div className="footer p-mt-4 flex flex-row align-items-start justify-content-between">
           <div className="p-text-center information" >
-          <Image src="/images/logo.png" alt="Logo" className="footer-logo" />
+          <Image src="/images/logo.png" alt="Logo" className="footer-logo" width='150px'/>
            
             <div>Indian Students Association Cottbus (ISAC)</div>
             <div>BTU (Cottbus-Seftenberg)</div>
@@ -20,10 +20,10 @@ const Footer = () => {
           <div className="contact-us">
           <div className='flex-auto space-x-2 text-sm text-gray-500 dark:text-gray-400 justify-content-center'>
           <h2>Join us on our growth journey</h2>
-            <div className='mx-10'>
-              <Link href="https://www.facebook.com/isacottbus/" target="_blank"><i className="pi pi-facebook p-mr-2 mx-10" style={{'fontSize': '1.5em'}}></i></Link>
-              <Link href="https://www.instagram.com/isac_cottbus/" target="_blank"><i className="pi pi-instagram mx-10" style={{'fontSize': '1.5em'}}></i></Link>
-              <Link href="https://github.com/VinayIN/isac" target="_blank"><i className="pi pi-github mx-10" style={{'fontSize': '1.5em'}}></i></Link>
+            <div className='flex justify-content-between mx-8'>
+              <Link href="https://www.facebook.com/isacottbus/" target="_blank"><i className="pi pi-facebook" style={{'fontSize': '1.5em'}}></i></Link>
+              <Link href="https://www.instagram.com/isac_cottbus/" target="_blank"><i className="pi pi-instagram" style={{'fontSize': '1.5em'}}></i></Link>
+              <Link href="https://github.com/VinayIN/isac" target="_blank"><i className="pi pi-github" style={{'fontSize': '1.5em'}}></i></Link>
             </div>
           </div>
           </div>

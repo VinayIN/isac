@@ -10,6 +10,7 @@ import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
 
 import { Card } from 'primereact/card';
+import { Image } from 'primereact/image';
 
 
 function Sponsors () {
@@ -53,7 +54,6 @@ function Sponsors () {
             const file = new Blob([jsonValues], { type: 'application/json' });
             const uploadformData = new FormData();
             uploadformData.append('file', file, `${data.name}.json`);
-
             try {
                 const description = "The sponser data can be found here: https://deta.space/builder/a0yMYmbrGQQL/develop?tab=data"
                 const response = await fetch('https://isacapi-1-r3703096.deta.app/uploadfile?description=' + encodeURIComponent(`${data.description}\n${description}`), {
@@ -88,6 +88,7 @@ function Sponsors () {
         { src: '/images/sponsor/11.png', alt: 'Sponsor 1' },
         { src: '/images/sponsor/3.PNG', alt: 'Sponsor 3' },
         { src: '/images/sponsor/4.JPG', alt: 'Sponsor 4' },
+        { src: '/images/sponsor/2.JPG', alt: 'Sponsor 2' },
         // ... add more sponsors here
     ];
     const isFormFieldValid = (name) => !!(formik.touched[name] && formik.errors[name]);
@@ -103,7 +104,7 @@ function Sponsors () {
         <Button label="Ok" className="p-button-text" onClick={() => setShowErrorMessage(false)} />
     );
     return (
-        <div className="form-demo pb-4">
+        <div className="form-demo pb-4 mx-6">
             <Dialog visible={showSuccessMessage} onHide={() => setShowSuccessMessage(false)} footer={successDialogFooter} header="Success">
                 <p>Your form has been submitted successfully!</p>
             </Dialog>
@@ -113,21 +114,16 @@ function Sponsors () {
                 <p>Please send us a mail at isacottbus@gmail.com.</p>
             </Dialog>
             
-            <Card title="Our previous Sponsors !" subTitle="" className="flex justify-content-center">
-              <div>
-              <div className="sponsor-logos p-m-3">
-            {sponsors.map(sponsor => (
-                <div className="p-col-12 p-md-3 p-lg-2" key={sponsor.key}>
-                    <img src={sponsor.src} alt={sponsor.alt} key={sponsor.key} className="sponsor-logo" />
+            <Card title="Our previous Sponsors !" className="text-center">
+                <div className="p-3 m-3 row">
+                    {sponsors.map((sponsor, index) => (
+                        <div key={index} className="col-12 col-md-4 col-lg-3 mb-4 d-flex justify-content-relative">
+                            <Image src={sponsor.src} alt={sponsor.alt} width='150px'/>
+                        </div>
+                    ))}
                 </div>
-            ))}
-             
-        </div>
-        <div className="sponsor-squre">
-                    <img src='/images/sponsor/2.JPG' alt='Sponsor 2' className="sponsor-logo-squ" />
-                </div>
-              </div>
             </Card>
+            
             <div className="flex justify-content-center">
                 <div className="card">
                     <h2 className="text-center">Help us speading cultural diversity around Cottbus.</h2>

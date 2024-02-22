@@ -79,14 +79,14 @@ function Home() {
   }, []);
   return (
 
-    <div className=''>
+    <div className='container-fluid m-0'>
       <canvas id="hero-banner" width="400" height='540' style={{ position: 'absolute' }}></canvas>
-      <div className="hero-banner" style={{ backgroundImage: 'url(/images/D_B.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', color: 'white' }}>
+      <div className="hero-banner" style={{ backgroundImage: 'url(/images/D_B.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', color: 'white'}}>
         <h1 className='banner-main-text fadeInUp '>Welcome to ISAC Cottbus</h1>
         <p className="p-m-3 banner-subtext fadeInUp ">Connecting Indian Students at BTU Cottbus-Senftenberg</p>
 
       </div>
-      <div className='py-6'>
+      <div className='py-6 mx-2'>
         <Accordion multiple activeIndex={[0]}>
           <AccordionTab header="Who are we (ISAC) ?">
             <p>

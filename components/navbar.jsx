@@ -52,35 +52,15 @@ export default function Navbar() {
             ]
         },
     ]
-    const accountMenu = [
-        { label: 'Login', icon: 'pi pi-fw pi-user-plus mx-10', command: () => { router.push('/login') } },
-        { label: 'Register', icon: 'pi pi-fw pi-sign-in mx-10', command: () => { router.push('/register') } }
-    ];
-    const [selectedAccount, setSelectedAccount] = useState(null);
-
-    const onAccountChange = (e) => {
-        setSelectedAccount(e.value);
-        // Perform action based on selection
-        e.value.command();
-    };
-    const accountItemTemplate = (option) => {
-        return (
-            <div className="p-flex p-ai-center">
-                <i className={option.icon} ></i>
-                <span className="p-ml-2">{option.label}</span>
-            </div>
-        );
-    };
 
 
-    const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="145" height="80" className="mr-2" /> </Link>;
-    const account = <div className="flex flex-row gap-2"></div>
+    const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="150" height="95"/> </Link>;
 
     return (
 
-        <div className="nevigation">
+        <div className="m-auto">
 
-            <Menubar model={items} start={logo} end={account} />
+            <Menubar model={items} start={logo} className="flex justify-content-between p-4" style={{ height: '200px', backgroundColor: '#071426', border: 'None', borderRadius:'0'}}/>
 
         </div>
     );

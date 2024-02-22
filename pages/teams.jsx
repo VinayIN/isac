@@ -97,7 +97,7 @@ const ProfileCard = ({ name, title, imageUrl, statusDots }) => {
 
 const Teams = () => {
   return (
-    <div className="app-container">
+    <div className="app-container mx-6">
       <div className="heading-container">
         <h1 className="heading">Meet Our Team</h1>
         <p className="subheading">ISAC is one of the student bodies at

@@ -6,10 +6,6 @@ body {
     margin: 0;
 }
 
-.mx-10 {
-    margin: 10px;
-}
-
 a {
     text-decoration: none;
 }
@@ -18,30 +14,8 @@ a:hover {
     color: indianred;
 }
 
-.event-carousel .event-content {
-    border: 1px solid var(--surface-d);
-    border-radius: 3px;
-    margin: .3rem;
-    text-align: center;
-    padding: 2rem 0;
-}
 
-.event-carousel .event-image {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
 
-.p-menubar {
-    background: transparent;
-    border: none;
-}
-
-.nevigation {
-    background: #071426;
-}
-
-.information {
-    margin-top: 0.83em
-}
 
 @keyframes fadeInUp {
     from {
@@ -245,88 +219,6 @@ h1.banner-main-text.fadeInUp {
 }
 
 
-footer {
-    height: 5%;
-    color: #BDBDBD;
-    display: grid;
-    place-items: center;
-    font-size: 12px;
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-}
-
-
-@media screen and (max-width: 1440px) {
-
-    main {
-        column-gap: 50px;
-    }
-
-}
-
-@media screen and (max-width: 1024px) {
-    main {
-        column-gap: 35px;
-    }
-
-}
-
-@media screen and (max-width: 768px) {
-
-    main {
-        column-gap: 25px;
-    }
-}
-
-
-@media screen and (max-width: 600px) {
-    body {
-
-        height: auto;
-        margin: 50px auto 10px;
-
-        header {
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            row-gap: 20px;
-
-            .title {
-                align-self: flex-start;
-
-                h3 {
-                    font-size: 30px;
-                }
-            }
-
-        }
-
-        main {
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 0px;
-            row-gap: 0px;
-
-            .profile {
-
-                &:nth-child(2),
-                &:nth-child(4),
-                &:nth-child(6) {
-                    margin-top: 50px;
-                }
-
-                &:nth-child(3),
-                &:nth-child(5) {
-                    margin-top: 0px;
-                }
-            }
-        }
-    }
-}
-
 /* Custom styles for the profile cards */
 .team-grid {
     display: flex;
@@ -346,86 +238,4 @@ footer {
 .team-grid .p-card-subtitle {
     color: #555;
     margin-bottom: 0.5em;
-}
-
-.app-container {
-    text-align: center;
-    margin: 2em;
-}
-
-/* Styles for the heading */
-.app-container .heading-container {
-    margin-bottom: 2em;
-}
-
-.app-container .heading {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-
-.app-container .subheading {
-    font-size: 1.2em;
-    color: #666;
-}
-
-.Link_page.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
-    grid-gap: 20px;
-    padding: 20px;
-}
-
-.dialog-without-scrollbar .p-dialog-content {
-    overflow: hidden !important;
-}
-
-.dialog-without-scrollbar .p-dialog-content>div {
-    overflow-y: hidden !important;
-}
-
-.p-menubar {
-    padding: 1rem;
-}
-
-.footer-logo img {
-    width: 150px;
-}
-
-.p-card .p-card-title {
-    text-align: center;
-}
-
-.sponsor-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.sponsor-logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.sponsor-squre {
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.sponsor-logo-squ {
-    width: 30%;
-}
-
-@media screen and (min-width: 2500px) {
-    h1.banner-main-text.fadeInUp {
-        font-size: 56px;
-        margin-bottom: 0;
-    }
-
-    #hero-banner {
-        height: 1100px;
-    }
 }
