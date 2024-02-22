@@ -15,3 +15,9 @@ Summer Intake (Starting in April) & Winter Intake (Starting in October)
 - **Admission Evaluation:** The university's admissions committee will review your application and documents. If you meet the requirements, you will receive an offer of admission. Upon which you can then proceed to search for accommodation.
 
 If you accept the offer of admission and follow the instructions provided for obtaining a student visa, You will reach Cottbus in no time.
+
+#### Important: Welcome and Registration Point
+
+As soon as you arrive in cottbus, to register yourself in university there will be a welcome point in Main Building (Hauptgebüde), where you have to enrol yourself. 
+
+​Office: `International Office room No. 4.29, Central campus, Cottbus, 03046`
