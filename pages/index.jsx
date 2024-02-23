@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Button } from 'primereact/button';
-import { Link } from "next/link";
 import { Card } from 'primereact/card';
 import Fireworks from '../components/firework';
 
 
 function Home() {
   return (
-
-    <div className='container-fluid m-0'>
-      <Fireworks id="hero-banner" />
-      <div className="hero-banner" style={{ backgroundImage: 'url(/images/banner.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+    <div className='m-auto'>
+      <div className="text-center">
+        <Fireworks id="hero-banner" />
+        <div className="hero-banner"></div>
       </div>
-      <div className='py-6 mx-2'>
+      <div className='m-2'>
         <Accordion multiple activeIndex={[0]}>
           <AccordionTab header="Who are we (ISAC) ?">
             <p>
@@ -122,8 +121,6 @@ function Home() {
               <strong>Please Note: Any communication you receive other than the above-mentioned medium must not be trusted and reported.</strong>
             </p>
           </AccordionTab>
-
-
         </Accordion>
       </div>
     </div>

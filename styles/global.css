@@ -14,108 +14,12 @@ a:hover {
     color: indianred;
 }
 
-
-/* team */
-
-
-
-.team_page header {
-    height: 20%;
-    margin: 0 36px;
+.hero-banner {
+    background-image: url('/images/banner.png');
+    background-size: cover;
+    background-position: 47%;
+    height: 70vh;
 }
-
-.team_page .title h1 {
-    font-size: 60px;
-    padding: 0;
-    margin: 0;
-
-}
-
-.team_page .content {
-    margin-top: 20px;
-}
-
-.team_page .content h2 {
-    margin: 0 !important;
-    animation: 3s fadeInUpImage;
-    font-size: 30px;
-}
-
-.team_page .content p {
-    margin: 2px !important;
-    font-size: 20px;
-    animation: 5s fadeInUpImage;
-}
-
-.team_page .content p strong {
-    font-size: 22px;
-    color: #93C5FD;
-}
-
-.slide-right {
-    animation: 2s slide-right;
-}
-
-
-.team_page main {
-    display: grid;
-    grid-template-columns: repeat(8, 2fr);
-    column-gap: 50px;
-    row-gap: 70px;
-    padding: 50px 50px;
-}
-
-.team_page main .profile {
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.team_page main .profile figure {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: 0;
-}
-
-.team_page main .profile figure img {
-
-    width: 70%;
-    animation: 4s fadeInUpImage;
-}
-
-.team_page main .profile figure figcaption {
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 12px;
-    text-transform: capitalize;
-    cursor: pointer;
-}
-
-.team_page main .profile figure::after {
-    content: attr(data-value);
-    width: 100%;
-    transform-origin: 0 0;
-    transform: rotate(90deg);
-    position: absolute;
-    text-transform: uppercase;
-    font-size: 12px;
-    right: -65%;
-}
-
-.team_page main .profile:nth-child(2) {
-    margin-top: 70px;
-}
-
-.team_page main .profile:nth-child(5) {
-    margin-top: -70px;
-}
-
-.team_page main .profile:nth-child(7) {
-    margin-top: -70px;
-}
-
 
 /* Custom styles for the profile cards */
 .team-grid {

@@ -9,8 +9,8 @@ const Fireworks = ({ id }) => {
     const fireworks = [];
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth - 100;
-      canvas.height = window.innerHeight - 100;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
 
     window.addEventListener('resize', resizeCanvas);
@@ -58,7 +58,7 @@ const Fireworks = ({ id }) => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} id={id} style={{ position: 'absolute' }} />;
+  return <canvas ref={canvasRef} id={id} style={{ position: 'absolute', right: '0' }} />;
 };
 
 export default Fireworks;

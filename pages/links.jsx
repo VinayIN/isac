@@ -14,7 +14,7 @@ function Links() {
   const contactsContent = useMarkdown('/markdown/emergencyContacts.md');
 
   return (
-    <div className='flex flex-column py-6 mx-6'>
+    <div className='flex flex-column py-6 mx-4'>
       <Card title="Admission Procedure at Brandenburg Technical University" className='m-2 shadow-4'>
         <div style={{height: '500px', overflow: 'auto' }}>
           <ReactMarkdown>{admissionContent}</ReactMarkdown>

@@ -155,7 +155,7 @@ const MyGallery = () => {
   };
 
   return (
-    <div className='mx-6'>
+    <div className='mx-4'>
       <DataView value={filteredData} layout={layout} itemTemplate={itemTemplate}
       header= {
       <div className="flex m-auto">

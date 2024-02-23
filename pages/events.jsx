@@ -19,7 +19,7 @@ function Events() {
   );
   const footer = `Today's date: ${new Date().toLocaleDateString("hi-IN", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}.`;
   return (
-      <Card className='m-6'>
+      <Card className='m-2'>
           <DataTable value={event} sortField="name" header={header} footer={footer} sortOrder={-1} responsiveLayout="scroll">
               <Column field="Year" header="Year" sortable></Column>
               <Column field="Event Name" header="Event Name" sortable></Column>
