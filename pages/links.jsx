@@ -86,11 +86,19 @@ function Links() {
 
       <Card title="Opening Bank Account" className='m-2 shadow-4'>
         <div style={{height: '500px', 'overflow': 'auto' }}>
-          
-              Under Construction!
-          
+            <ReactMarkdown>{accountContent}</ReactMarkdown>
           <ScrollTop target="parent" threshold={0} icon="pi pi-arrow-up text-base" />
         </div>
+        <Card
+          title="More resources"
+          subTitle="There are many resources you might come across in internet. Read carefully and seek advice from ISAC members. (If needed)"
+          className="flex justify-content-center shadow-4">
+          <div className='text-center'>
+            <a href="https://www.study-in-germany.de/en/germany/arrival/bank-account/" className="no-underline p-2">
+              <Button icon="pi pi-arrow-right" label="Tip: Bank Accounts" iconPos="right" outlined rounded />
+            </a>
+          </div>
+        </Card>
       </Card>
 
       <Card title="Reaching Cottbus" className='m-2 shadow-4'>
@@ -115,9 +123,7 @@ function Links() {
       
       <Card title="Emgergency Contacts" className='m-2 shadow-4'>
         <div style={{height: '500px', 'overflow': 'auto' }}>
-          
-          Under Construction!
-          
+            <ReactMarkdown>{contactsContent}</ReactMarkdown>    
           <ScrollTop target="parent" threshold={0} icon="pi pi-arrow-up text-base" />
         </div>
       </Card>
