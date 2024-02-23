@@ -29,10 +29,10 @@ function Home() {
               <div>
                 <p className="m-0">
                   <a href="/docs/Constitution_ISAC_2021.pdf" className="no-underline px-2">
-                    <Button icon="pi pi-file" label="Open Constitution" iconPos="right" />
+                    <Button icon="pi pi-file" label="Open Constitution" iconPos="right" outlined raised/>
                   </a>
                   <a href="/docs/Working Guidelines_ISAC_2021.pdf" className="no-underline px-2">
-                    <Button icon="pi pi-file" label="Open Guidelines" iconPos="right" />
+                    <Button icon="pi pi-file" label="Open Guidelines" iconPos="right" outlined raised/>
                   </a>
                 </p>
               </div>

@@ -12,8 +12,10 @@ function GreetingDialog() {
       const data = await response.json();
 
       const currentDate = new Date().toISOString().slice(5, 10);
-      const matchingEntry = data.find(
-        (entry) => entry.date === currentDate || entry.flag === "active"
+      const matchingEntry = (
+        data.find((entry) => entry.date === currentDate)
+        || 
+        data.find((entry) => entry.flag === "active")
       );
       setPopupData(matchingEntry);
     };
