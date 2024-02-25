@@ -4,6 +4,7 @@ import { Button } from 'primereact/button';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { TabView, TabPanel } from 'primereact/tabview';
+import { AnchorLink } from '../components/anchorlink';
 
 // Mock data for the team members
 const adminteam = [
@@ -113,29 +114,39 @@ const Teams = () => {
       <div className='card'>
         <TabView>
           <TabPanel header="Administrative Team">
-            <div className="team-grid">
-              {adminteam.map((member, index) => (<ProfileCard key={index} {...member} />))}
-            </div>
+            <AnchorLink id="administrative-team">
+              <div className="team-grid">
+                {adminteam.map((member, index) => (<ProfileCard key={index} {...member} />))}
+              </div>
+            </AnchorLink>
           </TabPanel>
           <TabPanel header="Social Media & Technology Team">
-            <div className="team-grid">
-                {socialmediateam.map((member, index) => (<ProfileCard key={index} {...member} />))}
-            </div>
+            <AnchorLink id="socialmedia-team">
+              <div className="team-grid">
+                  {socialmediateam.map((member, index) => (<ProfileCard key={index} {...member} />))}
+              </div>
+            </AnchorLink>
           </TabPanel>
           <TabPanel header="Finance Team">
-            <div className="team-grid">
-              {financeteam.map((member, index) => (<ProfileCard key={index} {...member} />))}
-            </div>
+            <AnchorLink id="finance-team">
+              <div className="team-grid">
+                {financeteam.map((member, index) => (<ProfileCard key={index} {...member} />))}
+              </div>
+            </AnchorLink>
           </TabPanel>
           <TabPanel header="Events Team">
-            <div className="team-grid">
-              {eventteam.map((member, index) => (<ProfileCard key={index} {...member} />))}
-            </div>
+            <AnchorLink id="events-team">
+              <div className="team-grid">
+                {eventteam.map((member, index) => (<ProfileCard key={index} {...member} />))}
+              </div>
+            </AnchorLink>
           </TabPanel>
           <TabPanel header="Advisory Team">
-            <div className="team-grid">
-              {advisory.map((member, index) => (<ProfileCard key={index} {...member} />))}
-            </div>
+            <AnchorLink id="advisory-team">
+              <div className="team-grid">
+                {advisory.map((member, index) => (<ProfileCard key={index} {...member} />))}
+              </div>
+            </AnchorLink>
           </TabPanel>
         </TabView>
       </div>
