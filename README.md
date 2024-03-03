@@ -3,9 +3,9 @@
 
 [![Testing & Preview](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml)
 
-Visit here for the website: https://isac-btu.firebaseapp.com/
-### Want to Contribute?
-- Todo
+Visit here for the website: https://isacotbus-btu.web.app/
+Visit here for the database: https://isacottbus.retool.com/app/dataviewer
+
 ### Development guidelines
 1. Never push to `main` branch. Always merge PR to this branch.
     - Doing a merge will automatically deploy the recent build code to production
