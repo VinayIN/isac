@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menubar } from 'primereact/menubar';
+<<<<<<< HEAD
 import { useRouter } from 'next/router'
 import { InputText } from 'primereact/inputtext';
 import { Divider } from 'primereact/divider';
@@ -8,6 +9,14 @@ import { Button } from 'primereact/button';
 import RequestLogin from "./request";
 import Login from "./login";
         
+=======
+import { useRouter } from 'next/router';
+import { Button } from 'primereact/button';
+import { Card } from 'primereact/card';
+import { Divider } from 'primereact/divider';
+import { Avatar } from 'primereact/avatar';
+import { Dropdown } from 'primereact/dropdown';
+>>>>>>> new_ui
 
 export default function Navbar() {
     const router = useRouter()
@@ -15,11 +24,16 @@ export default function Navbar() {
         {
             label: 'Events',
             icon: 'pi pi-fw pi-heart',
+<<<<<<< HEAD
             command: ()=>{ router.push('/events') }
+=======
+            command: () => { router.push('/events') }
+>>>>>>> new_ui
         },
         {
             label: 'Gallery',
             icon: "pi pi-fw pi-images",
+<<<<<<< HEAD
             command: ()=>{ router.push('/gallery') }
         },
         {
@@ -30,10 +44,23 @@ export default function Navbar() {
         {
             label: 'Sponser ISAC',
             command: ()=>{ router.push('/sponser') }
+=======
+            command: () => { router.push('/gallery') }
+        },
+        {
+            label: 'Links',
+            icon: "pi pi-fw pi-link",
+            command: () => { router.push('/links') }
+        },
+        {
+            label: 'Sponsor ISAC',
+            command: () => { router.push('/sponsor') }
+>>>>>>> new_ui
         },
         {
             label: 'Teams',
             icon: "pi pi-w pi-users",
+<<<<<<< HEAD
             items: [
                 {
                     label: '2022',
@@ -77,3 +104,37 @@ export default function Navbar() {
         </div>
     );
 }
+=======
+            command: () => { router.push('/teams') }
+        },
+        {
+            label: 'Join the Community',
+            icon: "pi pi-fw pi-info-circle",
+            items: [
+                {
+                    label: 'Whatsapp',
+                    icon: "pi pi-fw pi-whatsapp",
+                    command: () => { router.push('https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK') }
+                },
+                {
+                    label: 'Facebook',
+                    icon: "pi pi-fw pi-facebook",
+                    command: () => { router.push('https://www.facebook.com/groups/BTUIndians/') }
+                },
+            ]
+        },
+    ]
+
+
+    const logo = <Link href="/"> <img src="/images/logo.png" alt="" width="150" height="95"/> </Link>;
+
+    return (
+
+        <div className="m-auto">
+
+            <Menubar model={items} start={logo} className="flex justify-content-between p-4" style={{ height: '200px', backgroundColor: '#071426', border: 'None', borderRadius:'0'}}/>
+
+        </div>
+    );
+}
+>>>>>>> new_ui

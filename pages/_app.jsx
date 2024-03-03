@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 import 'primereact/resources/themes/soho-light/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import '../styles/global.css';
 import Layout from '../components/layout';
+=======
+import 'primereact/resources/themes/lara-light-blue/theme.css'; // theme
+import 'primereact/resources/primereact.min.css'; // core css
+import 'primeicons/primeicons.css'; // icons
+import 'primeflex/primeflex.css';
+import '../styles/global.css';
+import '../src/global.js';
+import Layout from '../components/layout';
+
+>>>>>>> new_ui
 import { initializeApp } from "firebase/app";
 
 // Firebase configuration

@@ -3,15 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "eslint-config-next": "^13.1.6",
     "firebase": "^9.17.1",
     "firebase-tools": "^11.23.1",
     "next": "^13.1.6",
     "primeflex": "^3.3.0",
+=======
+    "classnames": "^2.5.1",
+    "eslint-config-next": "^13.1.6",
+    "firebase": "^9.17.1",
+    "firebase-tools": "^11.23.1",
+    "formik": "^2.4.5",
+    "next": "^13.1.6",
+    "primeflex": "^3.3.1",
+>>>>>>> new_ui
     "primeicons": "^6.0.1",
     "primereact": "^9.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
+=======
+    "react-markdown": "^9.0.1",
+>>>>>>> new_ui
     "react-scripts": "5.0.1"
   },
   "scripts": {

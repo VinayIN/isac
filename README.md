@@ -3,9 +3,16 @@
 
 [![Testing & Preview](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml)
 
+<<<<<<< HEAD
 Visit here for the website: https://isac-btu.firebaseapp.com/
 ### Want to Contribute?
 - Todo
+=======
+Visit here for the website: https://isacottbus-btu.web.app/
+
+Visit here for the database: https://isacottbus.retool.com/app/dataviewer
+
+>>>>>>> new_ui
 ### Development guidelines
 1. Never push to `main` branch. Always merge PR to this branch.
     - Doing a merge will automatically deploy the recent build code to production
@@ -38,4 +45,8 @@ firebase init
 1. `npm run lint`: Check the linting of the source code.
 2. `npm run build`: Builds the app for production to the `.next` folder.
 3. `npm run export`: Exports the static file from `.next` folder to `out` folder.
+<<<<<<< HEAD
 4. `npm run deploy` : Need `npm run export` & `npm run build` before running this command.
+=======
+4. `npm run deploy` : Need `npm run export` & `npm run build` before running this command.
+>>>>>>> new_ui
