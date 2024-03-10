@@ -15,9 +15,11 @@ function Home() {
       </Suspense>
       <div className="text-center">
         <div className="hero-banner">
-          <Button className="hero-button" severity="secondary" onClick={() => window.location.href = "/events"} rounded outlined raised>
-            Upcoming<Tag value="Events" severity="warning" />
-          </Button>
+          <a href='/events'>
+            <Button className="hero-button" severity="secondary" rounded outlined raised>
+              Upcoming<Tag value="Events" severity="warning" />
+            </Button>
+          </a>
         </div>
       </div>
       <div className='m-2'>
