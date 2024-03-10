@@ -5,8 +5,10 @@ import { Card } from 'primereact/card';
 import { AnchorLink } from '../components/anchorlink';
 import Link from 'next/link';
 import { Tag } from 'primereact/tag';
+import { useRouter } from 'next/router';
 
 function Home() {
+  const router = useRouter();
   const GreetingDialog = lazy(() => import('../components/greeting'));
   return (
     <div className='m-auto'>
@@ -15,11 +17,11 @@ function Home() {
       </Suspense>
       <div className="text-center">
         <div className="hero-banner">
-          <a href='/events'>
+          <Link href="/events">
             <Button className="hero-button" severity="secondary" rounded outlined raised>
               Upcoming<Tag value="Events" severity="warning" />
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
       <div className='m-2'>
