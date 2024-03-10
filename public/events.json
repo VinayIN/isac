@@ -81,10 +81,12 @@
           "Description": ""
         },
         {
-          "Year": 2024,
+          "Year": "2024",
           "Event Name": "Outdoor Activity",
           "Status": "Upcoming",
-          "Date": "July, 2024"
+          "Date": "July, 2024",
+          "Location": "",
+          "Description": ""
         },
         {
           "Year": "2024",
