@@ -1,10 +1,138 @@
 {
     "data": [
-        {"Year": "2023", "Event Name": "Rang Barse - Holi","Status": "Completed","Date": "22nd April, 2023", "Location": "Universitätsstraße 14-15 Courtyard", "Description": "Open to all, we shall provide foods and snacks at the event."},
-        {"Year": "2023", "Event Name": "Meet & Greet - Indian Karaoke Night","Status": "Completed","Date": "30th May, 2023", "Location": "Quasimono", "Description": "21:00 to 23:00, restricted timing."},
-        {"Year": "2023", "Event Name": "Senftenberg Beach Party","Status": "Completed","Date": "15th July, 2023", "Location": "Senftenberger See", "Description": "Tan is guarenteed"},
-        {"Year": "2023", "Event Name": "Independence Day - Kabaddi and Kho-Kho Tournament","Status": "Completed","Date": "15th Aug, 2023", "Location": "Erich-Weinert Straße 22", "Description": "Celebrate the independence day with sports"},
-        {"Year": "2023", "Event Name": "Bike Ride - Explore Burg and Teichland","Status": "Completed","Date": "16th September, 2023", "Location": "BTU Bibliothek", "Description": "50km bike ride"},
-        {"Year": "2023", "Event Name": "Indian Cultural Night - Diwali","Status": "Completed","Date": "17th November, 2023", "Location": "Audimax + ZHG, Central Campus", "Description": "Dance, music and poetry paired with drinks, food and sweets. Do not forget the DJ at end"}
-        ]
-}
+        {
+          "Year": "2023",
+          "Event Name": "Rang Barse - Holi",
+          "Status": "Completed",
+          "Date": "22nd April, 2023",
+          "Location": "Universitätsstraße 14-15 Courtyard",
+          "Description": "Open to all, we shall provide foods and snacks at the event."
+        },
+        {
+          "Year": "2023",
+          "Event Name": "Meet & Greet - Indian Karaoke Night",
+          "Status": "Completed",
+          "Date": "30th May, 2023",
+          "Location": "Quasimono",
+          "Description": "21:00 to 23:00, restricted timing."
+        },
+        {
+          "Year": "2023",
+          "Event Name": "Senftenberg Beach Party",
+          "Status": "Completed",
+          "Date": "15th July, 2023",
+          "Location": "Senftenberger See",
+          "Description": "Tan is guarenteed"
+        },
+        {
+          "Year": "2023",
+          "Event Name": "Independence Day - Kabaddi and Kho-Kho Tournament",
+          "Status": "Completed",
+          "Date": "15th Aug, 2023",
+          "Location": "Erich-Weinert Straße 22",
+          "Description": "Celebrate the independence day with sports"
+        },
+        {
+          "Year": "2023",
+          "Event Name": "Bike Ride - Explore Burg and Teichland",
+          "Status": "Completed",
+          "Date": "16th September, 2023",
+          "Location": "BTU Bibliothek",
+          "Description": "50km bike ride"
+        },
+        {
+          "Year": "2023",
+          "Event Name": "Indian Cultural Night - Diwali",
+          "Status": "Completed",
+          "Date": "17th November, 2023",
+          "Location": "Audimax + ZHG, Central Campus",
+          "Description": "Dance, music and poetry paired with drinks, food and sweets. Do not forget the DJ at end"
+        },
+        {
+          "Year": "2024",
+          "Event Name": "Food Mela",
+          "Status": "Upcoming",
+          "Date": "12th April, 2024",
+          "Location": "",
+          "Description": ""
+        },
+        {
+          "Year": "2024",
+          "Event Name": "Holi celebration",
+          "Status": "Upcoming",
+          "Date": "13th April, 2024",
+          "Location": "",
+          "Description": ""
+        },
+        {
+          "Year": "2024",
+          "Event Name": "*Excursion activity",
+          "Status": "Upcoming",
+          "Date": "May, 2024",
+          "Location": "",
+          "Description": ""
+        },
+        {
+          "Year": "2024",
+          "Event Name": "*Educational Event",
+          "Status": "Upcoming",
+          "Date": "Mid-June, 2024",
+          "Location": "",
+          "Description": ""
+        },
+        {
+          "Year": 2024,
+          "Event Name": "Outdoor Activity",
+          "Status": "Upcoming",
+          "Date": "July, 2024"
+        },
+        {
+          "Year": "2024",
+          "Event Name": "Independence Day (Sports Day)",
+          "Status": "Upcoming",
+          "Date": "15th August, 2024",
+          "Location": "",
+          "Description": ""
+        },
+        {
+          "Year": "2024",
+          "Event Name": "Ganesh Chaturthi",
+          "Status": "Upcoming",
+          "Date": "7th September, 2024",
+          "Location": "",
+          "Description": "(Promoting/Supporting other students initiative) "
+        },
+        {
+          "Year": "2024",
+          "Event Name": "Onam",
+          "Status": "Upcoming",
+          "Date": "15th September, 2024",
+          "Location": "",
+          "Description": "(Collaboration with other student bodies)"
+        },
+        {
+          "Year": "2024",
+          "Event Name": "Durga Puja",
+          "Status": "Upcoming",
+          "Date": "11th October, 2024",
+          "Location": "",
+          "Description": "(Collaboration with other student bodies)"
+        },
+        {
+          "Year": "2024",
+          "Event Name": "Diwali",
+          "Status": "Upcoming",
+          "Date": "1st November, 2024",
+          "Location": "",
+          "Description": ""
+        },
+        {
+          "Year": "2024",
+          "Event Name": "Christmas",
+          "Status": "Upcoming",
+          "Date": "End-December, 2024",
+          "Location": "",
+          "Description": ""
+        }
+      ]
+  }

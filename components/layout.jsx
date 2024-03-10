@@ -1,9 +1,7 @@
-import Head from 'next/head'
-import Navbar from './navbar'
-import Footer from './footer'
-import React, { Suspense, lazy } from 'react';
+import Head from 'next/head';
+import Navbar from './navbar';
+import Footer from './footer';
 
-const GreetingDialog = lazy(() => import('./greeting'));
 
 export default function Layout({ children }) {
   return (
@@ -17,9 +15,6 @@ export default function Layout({ children }) {
       <Navbar />
     </nav>
     <main>
-    <Suspense fallback={<div>Loading...</div>}>
-      <GreetingDialog />
-    </Suspense>
       {children}
     </main>
     <footer>

@@ -1,16 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { AnchorLink } from '../components/anchorlink';
 import Link from 'next/link';
-
+import { Tag } from 'primereact/tag';
 
 function Home() {
+  const GreetingDialog = lazy(() => import('../components/greeting'));
   return (
     <div className='m-auto'>
+      <Suspense fallback={<div>Loading...</div>}>
+        <GreetingDialog />
+      </Suspense>
       <div className="text-center">
-        <div className="hero-banner"></div>
+        <div className="hero-banner">
+          <Button className="hero-button" severity="secondary" onClick={() => window.location.href = "/events"} rounded outlined raised>
+            Upcoming<Tag value="Events" severity="warning" />
+          </Button>
+        </div>
       </div>
       <div className='m-2'>
         <Accordion multiple activeIndex={[0]}>
