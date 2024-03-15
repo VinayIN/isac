@@ -1,12 +1,6 @@
-import { useState } from "react";
 import Link from "next/link";
 import { Menubar } from 'primereact/menubar';
 import { useRouter } from 'next/router';
-import { Button } from 'primereact/button';
-import { Card } from 'primereact/card';
-import { Divider } from 'primereact/divider';
-import { Avatar } from 'primereact/avatar';
-import { Dropdown } from 'primereact/dropdown';
 
 export default function Navbar() {
     const router = useRouter()
@@ -24,7 +18,14 @@ export default function Navbar() {
         {
             label: 'Links',
             icon: "pi pi-fw pi-link",
-            command: () => { router.push('/links') }
+            items: [
+                {label: "Admimission Procedure", icon: "pi pi-fw pi-link", command: () => { router.push('/links#admission-procedure') }},
+                {label: "Accomodation", icon: "pi pi-fw pi-link", command: () => { router.push('/links#accomodation') }},
+                {label: "City Registration", icon: "pi pi-fw pi-link", command: () => { router.push('/links#city-registration') }},
+                {label: "Bank Account", icon: "pi pi-fw pi-link", command: () => { router.push('/links#bank-account') }},
+                {label: "Reaching Cottbus", icon: "pi pi-fw pi-link", command: () => { router.push('/links#reaching-cottbus') }},
+                {label: "Emergency Contacts", icon: "pi pi-fw pi-link", command: () => { router.push('/links#emergency-contact') }},
+            ]
         },
         {
             label: 'Sponsor ISAC',
