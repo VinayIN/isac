@@ -13,7 +13,7 @@ export const AnchorLink = ({ id, children }) => {
 
   return (
     <div>
-      <Button icon="pi pi-link" className="p-button-rounded p-button-outlined" onClick={handleClick} aria-label="Link" />
+      <Button icon="pi pi-tag" rounded text raised onClick={handleClick} aria-label="Link" />
       <div id={id}>
         {children}
       </div> 
