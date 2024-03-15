@@ -8,7 +8,7 @@ function GreetingDialog() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/calender.json');
+      const response = await fetch('/popup.json');
       const data = await response.json();
 
       const currentDate = new Date().toISOString().slice(5, 10);

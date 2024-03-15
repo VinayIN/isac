@@ -5,11 +5,10 @@ import { Card } from 'primereact/card';
 import { AnchorLink } from '../components/anchorlink';
 import Link from 'next/link';
 import { Tag } from 'primereact/tag';
-import { useRouter } from 'next/router';
 
 function Home() {
-  const router = useRouter();
   const GreetingDialog = lazy(() => import('../components/greeting'));
+
   return (
     <div className='m-auto'>
       <Suspense fallback={<div>Loading...</div>}>
