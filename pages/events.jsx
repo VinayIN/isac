@@ -5,10 +5,12 @@ import { Card } from 'primereact/card';
 import { Tag } from 'primereact/tag';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { AnchorLink } from '../components/anchorlink';
+import useFirestore from '../hooks/firestoreFetch';
 
 
 function Events() {
   const [announcements, setAnnouncements] = useState([]);
+  const {data, loading, error} = useFirestore('announcements');
 
   useEffect(() => {
     fetch('/announcements.json')
@@ -36,6 +38,7 @@ function Events() {
   };
 
   const [expandedRows, setExpandedRows] = useState([]);
+  console.log(data, loading, error);
   return (
 
       <Card className='m-2'>

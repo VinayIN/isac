@@ -5,22 +5,19 @@ import 'primeflex/primeflex.css';
 import '../styles/global.css';
 import '../src/global.js';
 import Layout from '../components/layout';
-
 import { initializeApp } from "firebase/app";
 
-// Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAuSqEK8cC6zg1ho55ULnt7hMQLnR7EbWk",
-  authDomain: "isac-btu.firebaseapp.com",
-  projectId: "isac-btu",
-  storageBucket: "isac-btu.appspot.com",
-  messagingSenderId: "854015997641",
-  appId: "1:854015997641:web:aee5ba4d68e8c9ce817f18"
+  apiKey: "AIzaSyATpKRmiqtSghIvTSIxCnSd0biQSt0eqXo",
+  authDomain: "isacottbus-btu.firebaseapp.com",
+  projectId: "isacottbus-btu",
+  storageBucket: "isacottbus-btu.appspot.com",
+  messagingSenderId: "1081716638611",
+  appId: "1:1081716638611:web:904ed1d79e4db7ccde9e66",
+  measurementId: "G-Z0J3NZR5WK"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 
 export default function MyApp({ Component, pageProps }) {
   return (
