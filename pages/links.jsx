@@ -3,7 +3,7 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { ScrollTop } from 'primereact/scrolltop';
 import ReactMarkdown from 'react-markdown';
-import { useMarkdown } from '../components/usemarkdown';
+import { useMarkdown } from '../hooks/markdown';
 import { AnchorLink } from '../components/anchorlink';
 
 function Links() {

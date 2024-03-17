@@ -5,20 +5,11 @@ import { Card } from 'primereact/card';
 import { Tag } from 'primereact/tag';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { AnchorLink } from '../components/anchorlink';
-import useFirestore from '../hooks/firestoreFetch';
+import { useFirestore } from '../hooks/firestore';
 
 
 function Events() {
-  const [announcements, setAnnouncements] = useState([]);
-  const {data, loading, error} = useFirestore('announcements');
-
-  useEffect(() => {
-    fetch('/announcements.json')
-      .then(res => res.json())
-      .then(d => d.data)
-      .then((data) => setAnnouncements(data));
-  }, []);
-
+  const announcements = useFirestore('announcements');
   const [events, setEvents] = useState([]);
   useEffect(() => {
     fetch('/events.json')
@@ -38,20 +29,18 @@ function Events() {
   };
 
   const [expandedRows, setExpandedRows] = useState([]);
-  console.log(data, loading, error);
   return (
-
       <Card className='m-2'>
         <AnchorLink id="announcements">
           <Accordion className="pb-4 m-2">
             <AccordionTab header="Announcements">
               <DataTable
-                value={announcements}
+                value={announcements.data}
                 scrollable
                 stripedRows>
                   <Column field="title" header="Title"/>
                   <Column field="description" header=""/>
-                  <Column field="post_date" header="Posted On" sortable/>
+                  <Column field="posted_on" header="Posted On" sortable/>
               </DataTable>
             </AccordionTab>
           </Accordion>
