@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
-import { Dropdown } from 'primereact/dropdown';
 import { Checkbox } from 'primereact/checkbox';
 import { Dialog } from 'primereact/dialog';
-import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
-
 import { Card } from 'primereact/card';
 import { Image } from 'primereact/image';
-
+import { Resend } from 'resend';
 
 function Sponsors () {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [showErrorMessage, setShowErrorMessage] = useState(false);
-    const [formData, setFormData] = useState({});
 
     const formik = useFormik({
         initialValues: {
@@ -50,35 +46,28 @@ function Sponsors () {
             return errors;
         },
         onSubmit: async (data) => {
-            const jsonValues = JSON.stringify(data);
-            const file = new Blob([jsonValues], { type: 'application/json' });
-            const uploadformData = new FormData();
-            uploadformData.append('file', file, `${data.name}.json`);
+            const resendClient = new Resend('re_FSncCJCP_M9KNEDsd4ie5hfxkuBNMiyQo');
             try {
-                const description = "The sponser data can be found here: https://deta.space/builder/a0yMYmbrGQQL/develop?tab=data"
-                const response = await fetch('https://isacapi-1-r3703096.deta.app/uploadfile?description=' + encodeURIComponent(`${data.description}\n${description}`), {
-                    method: 'POST',
-                    body: uploadformData,
-                    headers: {
-                        'Accept': 'application/json',
-                    },
+                const formattedData = [];
+                Object.entries(data).forEach(([key, value]) => {
+                formattedData.push({ key, value });
                 });
-                console.log("Response received", response);
-                if (response.ok) {
-                    const responseBody = await response.json();
-                    if (responseBody.status === 200) {
-                        setFormData(data);
-                        setShowSuccessMessage(true);
-                    } else {
-                        console.error('Server processed request, but returned non-success status');
-                        setShowErrorMessage(true);
-                    }
-                } else {
-                    console.error('Request failed');
-                    setShowErrorMessage(true);
-                }
+
+                const emailBody = `
+                <table>
+                    ${formattedData.map(({ key, value }) => `<tr><td>${key}</td><td>${value}</td></tr>`).join('')}
+                </table>
+                `;
+
+                await resendClient.emails.send({
+                from: 'Automated <sponser@resend.dev>',
+                to: 'ask.isacottbus@gmail.com',
+                subject: 'Sponsor Data; Website Form Submission',
+                html: emailBody,
+                });
+                setShowSuccessMessage(true);
             } catch (error) {
-                console.error('Error occurred during fetch operation:', error);
+                console.log(error);
                 setShowErrorMessage(true);
             }
             formik.resetForm();
