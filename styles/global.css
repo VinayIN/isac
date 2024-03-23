@@ -39,7 +39,6 @@ a:hover {
 }
 
 
-
 /* Styles for the card title and subtitle */
 .team-grid .p-card-title {
     font-size: 1.2em;
@@ -49,4 +48,16 @@ a:hover {
 .team-grid .p-card-subtitle {
     color: #555;
     margin-bottom: 0.5em;
+}
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    justify-items: center;
+  }
+  
+.logo:hover {
+    border: 1px solid lightgray;  /* Light grey border */
+    border-radius: 5px;  /* Adjust border radius as desired */
 }

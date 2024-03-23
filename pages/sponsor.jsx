@@ -9,6 +9,9 @@ import { classNames } from 'primereact/utils';
 import { Card } from 'primereact/card';
 import { Image } from 'primereact/image';
 import { Resend } from 'resend';
+import Link from 'next/link';
+import { Tooltip } from 'primereact/tooltip';
+
 
 function Sponsors () {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -74,11 +77,13 @@ function Sponsors () {
         }        
     });
     const sponsors = [
-        { src: '/images/sponsor/11.png', alt: 'Sponsor 1' },
-        { src: '/images/sponsor/3.PNG', alt: 'Sponsor 3' },
-        { src: '/images/sponsor/4.JPG', alt: 'Sponsor 4' },
-        { src: '/images/sponsor/2.JPG', alt: 'Sponsor 2' },
-        // ... add more sponsors here
+        { src: '/images/sponsor/1.png', alt: 'Sponsor 1', href: '' },
+        { src: '/images/sponsor/2.png', alt: 'Sponsor 2', href: '' },
+        { src: '/images/sponsor/3.png', alt: 'Sponsor 3', href: '' },
+        { src: '/images/sponsor/4.png', alt: 'Sponsor 4', href: '' },
+        { src: '/images/sponsor/5.png', alt: 'Sponsor 5', href: '' },
+        { src: '/images/sponsor/6.png', alt: 'Sponsor 6', href: '' },
+        { src: '/images/sponsor/8.png', alt: 'taste-of-india', href: '' },
     ];
     const isFormFieldValid = (name) => !!(formik.touched[name] && formik.errors[name]);
     const getFormErrorMessage = (name) => {
@@ -103,13 +108,14 @@ function Sponsors () {
                 <p>Please send us a mail at isacottbus@gmail.com.</p>
             </Dialog>
             
+            <Tooltip target=".logo" mouseTrack />
             <Card title="Our previous Sponsors !" className="text-center">
-                <div className="p-3 m-3 row">
-                    {sponsors.map((sponsor, index) => (
-                        <div key={index} className="col-12 col-md-4 col-lg-3 mb-4 d-flex justify-content-relative">
-                            <Image src={sponsor.src} alt={sponsor.alt} width='150px'/>
-                        </div>
-                    ))}
+                <div className="p-3 m-3 sponsor-grid">  {/* Apply the 'sponsor-grid' class */}
+                {sponsors.map((sponsor, index) => (
+                    <Link className="logo" href={sponsor.href} key={index} target='_blank' data-pr-tooltip={sponsor.href}>
+                        <Image src={sponsor.src} alt={sponsor.alt} width='150px' key={index}/>
+                    </Link>
+                ))}
                 </div>
             </Card>
             
