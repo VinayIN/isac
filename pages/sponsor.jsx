@@ -81,8 +81,8 @@ function Sponsors () {
         { src: '/images/sponsor/2.png', alt: 'Sponsor 2', href: '' },
         { src: '/images/sponsor/3.png', alt: 'Sponsor 3', href: '' },
         { src: '/images/sponsor/4.png', alt: 'Sponsor 4', href: '' },
-        { src: '/images/sponsor/5.png', alt: 'Sponsor 5', href: '' },
         { src: '/images/sponsor/6.png', alt: 'Sponsor 6', href: '' },
+        { src: '/images/sponsor/5.png', alt: 'Sponsor 5', href: '' },
         { src: '/images/sponsor/8.png', alt: 'taste-of-india', href: '' },
     ];
     const isFormFieldValid = (name) => !!(formik.touched[name] && formik.errors[name]);
