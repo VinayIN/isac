@@ -77,13 +77,13 @@ function Sponsors () {
         }        
     });
     const sponsors = [
-        { src: '/images/sponsor/1.png', alt: 'Sponsor 1', href: '' },
-        { src: '/images/sponsor/2.png', alt: 'Sponsor 2', href: '' },
-        { src: '/images/sponsor/3.png', alt: 'Sponsor 3', href: '' },
-        { src: '/images/sponsor/4.png', alt: 'Sponsor 4', href: '' },
-        { src: '/images/sponsor/6.png', alt: 'Sponsor 6', href: '' },
-        { src: '/images/sponsor/5.png', alt: 'Sponsor 5', href: '' },
-        { src: '/images/sponsor/8.png', alt: 'taste-of-india', href: '' },
+        { src: '/images/sponsor/1.png', alt: 'jaipur', href: 'https://www.jaipurcottbus.com/' },
+        { src: '/images/sponsor/2.png', alt: 'roma', href: 'https://roma-cottbus.de/' },
+        { src: '/images/sponsor/3.png', alt: 'btu', href: 'https://www.b-tu.de/en/international/international-students/during-studies/student-activities' },
+        { src: '/images/sponsor/4.png', alt: 'stura', href: 'https://www.stura-btu.de/' },
+        { src: '/images/sponsor/6.png', alt: 'daad', href: 'https://www.daad.de/en/' },
+        { src: '/images/sponsor/5.png', alt: 'shiva', href: 'https://www.shiva-cottbus.de/' },
+        { src: '/images/sponsor/8.png', alt: 'taste-of-india', href: 'https://www.tasteofindiacottbus.de/' },
     ];
     const isFormFieldValid = (name) => !!(formik.touched[name] && formik.errors[name]);
     const getFormErrorMessage = (name) => {
@@ -113,7 +113,7 @@ function Sponsors () {
                 <div className="p-3 m-3 sponsor-grid">  {/* Apply the 'sponsor-grid' class */}
                 {sponsors.map((sponsor, index) => (
                     <Link className="logo" href={sponsor.href} key={index} target='_blank' data-pr-tooltip={sponsor.href}>
-                        <Image src={sponsor.src} alt={sponsor.alt} width='150px' key={index}/>
+                        <Image src={sponsor.src} alt={sponsor.alt} width='200px' key={index}/>
                     </Link>
                 ))}
                 </div>
