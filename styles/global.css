@@ -61,3 +61,10 @@ a:hover {
     border: 1px solid lightgray;  /* Light grey border */
     border-radius: 5px;  /* Adjust border radius as desired */
 }
+
+.year-card {
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+  }
