@@ -24,12 +24,7 @@ const socialmediateam = [
     name: 'Fuad Ahamed Fazaludin',
     title: 'Social Media & Technology',
     imageUrl: '/images/team/Fuad.png'
-  },
-  {
-    name: 'Vibhangi Ameta',
-    title: 'Social Media & Technology',
-    imageUrl: '/images/team/Vibhangi.png'
-  },
+  }
 ]
 const financeteam = [
 {
@@ -45,14 +40,9 @@ const financeteam = [
 ]
 const eventteam = [
   {
-    name: 'Gauri Mehra',
+    name: 'Vibhangi Ameta',
     title: 'Event Management',
-    imageUrl: '/images/team/Gauri.png'
-  },
-  {
-    name: 'Ananya Babu',
-    title: 'Event Management',
-    imageUrl: '/images/team/Ananya.png'
+    imageUrl: '/images/team/Vibhangi.png'
   },
   {
     name: 'Sithara Sethunath',
