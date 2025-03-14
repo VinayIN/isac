@@ -1,15 +1,14 @@
 ## ISAC-BTU
 [![Deployment](https://github.com/VinayIN/isac/actions/workflows/merge.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/merge.yml)
 
-[![Testing & Preview](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml/badge.svg)](https://github.com/VinayIN/isac/actions/workflows/pull-request.yml)
-
 Visit here for the website: https://isacottbus-btu.web.app/
 
 ### Development guidelines
-1. Never push to `main` branch. Always merge PR to this branch.
+1. During development/editing of website, to see the webisite locally use `npm run dev`
+2. Never push to `main` branch. Always merge PR to this branch.
     - Doing a merge will automatically deploy the recent build code to production
-2. Always create a branch for doing a development and then create a `PR to main branch`.
-3. Before accepting to merge, check if the `github action is success`
+3. Always create a branch for doing a development and then create a `PR to main branch`.
+4. Before accepting to merge, check if the `github action is success`
 
 ### Setup:
 1. Setup `firebase hosting` (Admin)
