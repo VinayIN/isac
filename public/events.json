@@ -60,7 +60,7 @@
         {
           "Year": "2024",
           "Event Name": "Rang De - Dil se Holi (Lets Groove)",
-          "Status": "Upcoming",
+          "Status": "Completed",
           "Date": "13th April, 2024",
           "Location": "Universitätsstraße 14-15 Courtyard",
           "Description": "After a music jam evening on 12th, we bring you a day to celebrate it with colors and dance along with our dancers.",
@@ -69,15 +69,15 @@
         {
           "Year": "2024",
           "Event Name": "Folk Studio - The Cultural Night",
-          "Status": "Upcoming",
+          "Status": "Completed",
           "Date": "17th August, 2024",
-          "Location": "BTU Zetrulcampus Cottbus Sportplatz & Sporthalle",
-          "Description": "A collaboration with PSA (Pakistani Student Association) bringing you a day of cricket, followed by cultural evening and ofcourse dance.",
+          "Location": "BTU Zetralcampus Cottbus Sportplatz & Sporthalle",
+          "Description": "A collaboration with PSA (Pakistani Student Association) bringing you a day of cricket, followed by cultural evening and of course dance to desi beats."
         },
         {
           "Year": "2024",
           "Event Name": "Ganesh Chaturthi",
-          "Status": "Upcoming",
+          "Status": "Completed",
           "Date": "7th September, 2024",
           "Location": "",
           "Description": "(Promoting/Supporting other students initiative) "
@@ -85,7 +85,7 @@
         {
           "Year": "2024",
           "Event Name": "Onam",
-          "Status": "Upcoming",
+          "Status": "Completed",
           "Date": "15th September, 2024",
           "Location": "",
           "Description": "(Collaboration with other student bodies)"
@@ -93,7 +93,7 @@
         {
           "Year": "2024",
           "Event Name": "Durga Puja",
-          "Status": "Upcoming",
+          "Status": "Completed",
           "Date": "11th October, 2024",
           "Location": "",
           "Description": "(Collaboration with other student bodies)"
@@ -101,16 +101,8 @@
         {
           "Year": "2024",
           "Event Name": "Diwali",
-          "Status": "Upcoming",
+          "Status": "Completed",
           "Date": "1st November, 2024",
-          "Location": "",
-          "Description": ""
-        },
-        {
-          "Year": "2024",
-          "Event Name": "Christmas",
-          "Status": "Upcoming",
-          "Date": "End-December, 2024",
           "Location": "",
           "Description": ""
         }

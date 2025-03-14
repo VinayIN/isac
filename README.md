@@ -5,8 +5,6 @@
 
 Visit here for the website: https://isacottbus-btu.web.app/
 
-Visit here for the database: https://isacottbus.retool.com/app/dataviewer
-
 ### Development guidelines
 1. Never push to `main` branch. Always merge PR to this branch.
     - Doing a merge will automatically deploy the recent build code to production
