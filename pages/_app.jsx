@@ -1,15 +1,14 @@
-import 'primereact/resources/themes/lara-light-blue/theme.css'; // theme
-import 'primereact/resources/primereact.min.css'; // core css
-import 'primeicons/primeicons.css'; // icons
+import 'primereact/resources/themes/lara-light-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import '../styles/global.css';
-import '../src/global.js';
 import Layout from '../components/layout';
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-    <Component {...pageProps} />
+      <Component {...pageProps} />
     </Layout>
-  )
+  );
 }

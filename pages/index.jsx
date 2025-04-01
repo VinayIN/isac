@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
@@ -7,13 +7,9 @@ import Link from 'next/link';
 import { Tag } from 'primereact/tag';
 
 function Home() {
-  const GreetingDialog = lazy(() => import('../components/greeting'));
 
   return (
     <div className='m-auto'>
-      <Suspense fallback={<div>Loading...</div>}>
-        <GreetingDialog />
-      </Suspense>
       <div className="text-center">
         <div className="hero-banner">
           <Link href="/events">

@@ -1,18 +1,9 @@
-module.exports = {
-    images: {
-      unoptimized: true,
-      trailingSlash: true,
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'primefaces.org'
-        },
-      ],
-    },
-    rewrites: async () => [
-      {
-        source: '/(.*)',
-        destination: '/_app.js',
-      },
-    ],
-  }
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['firebasestorage.googleapis.com'],
+  },
+};
+
+module.exports = nextConfig;
