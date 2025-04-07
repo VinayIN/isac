@@ -92,7 +92,8 @@ const Sponsors = () => {
               <Image 
                 src={sponsor.src} 
                 alt={sponsor.alt} 
-                width="200" 
+                layout="intrinsic"
+                width={200}
                 className="object-contain"
               />
               <Button
