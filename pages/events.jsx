@@ -10,23 +10,20 @@ import { useFirestore } from '../hooks/firestore';
 
 function Events() {
   const announcements = useFirestore('announcements');
-  const [events, setEvents] = useState([]);
-  useEffect(() => {
-    fetch('/events.json')
-    .then(res => res.json())
-    .then(d => d.data)
-    .then((data) => setEvents(data));
-  }, []); 
+  const events = useFirestore('events'); 
 
   const footer = `Today's date: ${new Date().toLocaleDateString("hi-IN", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}.`;
   
   const headerTemplate = (data) => {
+    const currentYear = new Date().getFullYear();
+    const severity = currentYear === data.Year? "success" : "warning";
+
     return (
         <div className="flex align-items-center gap-2">
-            <span>Events in <Tag value={data.Year} severity="success"/></span>
+            <span>Events in <Tag value={data.Year} severity={severity}/></span>
         </div>
     );
-  };
+ };
 
   const [expandedRows, setExpandedRows] = useState([]);
   return (
@@ -47,18 +44,16 @@ function Events() {
         </AnchorLink>
         <AnchorLink id="calender">
           <DataTable
-            value={events}
+            value={events.data}
             footer={footer}
             rowGroupMode="subheader" groupRowsBy="Year" rowGroupHeaderTemplate={headerTemplate}
-            sortMode="single"
-            sortField="Year"
-            sortOrder={-1}
+            sortMode="multiple" multiSortMeta={[{ field: "Year", order: -1 }, { field: "Date", order: -1 }]}
             expandableRowGroups expandedRows={expandedRows} onRowToggle={(e) => setExpandedRows(e.data)}
             stripedRows
             className='m-2'>
-              <Column field="Year" header="Year"></Column>
-              <Column field="Event Name" header="Event Name" sortable></Column>
-              <Column field="Status" header="Status" sortable></Column>
+              <Column field="Year" header="Year" sortable></Column>
+              <Column field="Event Name" header="Event Name"></Column>
+              <Column field="Status" header="Status"></Column>
               <Column field="Date" header="Date" sortable></Column>
               <Column field="Location" header="Location"></Column>
               <Column field="Description" header="Description"></Column>
