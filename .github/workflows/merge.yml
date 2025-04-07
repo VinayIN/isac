@@ -1,3 +1,8 @@
+permissions:
+  checks: write
+  contents: write
+  deployments: write
+
 name: Deployment
 'on':
   push:
