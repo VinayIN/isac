@@ -1,6 +1,5 @@
-'use client';
-
 import { useState, useEffect } from 'react';
+import { Image } from 'primereact/image';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { TabView, TabPanel } from 'primereact/tabview';
@@ -11,7 +10,14 @@ import app from '../hooks/init';
 
 
 const ProfileCard = ({ name, title, href }) => {
-  const header = <img alt={name} src={href} style={{ width: '100%', height: 'auto' }} />;
+  const header = (
+    <Image 
+      alt={name} 
+      src={href} 
+      layout="intrinsic" 
+      width={100}
+    />
+  );
 
   return (
     <Card
