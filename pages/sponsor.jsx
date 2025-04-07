@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import { InputText } from 'primereact/inputtext';
@@ -10,23 +8,19 @@ import { Dialog } from 'primereact/dialog';
 import { Card } from 'primereact/card';
 import { Image } from 'primereact/image';
 import { classNames } from 'primereact/utils';
-import Link from 'next/link';
-import { Resend } from 'resend';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import { useFirestore } from '../hooks/firestore';
-import app from '../lib/firestore';
+import app from '../hooks/init';
 
 const Sponsors = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const [sponsors, setSponsors] = useState([]);
-  const { data, loading, error } = useFirestore('sponsor');
+  const { data, loading } = useFirestore('sponsor');
 
-  
   useEffect(() => {
     const fetchImageUrls = async () => {
       if (!data.length || loading) return;
-
       try {
         const storage = getStorage(app);
         const sponsorsWithUrls = await Promise.all(
@@ -41,7 +35,6 @@ const Sponsors = () => {
         setSponsors(data);
       }
     };
-
     fetchImageUrls();
   }, [data, loading]);
 
@@ -66,24 +59,6 @@ const Sponsors = () => {
       return errors;
     },
     onSubmit: async (data, { resetForm }) => {
-      const resendClient = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-      try {
-        const emailBody = `<table>${Object.entries(data)
-          .map(([key, value]) => `<tr><td>${key}</td><td>${value}</td></tr>`)
-          .join('')}</table>`;
-
-        await resendClient.emails.send({
-          from: 'Automated <sponsor@resend.dev>',
-          to: 'ask.isacottbus@gmail.com',
-          subject: 'Sponsor Data: Website Form Submission',
-          html: emailBody,
-        });
-        setShowSuccess(true);
-        resetForm();
-      } catch (error) {
-        console.error('Form submission error:', error);
-        setShowError(true);
-      }
     },
   });
 
@@ -107,24 +82,34 @@ const Sponsors = () => {
         header="Error"
         footer={<Button label="Ok" onClick={() => setShowError(false)} text />}
       >
-        <p>
-          There was an error submitting the form. Please email{' '}
-          <a href="mailto:isacottbus@gmail.com">isacottbus@gmail.com</a>.
-        </p>
+        <p>There was an error submitting the form. Please try again.</p>
       </Dialog>
 
       <Card title="Our Previous Sponsors!" className="text-center">
         <div className="p-3 m-3 flex flex-wrap justify-center gap-4">
-            {sponsors.map((sponsor) => (
-              <Link key={sponsor.id} href={sponsor.href} target="_blank" rel="noopener noreferrer">
-                <Image src={sponsor.src} alt={sponsor.alt} width="200" preview />
-              </Link>
-            ))}
+          {sponsors.map((sponsor) => (
+            <div key={sponsor.id} className="relative">
+              <Image 
+                src={sponsor.src} 
+                alt={sponsor.alt} 
+                width="200" 
+                className="object-contain"
+              />
+              <Button
+                icon="pi pi-external-link"
+                className="p-button-rounded p-button-text absolute top-0 right-0"
+                onClick={() => window.open(sponsor.href, '_blank', 'noopener,noreferrer')}
+              />
+            </div>
+          ))}
         </div>
       </Card>
 
       <div className="flex justify-center mt-4">
-        <Card title="Help us spread cultural diversity around Cottbus" className="w-full max-w-lg text-center">
+        <Card 
+        title="Help us spread cultural diversity around Cottbus" 
+        subTitle="The form widget is not functional yet. Please contact us via email or social media."
+        className="w-full max-w-lg text-center">
           <form onSubmit={formik.handleSubmit} className="p-fluid">
             <div className="field mb-4">
               <span className="p-float-label">
@@ -220,7 +205,7 @@ const Sponsors = () => {
               </label>
               {errorMessage('accept')}
             </div>
-            <Button type="submit" label="Submit" className="mt-2" />
+            <Button type="submit" label="Submit" className="mt-2" disabled/>
           </form>
         </Card>
       </div>

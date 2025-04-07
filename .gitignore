@@ -15,5 +15,5 @@ out
 .env*
 .firebase
 .next
-package-lock.json
+*package-lock.json
 *.log

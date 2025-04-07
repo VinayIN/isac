@@ -7,7 +7,7 @@ import { TabView, TabPanel } from 'primereact/tabview';
 import { AnchorLink } from '../components/anchorlink';
 import { useFirestore } from '../hooks/firestore';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
-import app from '../lib/firestore';
+import app from '../hooks/init';
 
 
 const ProfileCard = ({ name, title, href }) => {

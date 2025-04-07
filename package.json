@@ -2,6 +2,7 @@
   "name": "isac-btu",
   "version": "0.2.0",
   "private": true,
+  "description": "Website of ISAC, a student organization at BTU Cottbus-Senftenberg.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,22 +12,21 @@
     "deploy": "next build && next export && firebase deploy"
   },
   "dependencies": {
-    "classnames": "^2.5.1",
     "firebase": "^11.6.0",
-    "firebase-tools": "^14.0.1",
+    "firebase-admin": "^13.2.0",
+    "firebase-tools": "^14.1.0",
     "formik": "^2.4.6",
     "next": "^15.2.4",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
-    "primereact": "^10.6.6",
+    "primereact": "^10.9.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-markdown": "^10.1.0",
-    "resend": "^4.2.0"
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-config-next": "^15.2.4",
-    "tailwindcss": "^4.0.17"
+    "tailwindcss": "^4.1.3"
   }
 }
