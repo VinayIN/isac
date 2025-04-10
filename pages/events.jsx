@@ -128,7 +128,7 @@ function Events() {
                 <Column field="Location" header="Location" className="break-words" style={{ minWidth: '150px' }} />
                 <Column field="Description" header="Description" className="break-words" style={{ minWidth: '250px' }} />
                 <Column field="Link" header="Details" style={{ width: '100px' }} body={(rowData) => 
-                  rowData.Link ? <a href={rowData.Link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">View</a> : null
+                  rowData.Link ? <a href={rowData.Link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">{rowData.Link}</a> : null
                 } />
               </DataTable>
             )}
