@@ -73,7 +73,7 @@ const Teams = () => {
         }
       }
     }
-  }, [yearsCollection.data, yearsCollection.loading]);
+  }, [yearsCollection.data, yearsCollection.loading, selectedYear]);
 
   const adminData = useFirestore(`teams/${selectedYear}/admin`);
   const socialMediaData = useFirestore(`teams/${selectedYear}/socialmedia`);

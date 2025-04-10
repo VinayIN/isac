@@ -7,11 +7,6 @@ import { Badge } from 'primereact/badge';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { AnchorLink } from '../components/anchorlink';
 import { useFirestore } from '../hooks/firestore';
-import { ProgressSpinner } from 'primereact/progressspinner';
-import { Button } from 'primereact/button';
-import { Dropdown } from 'primereact/dropdown';
-import { Dialog } from 'primereact/dialog';
-import { Divider } from 'primereact/divider';
 import Head from 'next/head';
 
 function Events() {
@@ -37,7 +32,7 @@ function Events() {
     <div className="py-3">
       <div className="flex items-center mb-2">
         <i className="pi pi-clock text-blue-500 mr-2"></i>
-        <span className="text-sm font-medium">Today's Date</span>
+        <span className="text-sm font-medium">Today&apos;s Date</span>
       </div>
       <div className="overflow-x-auto">
         <div className="flex flex-wrap gap-2">
