@@ -55,7 +55,7 @@ function Events() {
   
   const headerTemplate = (data) => {
     const currentYear = new Date().getFullYear();
-    const severity = currentYear === data.Year? "success" : "warning";
+    const severity = currentYear === data.Year? "success" : "info";
     return (
       <div className="flex align-items-center">
         <span>Events in <Badge value={data.Year} severity={severity} /></span>
