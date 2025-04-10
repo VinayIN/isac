@@ -34,6 +34,5 @@ firebase init
 
 ### Some commands
 1. `npm run lint`: Check the linting of the source code.
-2. `npm run build`: Builds the app for production to the `.next` folder.
-3. `npm run export`: Exports the static file from `.next` folder to `out` folder.
+2. `npm run build`: Builds the app for production to the `.next` and `out` folder.
 4. `npm run deploy` : Deploys the website to firebase.
