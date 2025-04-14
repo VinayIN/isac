@@ -114,9 +114,8 @@ function Events() {
     }
   };
   
-  // Formatters that use the dateUtils
-  const formatDate = (rowData) => dateUtils.format(rowData, 'Date');
-  const formatPostedOn = (rowData) => dateUtils.format(rowData, 'posted_on');
+  const formatDate = (rowData) => dateUtils.format(rowData, 'parsedDate');
+  const formatPostedOn = (rowData) => dateUtils.format(rowData, 'parsedPostedOn');
 
   return (
     <>
@@ -136,7 +135,7 @@ function Events() {
                   <DataTable
                     value={announcements.data.map(announcement => ({
                       ...announcement,
-                      parsedPostedOn: dateUtils.parse(announcement.posted_on) // Fix: use dateUtils.parse instead of parseDate
+                      parsedPostedOn: dateUtils.parse(announcement.posted_on)
                     }))}
                     stripedRows
                   >
