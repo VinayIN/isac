@@ -83,6 +83,41 @@ function Events() {
            'warning';
   };
 
+  const dateUtils = {
+    // Parse date string in dd/mm/yyyy format to Date object
+    parse: (dateString) => {
+      if (!dateString) return null;
+      
+      const parts = dateString.split('/');
+      if (parts.length !== 3) return null;
+      
+      const day = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10) - 1;
+      const year = parseInt(parts[2], 10);
+      
+      return new Date(year, month, day);
+    },
+    
+    format: (rowData, fieldName) => {
+      const value = rowData[fieldName];
+      const parsedDate = typeof value === 'string' ? 
+        dateUtils.parse(value) : 
+        (value instanceof Date ? value : null);
+      
+      if (!parsedDate) return value;
+      
+      return parsedDate.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      });
+    }
+  };
+  
+  // Formatters that use the dateUtils
+  const formatDate = (rowData) => dateUtils.format(rowData, 'Date');
+  const formatPostedOn = (rowData) => dateUtils.format(rowData, 'posted_on');
+
   return (
     <>
       <Head>
@@ -99,12 +134,15 @@ function Events() {
               <Accordion>
                 <AccordionTab header="Announcements">
                   <DataTable
-                    value={announcements.data}
+                    value={announcements.data.map(announcement => ({
+                      ...announcement,
+                      parsedPostedOn: dateUtils.parse(announcement.posted_on) // Fix: use dateUtils.parse instead of parseDate
+                    }))}
                     stripedRows
                   >
                     <Column field="title" header="Title" className="break-words" style={{ minWidth: '200px' }} />
                     <Column field="description" header="Description" className="break-words" style={{ minWidth: '300px' }} />
-                    <Column field="posted_on" header="Posted On" sortable style={{ minWidth: '150px' }} />
+                    <Column field="parsedPostedOn" header="Posted On" sortable style={{ minWidth: '150px' }} body={formatPostedOn} />
                   </DataTable>
                 </AccordionTab>
               </Accordion>
@@ -116,13 +154,16 @@ function Events() {
         <Card>
             {!events.loading && (
               <DataTable
-                value={events.data}
+                value={events.data.map(event => ({
+                  ...event,
+                  parsedDate: dateUtils.parse(event.Date)
+                }))}
                 footer={footerTemplate}
                 rowGroupMode="subheader"
                 groupRowsBy="Year"
                 rowGroupHeaderTemplate={headerTemplate}
                 sortMode="multiple"
-                multiSortMeta={[{ field: "Year", order: -1 }, { field: "Date", order: -1 }]}
+                multiSortMeta={[{ field: "Year", order: -1 }, { field: "parsedDate", order: 1 }]}
                 expandableRowGroups
                 expandedRows={expandedRows}
                 onRowToggle={(e) => setExpandedRows(e.data)}
@@ -136,7 +177,7 @@ function Events() {
                     severity={getTagSeverity(rowData.Status)} 
                   />
                 )} />
-                <Column field="Date" header="Date" sortable style={{ width: '130px' }} />
+                <Column field="parsedDate" header="Date" sortable style={{ width: '130px' }} body={formatDate} />
                 <Column field="Location" header="Location" className="break-words" style={{ minWidth: '150px' }} />
                 <Column field="Description" header="Description" className="break-words" style={{ minWidth: '250px' }} />
                 <Column field="Link" header="Details" style={{ width: '100px' }} body={(rowData) => 
