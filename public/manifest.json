@@ -1,0 +1,27 @@
+{
+  "name": "ISAC - Indian Students Association Cottbus",
+  "short_name": "ISAC BTU",
+  "description": "Supporting Indian students at Brandenburg University of Technology Cottbus-Senftenberg",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "social"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
