@@ -1,6 +1,6 @@
 "use client";
 
-import { useMarkdown } from "../../lib/markdown";
+import { useMarkdown } from "../../_hooks/useMarkdown";
 import ReactMarkdown from "react-markdown";
 
 export default function ResourceContent({ config }) {

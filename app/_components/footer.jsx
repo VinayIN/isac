@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { SOCIAL_LINKS } from "../lib/constants";
+import { SOCIAL_LINKS } from "../_lib/constants";
 import { Button } from "primereact/button";
 import { Divider } from "primereact/divider";
 

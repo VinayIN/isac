@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "primereact/button";
 
 // Simple dynamic import for Galleria
 const Galleria = dynamic(() => import("primereact/galleria").then(mod => ({ default: mod.Galleria })), {
@@ -80,6 +82,44 @@ export default function Hero({ children }) {
           ]}
         />
       </div>
+
+      {/* Hero Content Overlay - Positioned at Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-20 pb-8 px-4 z-10">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">Welcome to ISAC</h1>
+          <p className="text-xl md:text-2xl text-gray-200 mb-4">
+            Indian Student Association at BTU Cottbus
+          </p>
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+            Building bridges between cultures amongst international students.
+            Checkout our events and celebrate with our vibrant community.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/events">
+              <Button
+                label="Explore Events"
+                icon="pi pi-calendar"
+                className="p-button-lg"
+              />
+            </Link>
+            <Link href="/resources">
+              <Button
+                label="Student Resources"
+                icon="pi pi-book"
+                className="p-button-lg"
+              />
+            </Link>
+            <Link href="https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK">
+              <Button
+                label="Join WhatsApp Community"
+                icon="pi pi-whatsapp"
+                className="p-button-lg"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {children && <div className="relative z-10">{children}</div>}
     </section>
   );

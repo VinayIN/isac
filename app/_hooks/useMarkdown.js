@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useMarkdown = (filePath) => {
+export const useMarkdown = (filePath) => {
     const [markdown, setMarkdown] = useState('');
 
     useEffect(() => {
@@ -43,5 +43,3 @@ const useMarkdown = (filePath) => {
 
     return markdown;
 };
-
-export { useMarkdown };
