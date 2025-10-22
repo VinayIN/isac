@@ -9,8 +9,8 @@ import { Dialog } from "primereact/dialog";
 import { Card } from "primereact/card";
 import { Image } from "primereact/image";
 import { classNames } from "primereact/utils";
-import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-import { useFirestore } from "../_hooks/useFirestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import useFirestore from "../_hooks/useFirestore";
 import app from "../_lib/init";
 
 const validateForm = (data) => {
@@ -76,7 +76,9 @@ export default function SponsorPage() {
   useEffect(() => {
     const fetchImageUrls = async () => {
       if (!data || data.length === 0 || dataLoading) return;
+
       setLoading(true);
+
       try {
         const storage = getStorage(app);
         const sponsorsWithUrls = await Promise.all(
@@ -84,16 +86,18 @@ export default function SponsorPage() {
             try {
               const imageRef = ref(storage, sponsor.src);
               const url = await getDownloadURL(imageRef);
+
               return { ...sponsor, src: url };
-            } catch (err) {
-              console.error(`Error loading sponsor image: ${sponsor.alt}`, err);
+            } catch {
+              // Error loading sponsor image
               return sponsor;
             }
           }),
         );
+
         setSponsors(sponsorsWithUrls);
-      } catch (err) {
-        console.error("Error fetching sponsor URLs:", err);
+      } catch {
+        // Error fetching sponsor URLs
         setSponsors(data);
       } finally {
         setLoading(false);
@@ -116,10 +120,12 @@ export default function SponsorPage() {
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+
     if (formErrors[name]) {
       setFormErrors((prev) => ({
         ...prev,
@@ -135,10 +141,11 @@ export default function SponsorPage() {
 
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
+
       return;
     }
 
-    console.log("Form submitted:", formData);
+    // Form submitted
     setShowSuccess(true);
 
     setFormData({

@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Image } from "primereact/image";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
-import { useFirestore } from "../_hooks/useFirestore";
+import useFirestore from "../_hooks/useFirestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import app from "../_lib/init";
 
@@ -71,6 +71,7 @@ const processTeamData = async (data, teamKey, setTeams, setMessages) => {
 
   if (!data.data || data.data.length === 0) {
     setTeams((prev) => ({ ...prev, [teamKey]: [] }));
+
     return;
   }
 
@@ -81,16 +82,18 @@ const processTeamData = async (data, teamKey, setTeams, setMessages) => {
         try {
           const imageRef = ref(storage, member.href);
           const url = await getDownloadURL(imageRef);
+
           return { ...member, href: url };
-        } catch (err) {
-          console.error(`Error loading image for ${member.name}:`, err);
+        } catch {
+          // Error loading image
           return member;
         }
       }),
     );
+
     setTeams((prev) => ({ ...prev, [teamKey]: teamWithUrls }));
-  } catch (err) {
-    console.error(`Error fetching ${teamKey}:`, err);
+  } catch {
+    // Error fetching team data
     setTeams((prev) => ({ ...prev, [teamKey]: data.data }));
     setMessages((prev) => ({
       ...prev,
@@ -125,11 +128,13 @@ export default function TeamsPage() {
   useEffect(() => {
     if (!yearsCollection.loading && yearsCollection.data) {
       const availableYears = yearsCollection.data.map((doc) => doc.id);
+
       setYears(availableYears);
 
       if (availableYears.length > 0) {
         if (!availableYears.includes(selectedYear)) {
           const sortedYears = [...availableYears].sort((a, b) => b - a);
+
           setSelectedYear(`${sortedYears[0]}`);
         }
       }
