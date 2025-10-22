@@ -4,11 +4,7 @@ import app from '../_lib/init';
 
 const db = getFirestore(app);
 
-<<<<<<<< HEAD:app/_hooks/useFirestore.js
-export const useFirestore = (collectionPath) => {
-========
 const useFirestore = (collectionPath) => {
->>>>>>>> 38ae60f (refactor nextjs 16):app/lib/firestore.jsx
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,4 +28,6 @@ const useFirestore = (collectionPath) => {
   }, [collectionPath]);
 
   return { data, loading, error };
-}
+};
+
+export default useFirestore;

@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { Dialog } from 'primereact/dialog';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Skeleton } from 'primereact/skeleton';
-import { useFirestore } from '../_hooks/useFirestore';
+import useFirestore from '../_hooks/useFirestore';
 
 const Galleria = dynamic(() => import('primereact/galleria').then(mod => ({ default: mod.Galleria })), {
   ssr: false,
@@ -26,10 +27,13 @@ export default function GalleryPage() {
   // Memoize groupedData
   const groupedData = useMemo(() => {
     if (!galleryData.data) return {};
+
     return galleryData.data.reduce((acc, item) => {
       const year = item.year;
+
       acc[year] = acc[year] || [];
       acc[year].push(item);
+
       return acc;
     }, {});
   }, [galleryData.data]);
@@ -58,9 +62,11 @@ export default function GalleryPage() {
 
   const itemTemplate = (item) => (
     <div className="w-full bg-slate-900 flex items-center justify-center p-4">
-      <img
+      <Image
         src={item.link1}
         alt={item.name}
+        width={600}
+        height={400}
         className="max-h-96 max-w-full object-contain rounded-lg shadow-lg"
         onError={(e) => {
           e.target.src = 'https://via.placeholder.com/600x400?text=Image';
@@ -78,6 +84,7 @@ export default function GalleryPage() {
 
   const yearCardTemplate = (year) => {
     const eventCount = groupedData[year].length;
+
     return (
       <div
         key={year}
@@ -235,6 +242,7 @@ export default function GalleryPage() {
                   className="p-3 cursor-pointer hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-300"
                   onClick={() => {
                     const galleriaElement = document.querySelector('.p-galleria-viewport');
+
                     if (galleriaElement) {
                       galleriaElement.scrollLeft = index * galleriaElement.offsetWidth;
                     }
@@ -242,9 +250,11 @@ export default function GalleryPage() {
                 >
                   <div className="flex items-start gap-3">
                     <div className="shrink-0 w-16 h-16 bg-gray-200 rounded overflow-hidden flex items-center justify-center">
-                      <img
+                      <Image
                         src={item.link1}
                         alt={item.name}
+                        width={64}
+                        height={64}
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           e.target.src = 'https://via.placeholder.com/64x64?text=Photo';

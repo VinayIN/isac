@@ -7,7 +7,7 @@ import { Card } from "primereact/card";
 import { Tag } from "primereact/tag";
 import { Badge } from "primereact/badge";
 import { Button } from "primereact/button";
-import { useFirestore } from "../_hooks/useFirestore";
+import useFirestore from "../_hooks/useFirestore";
 
 export default function EventsPage() {
   const announcements = useFirestore("announcements");
@@ -18,6 +18,7 @@ export default function EventsPage() {
   // Get unique years for filtering
   const uniqueYears = useMemo(() => {
     if (!events.data) return [];
+
     return Array.from(new Set(events.data.map((e) => e.Year)))
       .sort()
       .reverse();
@@ -26,11 +27,15 @@ export default function EventsPage() {
   const dateUtils = {
     parse: (dateString) => {
       if (!dateString) return null;
+
       const parts = dateString.split("/");
+
       if (parts.length !== 3) return null;
+
       const day = parseInt(parts[0], 10);
       const month = parseInt(parts[1], 10) - 1;
       const year = parseInt(parts[2], 10);
+
       return new Date(year, month, day);
     },
 
@@ -55,17 +60,25 @@ export default function EventsPage() {
 
   const getTagSeverity = (status) => {
     const s = status?.toLowerCase();
+
     if (s === "completed") return "success";
+
     if (s === "upcoming") return "info";
+
     if (s === "cancelled") return "danger";
+
     return "warning";
   };
 
   const getStatusIcon = (status) => {
     const s = status?.toLowerCase();
+
     if (s === "completed") return "pi-check-circle";
+
     if (s === "upcoming") return "pi-calendar";
+
     if (s === "cancelled") return "pi-times-circle";
+
     return "pi-info-circle";
   };
 
@@ -73,13 +86,16 @@ export default function EventsPage() {
 
   const filteredEvents = useMemo(() => {
     if (!events.data) return [];
+
     if (!filterYear) return events.data;
+
     return events.data.filter((e) => e.Year === filterYear);
   }, [events.data, filterYear]);
 
   const headerTemplate = (data) => {
     const eventCount =
       events.data?.filter((e) => e.Year === data.Year).length || 0;
+
     return (
       <div className="flex items-center justify-between w-full py-2">
         <span className="font-semibold text-lg">

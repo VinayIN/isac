@@ -21,6 +21,7 @@ export default function Navbar() {
 
   const isActive = (href) => {
     if (href === "/") return pathname === "/";
+
     return pathname?.startsWith(href);
   };
 

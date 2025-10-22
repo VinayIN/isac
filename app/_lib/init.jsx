@@ -11,8 +11,4 @@ const firebaseConfig = {
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
-<<<<<<<< HEAD:app/_lib/init.jsx
 export default app;
-========
-export default app;
->>>>>>>> 38ae60f (refactor nextjs 16):app/lib/init.jsx
