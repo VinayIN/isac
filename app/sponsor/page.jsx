@@ -165,14 +165,15 @@ export default function SponsorPage() {
       {/* Hero Section */}
       <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-2">
-            <div className="w-2 h-8 bg-orange-500 rounded-full"></div>
-            <div className="w-2 h-8 bg-green-600 rounded-full"></div>
-            <div className="w-2 h-8 bg-red-600 rounded-full"></div>
+          <div className="flex gap-2 mb-4">
+            <div className="w-2 h-8 bg-orange-400 rounded-full"></div>
+            <div className="w-2 h-8 bg-green-500 rounded-full"></div>
+            <div className="w-2 h-8 bg-red-500 rounded-full"></div>
           </div>
-          <span className="text-sm font-bold uppercase tracking-widest text-orange-600">
+          <span className="text-sm font-bold uppercase tracking-widest text-orange-600 block mb-2">
             Our Partners
           </span>
+          <h1 className="text-4xl font-bold text-gray-900 mt-2 mb-4">Partnership Opportunities</h1>
 
           <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
             Help us spread cultural diversity and support the vibrant Indian
@@ -215,14 +216,14 @@ export default function SponsorPage() {
       </div>
 
       {/* Why Sponsor Section */}
-      <div className="bg-blue-50 py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
+      <div className="bg-orange-50 py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             Why Partner with ISAC?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="text-center border-0 shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-5xl mb-4 text-blue-600">
+              <div className="text-5xl mb-4 text-orange-600">
                 <i className="pi pi-users"></i>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -235,7 +236,7 @@ export default function SponsorPage() {
             </Card>
 
             <Card className="text-center border-0 shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-5xl mb-4 text-blue-500">
+              <div className="text-5xl mb-4 text-green-600">
                 <i className="pi pi-globe"></i>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -248,7 +249,7 @@ export default function SponsorPage() {
             </Card>
 
             <Card className="text-center border-0 shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-5xl mb-4 text-blue-400">
+              <div className="text-5xl mb-4 text-red-600">
                 <i className="pi pi-star"></i>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">

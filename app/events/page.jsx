@@ -144,14 +144,15 @@ export default function EventsPage() {
       {/* Hero Header */}
       <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-2">
-            <div className="w-2 h-8 bg-orange-500 rounded-full"></div>
-            <div className="w-2 h-8 bg-green-600 rounded-full"></div>
-            <div className="w-2 h-8 bg-red-600 rounded-full"></div>
+          <div className="flex gap-2 mb-4">
+            <div className="w-2 h-8 bg-orange-400 rounded-full"></div>
+            <div className="w-2 h-8 bg-green-500 rounded-full"></div>
+            <div className="w-2 h-8 bg-red-500 rounded-full"></div>
           </div>
-          <span className="text-sm font-bold uppercase tracking-widest text-orange-600">
+          <span className="text-sm font-bold uppercase tracking-widest text-orange-600 block mb-2">
             Events & Announcements
           </span>
+          <h1 className="text-4xl font-bold text-gray-900 mt-2 mb-4">Stay Connected</h1>
           <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
             Stay connected with ISAC's vibrant calendar of cultural, academic,
             and social events. Join us for memorable experiences and build
@@ -189,9 +190,7 @@ export default function EventsPage() {
       >
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="text-white rounded-full p-3 bg-blue-600">
-              <i className="pi pi-bell text-xl"></i>
-            </div>
+            <div className="w-1.5 h-10 bg-orange-400 rounded-full"></div>
             <div>
               <h2 className="text-3xl font-bold text-gray-900">
                 Announcements
@@ -267,9 +266,7 @@ export default function EventsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
-              <div className="text-white rounded-full p-3 bg-green-600">
-                <i className="pi pi-calendar text-xl"></i>
-              </div>
+              <div className="w-1.5 h-10 bg-green-500 rounded-full"></div>
               <div>
                 <h2 className="text-3xl font-bold text-gray-900">
                   Events Calendar
