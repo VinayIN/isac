@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { getFirestore, collection, getDocs, query } from 'firebase/firestore';
-import app from './init';
+import app from '../_lib/init';
 
 const db = getFirestore(app);
 
-const useFirestore = (collectionPath) => {
+export const useFirestore = (collectionPath) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -29,5 +29,3 @@ const useFirestore = (collectionPath) => {
 
   return { data, loading, error };
 }
-
-export { useFirestore };
