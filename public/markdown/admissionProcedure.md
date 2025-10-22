@@ -1,4 +1,4 @@
-Please note that the admission procedures for international students at Brandenburg University of Technology Cottbus-Senftenberg `(BTU Cottbus-Senftenberg)` may change over time, and it's essential to check the official university website or contact the university's admissions office for the most up-to-date information. Here's a general overview of the admission procedure for international students at BTU for both the summer and winter intakes:
+Please note that the admission procedures for international students at Brandenburg University of Technology Cottbus-Senftenberg (BTU Cottbus-Senftenberg) may change over time, and it's essential to check the official university website or contact the university's admissions office for the most up-to-date information. Here's a general overview of the admission procedure for international students at BTU for both the summer and winter intakes:
 
 Summer Intake (Starting in April) & Winter Intake (Starting in October)
 
@@ -18,6 +18,6 @@ If you accept the offer of admission and follow the instructions provided for ob
 
 #### Important: Welcome and Registration Point
 
-As soon as you arrive in cottbus, to register yourself in university there will be a welcome point in Main Building (Hauptgebüde), where you have to enrol yourself. 
+As soon as you arrive in Cottbus, to register yourself in the university, there will be a welcome point in the Main Building (Hauptgebäude), where you have to enroll yourself.
 
-​Office: `International Office room No. 4.29, Central campus, Cottbus, 03046`
+Office: International Office, Room No. 4.29, Central Campus, Cottbus, 03046

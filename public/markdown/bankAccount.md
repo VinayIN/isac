@@ -6,7 +6,7 @@ Having a German bank account should be the first priority after coming to German
 
 **Studentenkonto:** Some banks offer specialized student accounts with lower fees and benefits like free withdrawals or discounts on services. Generally if you are under 27, almost all banks in Germany will assist you with a Studentenkonto account.
 
-There are also a number of online banks which offer the entire range of services via the Internet – from setting up the account to all necessary transactions. Some of the popular ones are N26, Wise, 
+There are also a number of online banks that offer the entire range of services via the Internet – from setting up the account to all necessary transactions. Some popular options include N26 and Wise. 
 
 **Recommended bank:** [Sparkasse Spree-Neiße](https://www.sparkasse-spree-neisse.de/de/home.html)
 

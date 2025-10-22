@@ -19,7 +19,7 @@ export default function Footer() {
 
   const resourceLinks = [
     { href: "/resources/admission-procedure", label: "Admission Procedure" },
-    { href: "/resources/accommodation", label: "Accommodation" },
+    { href: "/resources/accommodation", label: "Finding Accommodation" },
     { href: "/resources/city-registration", label: "City Registration" },
     { href: "/resources/bank-account", label: "Bank Account" },
     { href: "/resources/reaching-cottbus", label: "Reaching Cottbus" },
@@ -155,7 +155,15 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-slate-700 text-center">
           <p className="text-xs text-gray-500">
-            Made with <i className="pi pi-heart bg-black"></i> by ISAC Team | BTU Cottbus-Senftenberg
+            Made with <i className="pi pi-heart text-red-500 inline-block mx-1"></i> by ISAC Team | BTU Cottbus-Senftenberg | Designed by{" "}
+            <a
+              href="https://binaypradhan.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange-400 hover:text-orange-300 transition-colors font-medium"
+            >
+              Binay Pradhan
+            </a>
           </p>
         </div>
       </div>

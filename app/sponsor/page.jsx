@@ -499,7 +499,7 @@ export default function SponsorPage() {
                 icon="pi pi-envelope"
                 severity="secondary"
                 className="flex-1"
-                onClick={() => window.open("mailto:sponsor@isac-cottbus.de")}
+                onClick={() => window.open("mailto:isacottbus@gmail.com?subject=Sponsorship%20Inquiry")}
               />
             </div>
           </form>
@@ -522,7 +522,7 @@ export default function SponsorPage() {
               icon="pi pi-envelope"
               label="Email Us"
               className="p-button-outlined"
-              onClick={() => window.open("mailto:sponsor@isac-cottbus.de")}
+              onClick={() => window.open("mailto:isacottbus@gmail.com?subject=Sponsorship%20Inquiry")}
             />
             <Button
               icon="pi pi-whatsapp"

@@ -33,7 +33,9 @@ export const EXTERNAL_LINKS = {
   bankGuide: "https://www.study-in-germany.de/en/germany/arrival/bank-account/",
   vbb: "https://www.vbb.de/en",
   deutscheBahn: "https://int.bahn.de/en/",
-  email: "isac.btu@gmail.com",
+  emailAdmin: "isacottbus@gmail.com",
+  emailInfo: "ask.isacottbus@gmail.com",
+  emailSponsor: "sponsor@isac-cottbus.de",
 };
 
 export const NAVIGATION = [

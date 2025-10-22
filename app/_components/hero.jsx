@@ -38,12 +38,49 @@ export default function Hero({ children }) {
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
-      <div className="absolute top-4 right-4 opacity-20">
-        <div className="flex gap-1">
-          <div className="w-12 h-8 bg-india-saffron rounded-sm"></div>
-          <div className="w-12 h-8 bg-white rounded-sm border"></div>
-          <div className="w-12 h-8 bg-india-green rounded-sm"></div>
-        </div>
+      <div className="absolute top-4 right-4 opacity-30 flex gap-2">
+        {/* Indian Flag */}
+        <svg width="64" height="42" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+          {/* Saffron */}
+          <rect width="900" height="200" fill="#FF9933" />
+          {/* White */}
+          <rect y="200" width="900" height="200" fill="#FFFFFF" />
+          {/* Green */}
+          <rect y="400" width="900" height="200" fill="#138808" />
+          
+          {/* Ashoka Chakra (Blue wheel in white section) */}
+          <circle cx="450" cy="300" r="60" fill="none" stroke="#000080" strokeWidth="3" />
+          
+          {/* Chakra spokes */}
+          <g stroke="#000080" strokeWidth="2">
+            {/* 12 spokes */}
+            <line x1="450" y1="240" x2="450" y2="180" />
+            <line x1="450" y1="360" x2="450" y2="420" />
+            <line x1="510" y1="300" x2="570" y2="300" />
+            <line x1="390" y1="300" x2="330" y2="300" />
+            <line x1="500" y1="250" x2="539" y2="211" />
+            <line x1="400" y1="350" x2="361" y2="389" />
+            <line x1="550" y1="250" x2="589" y2="211" />
+            <line x1="450" y1="350" x2="489" y2="389" />
+            <line x1="500" y1="350" x2="539" y2="389" />
+            <line x1="400" y1="250" x2="361" y2="211" />
+            <line x1="550" y1="350" x2="589" y2="389" />
+            <line x1="450" y1="250" x2="489" y2="211" />
+          </g>
+          
+          {/* Central circle */}
+          <circle cx="450" cy="300" r="15" fill="#000080" />
+        </svg>
+        
+        {/* German Flag */}
+        <svg width="64" height="42" viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg">
+          {/* Black */}
+          <rect width="5" height="1" fill="#000000" />
+          {/* Red */}
+          <rect y="1" width="5" height="1" fill="#D00000" />
+          {/* Gold/Yellow */}
+          <rect y="2" width="5" height="1" fill="#FFCE00" />
+        </svg>
       </div>
     </div>
   );
@@ -84,15 +121,15 @@ export default function Hero({ children }) {
       </div>
 
       {/* Hero Content Overlay - Positioned at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-20 pb-8 px-4 z-10">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-20 pb-24 px-4 z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">Welcome to ISAC</h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-1">Welcome to ISAC</h1>
+          <p className="text-xl md:text-2xl text-gray-200 mb-2">
             Indian Student Association at BTU Cottbus
           </p>
-          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-4">
             Building bridges between cultures amongst international students.
-            Checkout our events and celebrate with our vibrant community.
+            Check out our events and celebrate with our vibrant community.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/events">
