@@ -75,16 +75,6 @@ export default function TeamsPage() {
   const advisoryData = useFirestore(`teams/${selectedYear}/advisory`);
 
   useEffect(() => {
-    const clearAllMessages = () => {
-      setAdminMessages([]);
-      setSocialMediaMessages([]);
-      setFinanceMessages([]);
-      setEventsMessages([]);
-      setAdvisoryMessages([]);
-    };
-
-    clearAllMessages();
-
     const fetchImageUrls = async (data, teamKey) => {
       if (data.loading) return;
 
@@ -137,19 +127,19 @@ export default function TeamsPage() {
       }
     };
 
+    // Clear all messages when year changes
+    setAdminMessages([]);
+    setSocialMediaMessages([]);
+    setFinanceMessages([]);
+    setEventsMessages([]);
+    setAdvisoryMessages([]);
+
     fetchImageUrls(adminData, "admin");
     fetchImageUrls(socialMediaData, "socialmedia");
     fetchImageUrls(financeData, "finance");
     fetchImageUrls(eventsData, "events");
     fetchImageUrls(advisoryData, "advisory");
-  }, [
-    selectedYear,
-    adminData,
-    socialMediaData,
-    financeData,
-    eventsData,
-    advisoryData,
-  ]);
+  }, [selectedYear]);
 
   const teamData = [
     {

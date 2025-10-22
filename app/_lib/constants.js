@@ -40,7 +40,6 @@ export const NAVIGATION = [
   { href: "/", label: "Home", icon: "pi-home" },
   { href: "/events", label: "Events", icon: "pi-calendar" },
   { href: "/gallery", label: "Gallery", icon: "pi-images" },
-  { href: "/resources", label: "Resources", icon: "pi-book" },
   { href: "/sponsor", label: "Sponsor", icon: "pi-heart" },
   { href: "/teams", label: "Teams", icon: "pi-users" },
 ];
