@@ -5,7 +5,6 @@ import app from './init';
 const db = getFirestore(app);
 
 const useFirestore = (collectionPath) => {
-  const db = getFirestore(app);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,6 +15,7 @@ const useFirestore = (collectionPath) => {
         const q = query(collection(db, collectionPath));
         const snapshot = await getDocs(q);
         const documents = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+
         setData(documents);
       } catch (err) {
         setError(err);

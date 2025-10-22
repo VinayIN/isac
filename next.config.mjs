@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   images: {
+    qualities: [75, 85],
     remotePatterns: [
       {
         protocol: 'https',
@@ -13,4 +14,4 @@ const nextConfig = {
   trailingSlash: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
