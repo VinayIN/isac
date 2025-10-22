@@ -1,10 +1,13 @@
 import eslint from "@eslint/js";
+import nextPlugin from "@next/eslint-plugin-next";
 import prettierConfig from "eslint-config-prettier";
+import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
     ignores: [
+      "**/out/**",
       "**/dist/**",
       "**/node_modules/**",
       "**/.next/**",
@@ -14,12 +17,24 @@ export default tseslint.config(
   },
   {
     files: ["**/*.{js,jsx,mjs,ts,tsx,mts,d.ts}"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
     extends: [
       eslint.configs.recommended,
       tseslint.configs.recommended,
       prettierConfig,
     ],
+    plugins: {
+      "@next/next": nextPlugin,
+    },
     rules: {
+      ...nextPlugin.configs["core-web-vitals"].rules,
       "no-console": "error",
       "no-debugger": "error",
       "no-fallthrough": "off",

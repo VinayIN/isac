@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://isacottbus-btu.web.app/sitemap.xml
