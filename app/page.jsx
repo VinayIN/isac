@@ -321,10 +321,10 @@ export default function Page() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                   <Card className="text-center">
                     <div>
-                      <div className="text-4xl text-orange-500 mb-4 inline-block">
+                      <div className="text-5xl text-orange-400 mb-4 inline-block">
                         <i className="pi pi-envelope"></i>
                       </div>
-                      <h4 className="font-semibold text-gray-900 mb-2">
+                      <h4 className="font-semibold text-gray-900 mb-3 text-lg">
                         Administrative
                       </h4>
                       <p className="text-xs text-gray-600 mb-4">
@@ -343,7 +343,7 @@ export default function Page() {
 
                   <Card className="text-center">
                     <div>
-                      <div className="text-4xl text-green-600 mb-4 inline-block">
+                      <div className="text-5xl text-green-500 mb-4 inline-block">
                         <i className="pi pi-question-circle"></i>
                       </div>
                       <h4 className="font-semibold text-gray-900 mb-2">
@@ -365,7 +365,7 @@ export default function Page() {
 
                   <Card className="text-center">
                     <div>
-                      <div className="text-4xl text-pink-500 mb-4 inline-block">
+                      <div className="text-5xl text-red-500 mb-4 inline-block">
                         <i className="pi pi-instagram"></i>
                       </div>
                       <h4 className="font-semibold text-gray-900 mb-2">

@@ -124,8 +124,8 @@ export default function GalleryPage() {
             <div className="w-2 h-8 bg-green-500 rounded-full"></div>
             <div className="w-2 h-8 bg-red-500 rounded-full"></div>
           </div>
-          <span className="text-sm font-bold uppercase tracking-widest text-orange-400">
-            Google Photos
+          <span className="text-sm font-bold uppercase tracking-widest text-orange-400 block mb-2">
+            Photo Gallery
           </span>
           <h1 className="text-4xl font-bold text-white mt-2 mb-4">
             ISAC Memories
@@ -278,7 +278,7 @@ export default function GalleryPage() {
 
       {/* Bottom CTA */}
       {galleryData.data && galleryData.data.length > 0 && (
-        <div className="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 bg-gradient-to-r from-slate-50 to-gray-50">
+        <div className="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="bg-white rounded-lg shadow-md p-8 md:p-12 text-center border border-gray-200">
               <div className="flex gap-2 justify-center mb-4">

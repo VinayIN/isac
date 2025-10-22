@@ -55,7 +55,7 @@ export default function Page() {
             <div className="w-2 h-8 bg-green-500 rounded-full"></div>
             <div className="w-2 h-8 bg-red-500 rounded-full"></div>
           </div>
-          <span className="text-sm font-bold uppercase tracking-widest text-orange-400">
+          <span className="text-sm font-bold uppercase tracking-widest text-orange-400 block mb-2">
             Student Resources
           </span>
           <h1 className="text-4xl font-bold text-white mt-2 mb-4">

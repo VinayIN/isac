@@ -5,14 +5,13 @@ import { Image } from "primereact/image";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
-import { Badge } from "primereact/badge";
 import { useFirestore } from "../_hooks/useFirestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import app from "../_lib/init";
 
 const ProfileCard = ({ name, title, href }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg overflow-hidden border border-gray-200">
+    <Card className="h-full">
       <div className="relative h-56 bg-gray-100 overflow-hidden">
         <Image
           alt={name}
@@ -20,6 +19,9 @@ const ProfileCard = ({ name, title, href }) => {
           width={220}
           height={220}
           className="w-full h-full object-cover"
+          onError={(e) => {
+            e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Crect fill="%23e5e7eb" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="40" fill="%239ca3af" text-anchor="middle" dy=".3em" font-family="system-ui"%3ENo Image%3C/text%3E%3C/svg%3E';
+          }}
         />
       </div>
       <div className="p-5">
@@ -28,9 +30,37 @@ const ProfileCard = ({ name, title, href }) => {
         </h3>
         <p className="text-sm text-gray-600 font-medium">{title}</p>
       </div>
-    </div>
+    </Card>
   );
 };
+
+const TEAM_CONFIGS = [
+  {
+    key: "admin",
+    label: "Administrative Team",
+    description: "Leading our organization with vision and dedication",
+  },
+  {
+    key: "socialmedia",
+    label: "Social Media & Technology",
+    description: "Connecting our community through digital platforms",
+  },
+  {
+    key: "finance",
+    label: "Finance Team",
+    description: "Managing resources and ensuring financial transparency",
+  },
+  {
+    key: "events",
+    label: "Events Team",
+    description: "Creating memorable cultural experiences",
+  },
+  {
+    key: "advisory",
+    label: "Advisory Board",
+    description: "Providing guidance and strategic direction",
+  },
+];
 
 const currentYear = new Date().getFullYear();
 
@@ -38,22 +68,19 @@ export default function TeamsPage() {
   const [selectedYear, setSelectedYear] = useState(`${currentYear}`);
   const [selectedTeam, setSelectedTeam] = useState("admin");
   const [years, setYears] = useState([]);
-  const [teams, setTeams] = useState({
-    admin: [],
-    socialmedia: [],
-    finance: [],
-    events: [],
-    advisory: [],
-  });
+  const [teams, setTeams] = useState({});
+  const [messages, setMessages] = useState({});
 
   const yearsCollection = useFirestore("teams");
 
-  const [adminMessages, setAdminMessages] = useState([]);
-  const [socialMediaMessages, setSocialMediaMessages] = useState([]);
-  const [financeMessages, setFinanceMessages] = useState([]);
-  const [eventsMessages, setEventsMessages] = useState([]);
-  const [advisoryMessages, setAdvisoryMessages] = useState([]);
+  // Fetch data for each team using useFirestore hook
+  const adminData = useFirestore(`teams/${selectedYear}/admin`);
+  const socialMediaData = useFirestore(`teams/${selectedYear}/socialmedia`);
+  const financeData = useFirestore(`teams/${selectedYear}/finance`);
+  const eventsData = useFirestore(`teams/${selectedYear}/events`);
+  const advisoryData = useFirestore(`teams/${selectedYear}/advisory`);
 
+  // Initialize year selection from available years
   useEffect(() => {
     if (!yearsCollection.loading && yearsCollection.data) {
       const availableYears = yearsCollection.data.map((doc) => doc.id);
@@ -62,44 +89,16 @@ export default function TeamsPage() {
       if (availableYears.length > 0) {
         if (!availableYears.includes(selectedYear)) {
           const sortedYears = [...availableYears].sort((a, b) => b - a);
-          setSelectedYear(sortedYears[0]);
+          setSelectedYear(`${sortedYears[0]}`);
         }
       }
     }
   }, [yearsCollection.data, yearsCollection.loading, selectedYear]);
 
-  const adminData = useFirestore(`teams/${selectedYear}/admin`);
-  const socialMediaData = useFirestore(`teams/${selectedYear}/socialmedia`);
-  const financeData = useFirestore(`teams/${selectedYear}/finance`);
-  const eventsData = useFirestore(`teams/${selectedYear}/events`);
-  const advisoryData = useFirestore(`teams/${selectedYear}/advisory`);
-
+  // Fetch and process team data with images
   useEffect(() => {
-    const fetchImageUrls = async (data, teamKey) => {
+    const processTeamData = async (data, teamKey) => {
       if (data.loading) return;
-
-      const addMessage = (severity, summary, detail, sticky = true) => {
-        const message = { severity, summary, detail, sticky };
-        switch (teamKey) {
-          case "admin":
-            setAdminMessages((prev) => [...prev, message]);
-            break;
-          case "socialmedia":
-            setSocialMediaMessages((prev) => [...prev, message]);
-            break;
-          case "finance":
-            setFinanceMessages((prev) => [...prev, message]);
-            break;
-          case "events":
-            setEventsMessages((prev) => [...prev, message]);
-            break;
-          case "advisory":
-            setAdvisoryMessages((prev) => [...prev, message]);
-            break;
-          default:
-            break;
-        }
-      };
 
       if (!data.data || data.data.length === 0) {
         setTeams((prev) => ({ ...prev, [teamKey]: [] }));
@@ -110,74 +109,51 @@ export default function TeamsPage() {
         const storage = getStorage(app);
         const teamWithUrls = await Promise.all(
           data.data.map(async (member) => {
-            const imageRef = ref(storage, member.href);
-            const url = await getDownloadURL(imageRef);
-            return { ...member, href: url };
+            try {
+              const imageRef = ref(storage, member.href);
+              const url = await getDownloadURL(imageRef);
+              return { ...member, href: url };
+            } catch (err) {
+              console.error(`Error loading image for ${member.name}:`, err);
+              return member;
+            }
           }),
         );
         setTeams((prev) => ({ ...prev, [teamKey]: teamWithUrls }));
       } catch (err) {
-        console.error(`Error fetching ${teamKey} image URLs:`, err);
+        console.error(`Error fetching ${teamKey}:`, err);
         setTeams((prev) => ({ ...prev, [teamKey]: data.data }));
-        addMessage(
-          "error",
-          "Error loading images",
-          `Could not load images for ${teamKey} team`,
-        );
+        setMessages((prev) => ({
+          ...prev,
+          [teamKey]: {
+            severity: "error",
+            summary: "Error loading images",
+            detail: `Could not load images for ${teamKey} team`,
+          },
+        }));
       }
     };
 
-    // Clear all messages when year changes
-    setAdminMessages([]);
-    setSocialMediaMessages([]);
-    setFinanceMessages([]);
-    setEventsMessages([]);
-    setAdvisoryMessages([]);
+    // Clear messages when year changes
+    setMessages({});
 
-    fetchImageUrls(adminData, "admin");
-    fetchImageUrls(socialMediaData, "socialmedia");
-    fetchImageUrls(financeData, "finance");
-    fetchImageUrls(eventsData, "events");
-    fetchImageUrls(advisoryData, "advisory");
-  }, [selectedYear]);
+    // Process all team data
+    processTeamData(adminData, "admin");
+    processTeamData(socialMediaData, "socialmedia");
+    processTeamData(financeData, "finance");
+    processTeamData(eventsData, "events");
+    processTeamData(advisoryData, "advisory");
+  }, [selectedYear, adminData, socialMediaData, financeData, eventsData, advisoryData]);
 
-  const teamData = [
-    {
-      key: "admin",
-      label: "Administrative Team",
-      description: "Leading our organization with vision and dedication",
-      members: teams.admin,
-      messages: adminMessages,
-    },
-    {
-      key: "socialmedia",
-      label: "Social Media & Technology",
-      description: "Connecting our community through digital platforms",
-      members: teams.socialmedia,
-      messages: socialMediaMessages,
-    },
-    {
-      key: "finance",
-      label: "Finance Team",
-      description: "Managing resources and ensuring financial transparency",
-      members: teams.finance,
-      messages: financeMessages,
-    },
-    {
-      key: "events",
-      label: "Events Team",
-      description: "Creating memorable cultural experiences",
-      members: teams.events,
-      messages: eventsMessages,
-    },
-    {
-      key: "advisory",
-      label: "Advisory Board",
-      description: "Providing guidance and strategic direction",
-      members: teams.advisory,
-      messages: advisoryMessages,
-    },
-  ];
+  const teamData = useMemo(
+    () =>
+      TEAM_CONFIGS.map((config) => ({
+        ...config,
+        members: teams[config.key] || [],
+        messages: messages[config.key] ? [messages[config.key]] : [],
+      })),
+    [teams, messages],
+  );
 
   const currentTeam = teamData.find((t) => t.key === selectedTeam);
 
@@ -186,12 +162,12 @@ export default function TeamsPage() {
       {/* Hero Section */}
       <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-2">
-            <div className="w-2 h-8 bg-orange-500 rounded-full"></div>
-            <div className="w-2 h-8 bg-green-600 rounded-full"></div>
-            <div className="w-2 h-8 bg-red-600 rounded-full"></div>
+          <div className="flex gap-2 mb-4">
+            <div className="w-2 h-8 bg-orange-400 rounded-full"></div>
+            <div className="w-2 h-8 bg-green-500 rounded-full"></div>
+            <div className="w-2 h-8 bg-red-500 rounded-full"></div>
           </div>
-          <span className="text-sm font-bold uppercase tracking-widest text-orange-600">
+          <span className="text-sm font-bold uppercase tracking-widest text-orange-600 block mb-2">
             Meet Our Team
           </span>
           <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
@@ -247,7 +223,7 @@ export default function TeamsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           {/* Team Header */}
-          <div className="bg-blue-50 p-8 border-b border-blue-200">
+          <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-8 border-b border-orange-200">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               {currentTeam?.label}
             </h2>
