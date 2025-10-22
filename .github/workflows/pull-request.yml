@@ -1,19 +1,27 @@
 name: Testing & Preview
 'on':
-  [pull_request, workflow_dispatch]
+  pull_request:
+    branches:
+      - dev
+      - main
+  workflow_dispatch
 
 jobs:
-  build_and_preview:
+  test_and_preview:
     runs-on: ubuntu-latest
     environment: TEST
 
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
-          node-version: '23'
+          node-version: '24'
+          cache: 'npm'
       
-      - run: npm install
+      - name: Install dependencies
+        run: npm ci
+      
       - name: Set up Firebase config
         run: |
           echo "NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}" >> .env
@@ -23,11 +31,17 @@ jobs:
           echo "NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}" >> .env
           echo "NEXT_PUBLIC_FIREBASE_APP_ID=${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}" >> .env
       
-      - run: npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Run linting
+        run: npm run lint
+      
+      - name: Build project
+        run: npm run build
+      
+      - name: Deploy preview
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ISACOTTBUS_BTU }}'
-          channelId: '${{ github.actor }}'
-          expires: 1d
+          channelId: pr-${{ github.event.number }}
+          expires: 7d
           projectId: isacottbus-btu
