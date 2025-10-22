@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import dynamic from 'next/dynamic';
+import { Dialog } from 'primereact/dialog';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Skeleton } from 'primereact/skeleton';
-import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
-import app from '../_lib/init';
+import { useFirestore } from '../_hooks/useFirestore';
 
 const Galleria = dynamic(() => import('primereact/galleria').then(mod => ({ default: mod.Galleria })), {
   ssr: false,
@@ -14,157 +14,300 @@ const Galleria = dynamic(() => import('primereact/galleria').then(mod => ({ defa
 });
 
 export default function GalleryPage() {
-  const [galleryImages, setGalleryImages] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const galleryData = useFirestore('gallery');
+  const [galleryState, setGalleryState] = useState({
+    years: [],
+    selectedYear: null,
+    selectedData: null,
+    displayDialog: false,
+    activeImageIndex: 0,
+  });
+
+  // Memoize groupedData
+  const groupedData = useMemo(() => {
+    if (!galleryData.data) return {};
+    return galleryData.data.reduce((acc, item) => {
+      const year = item.year;
+      acc[year] = acc[year] || [];
+      acc[year].push(item);
+      return acc;
+    }, {});
+  }, [galleryData.data]);
+
+  // Get sorted years
+  const sortedYears = useMemo(() => {
+    return Object.keys(groupedData).sort((a, b) => b - a);
+  }, [groupedData]);
 
   useEffect(() => {
-    const fetchGalleryImages = async () => {
-      try {
-        const storage = getStorage(app);
-        const imagesRef = ref(storage, 'gallery');
-        const imageList = await listAll(imagesRef);
+    setGalleryState((prevState) => ({
+      ...prevState,
+      years: sortedYears,
+    }));
+  }, [sortedYears]);
 
-        const images = await Promise.all(
-          imageList.items.map(async (itemRef) => {
-            const url = await getDownloadURL(itemRef);
-            return {
-              itemImageSrc: url,
-              thumbnailImageSrc: url,
-              alt: itemRef.name,
-            };
-          })
-        );
-
-        setGalleryImages(images);
-      } catch (error) {
-        console.error('Error loading gallery:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchGalleryImages();
-  }, []);
+  const handleYearClick = (year) => {
+    setGalleryState((prevState) => ({
+      ...prevState,
+      selectedYear: year,
+      selectedData: groupedData[year],
+      displayDialog: true,
+      activeImageIndex: 0,
+    }));
+  };
 
   const itemTemplate = (item) => (
-    <img src={item.itemImageSrc} alt={item.alt} style={{ width: '100%', display: 'block' }} />
+    <div className="w-full bg-slate-900 flex items-center justify-center p-4">
+      <img
+        src={item.link1}
+        alt={item.name}
+        className="max-h-96 max-w-full object-contain rounded-lg shadow-lg"
+        onError={(e) => {
+          e.target.src = 'https://via.placeholder.com/600x400?text=Image';
+        }}
+      />
+    </div>
   );
 
-  const thumbnailTemplate = (item) => (
-    <img src={item.thumbnailImageSrc} alt={item.alt} style={{ display: 'block' }} />
+  const captionTemplate = (item) => (
+    <div className="text-white text-center py-3">
+      <p className="font-semibold text-lg">{item.name}</p>
+      <p className="text-sm text-gray-300">Click arrows to navigate</p>
+    </div>
   );
+
+  const yearCardTemplate = (year) => {
+    const eventCount = groupedData[year].length;
+    return (
+      <div
+        key={year}
+        onClick={() => handleYearClick(year)}
+        className="cursor-pointer"
+      >
+        <Card className="h-full hover:shadow-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:scale-105">
+          <div className="relative h-40 flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-orange-400 mb-2">{year}</div>
+              <div className="text-gray-300 text-sm font-medium">
+                <i className="pi pi-images mr-1"></i>
+                {eventCount} {eventCount === 1 ? 'album' : 'albums'}
+              </div>
+            </div>
+          </div>
+
+          <div className="p-6 bg-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              {year} Albums
+            </h3>
+            <p className="text-gray-600 text-sm mb-4">
+              Browse {eventCount} {eventCount === 1 ? 'album' : 'albums'} from {year}
+            </p>
+            <Button
+              label="View Gallery"
+              icon="pi pi-images"
+              className="w-full p-button-sm"
+              severity="success"
+            />
+          </div>
+        </Card>
+      </div>
+    );
+  };
 
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
-      <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 border-b border-gray-200">
+      <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-800 border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="flex gap-2 mb-4">
-            <div className="w-2 h-8 bg-orange-500 rounded-full"></div>
-            <div className="w-2 h-8 bg-green-600 rounded-full"></div>
-            <div className="w-2 h-8 bg-red-600 rounded-full"></div>
+            <div className="w-2 h-8 bg-orange-400 rounded-full"></div>
+            <div className="w-2 h-8 bg-green-500 rounded-full"></div>
+            <div className="w-2 h-8 bg-red-500 rounded-full"></div>
           </div>
-          <span className="text-sm font-bold uppercase tracking-widest text-orange-600">
-            Photo Gallery
+          <span className="text-sm font-bold uppercase tracking-widest text-orange-400">
+            Google Photos
           </span>
-          <h1 className="text-4xl font-bold text-gray-900 mt-2 mb-4">
-            ISAC Moments
+          <h1 className="text-4xl font-bold text-white mt-2 mb-4">
+            ISAC Memories
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl">
-            Celebrate the vibrant moments from ISAC events, cultural festivities, and community gatherings at BTU Cottbus-Senftenberg.
+          <p className="text-lg text-gray-300 max-w-2xl">
+            Browse our Google Photos albums to celebrate vibrant moments from ISAC events, cultural festivities, and community gatherings at BTU Cottbus-Senftenberg.
           </p>
         </div>
       </div>
 
-      {/* Gallery Section */}
+      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {loading ? (
-          <div className="text-center py-12">
-            <i className="pi pi-spin pi-spinner text-4xl text-blue-600 mb-4"></i>
+        {galleryData.loading ? (
+          <div className="text-center py-16">
+            <i className="pi pi-spin pi-spinner text-5xl text-slate-900 mb-4 block"></i>
             <p className="text-gray-600 text-lg">Loading gallery...</p>
           </div>
-        ) : galleryImages.length > 0 ? (
-          <Card className="border border-gray-200 overflow-hidden shadow-lg">
-            <Galleria
-              value={galleryImages}
-              item={itemTemplate}
-              thumbnail={thumbnailTemplate}
-              showThumbnails
-              thumbnailsPosition="bottom"
-              autoPlay
-              transitionInterval={3000}
-              circular
-              showIndicators
-              responsiveOptions={[
-                { breakpoint: '1024px', numVisible: 5 },
-                { breakpoint: '768px', numVisible: 3 },
-                { breakpoint: '560px', numVisible: 1 },
-              ]}
-            />
-          </Card>
+        ) : galleryData.data && galleryData.data.length > 0 ? (
+          <>
+            {/* Filter info */}
+            <div className="mb-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900">Browse Albums by Year</h2>
+                <p className="text-gray-600 text-sm mt-2">Click any year to view album memories</p>
+              </div>
+              <div className="text-right">
+                <div className="inline-block px-4 py-2 bg-orange-50 rounded-lg border border-orange-200">
+                  <p className="text-orange-900 font-semibold">
+                    {galleryData.data.length} <span className="text-sm font-normal">Total Albums</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Year Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {galleryState.years.map((year) => yearCardTemplate(year))}
+            </div>
+          </>
         ) : (
-          <Card className="text-center py-16 border border-gray-200">
-            <i className="pi pi-images text-5xl text-gray-400 mb-4"></i>
-            <p className="text-gray-600 text-lg">No photos available yet</p>
-            <p className="text-gray-500 text-sm mt-2">Check back soon for photo updates!</p>
-          </Card>
+          <div className="text-center py-16">
+            <i className="pi pi-inbox text-5xl text-gray-400 mb-4 block"></i>
+            <p className="text-gray-600 text-lg">No gallery data available</p>
+            <p className="text-gray-500 text-sm mt-2">
+              Check back soon for photos from upcoming events!
+            </p>
+          </div>
         )}
       </div>
 
-      {/* Info Section */}
-      <div className="bg-blue-50 py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Connect With Our Community
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center border-0 shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-5xl mb-4 text-orange-500">
-                <i className="pi pi-camera"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Share Your Photos
-              </h3>
-              <p className="text-gray-600 mb-6">
-                If you have photos from ISAC events, reach out to us to share them with our community.
-              </p>
-              <a href="mailto:ask.isacottbus@gmail.com">
-                <Button label="Send Photos" icon="pi pi-send" className="p-button-sm" />
-              </a>
-            </Card>
+      {/* Gallery Modal Dialog */}
+      <Dialog
+        header={
+          <div className="flex items-center gap-3">
+            <i className="pi pi-images text-slate-900 text-xl"></i>
+            <span>
+              {galleryState.selectedYear} - {galleryState.selectedData?.length}{' '}
+              {galleryState.selectedData?.length === 1 ? 'photo' : 'photos'}
+            </span>
+          </div>
+        }
+        visible={galleryState.displayDialog}
+        onHide={() =>
+          setGalleryState((prevState) => ({
+            ...prevState,
+            displayDialog: false,
+          }))
+        }
+        modal
+        maximizable
+        style={{ width: '90vw', maxWidth: '1000px' }}
+        className="p-dialog-gallery"
+      >
+        {galleryState.selectedData && galleryState.selectedData.length > 0 ? (
+          <div className="space-y-4">
+            <Galleria
+              value={galleryState.selectedData}
+              item={itemTemplate}
+              caption={captionTemplate}
+              circular
+              showIndicators
+              showItemNavigators
+              showThumbnails={galleryState.selectedData.length > 1}
+              thumbnailsPosition="bottom"
+              numVisible={4}
+              responsiveOptions={[
+                {
+                  breakpoint: '1024px',
+                  numVisible: 3,
+                },
+                {
+                  breakpoint: '768px',
+                  numVisible: 2,
+                },
+                {
+                  breakpoint: '560px',
+                  numVisible: 1,
+                },
+              ]}
+            />
 
-            <Card className="text-center border-0 shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-5xl mb-4 text-india-saffron">
-                <i className="pi pi-heart"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Upcoming Events
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Check our events page to see what's happening next and join us for amazing experiences.
-              </p>
-              <a href="/events">
-                <Button label="View Events" icon="pi pi-calendar" severity="success" className="p-button-sm" />
-              </a>
-            </Card>
+            {/* Album List */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-gray-200 mt-6">
+              {galleryState.selectedData.map((item, index) => (
+                <Card
+                  key={index}
+                  className="p-3 cursor-pointer hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-300"
+                  onClick={() => {
+                    const galleriaElement = document.querySelector('.p-galleria-viewport');
+                    if (galleriaElement) {
+                      galleriaElement.scrollLeft = index * galleriaElement.offsetWidth;
+                    }
+                  }}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="shrink-0 w-16 h-16 bg-gray-200 rounded overflow-hidden flex items-center justify-center">
+                      <img
+                        src={item.link1}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.src = 'https://via.placeholder.com/64x64?text=Photo';
+                        }}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-900 text-sm">
+                        {item.name}
+                      </h4>
+                      <p className="text-xs text-gray-600 mt-1">
+                        Photo {index + 1} of {galleryState.selectedData.length}
+                      </p>
+                    </div>
+                    <a
+                      href={item.link1}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 text-orange-600 hover:text-orange-700"
+                      title="Open in new tab"
+                    >
+                      <i className="pi pi-external-link"></i>
+                    </a>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </Dialog>
 
-            <Card className="text-center border-0 shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-5xl mb-4 text-india-green">
-                <i className="pi pi-users"></i>
+      {/* Bottom CTA */}
+      {galleryData.data && galleryData.data.length > 0 && (
+        <div className="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 bg-gradient-to-r from-slate-50 to-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-white rounded-lg shadow-md p-8 md:p-12 text-center border border-gray-200">
+              <div className="flex gap-2 justify-center mb-4">
+                <div className="w-2 h-8 bg-orange-400 rounded-full"></div>
+                <div className="w-2 h-8 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-8 bg-red-500 rounded-full"></div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Join Our Community
+              <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                Share Your Moments
               </h3>
-              <p className="text-gray-600 mb-6">
-                Follow our social media to stay updated with all ISAC activities and celebrations.
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Have amazing photos from ISAC events? Share them to be featured in our Google Photos albums and inspire our community!
               </p>
-              <a href="https://www.instagram.com/isac_cottbus/" target="_blank" rel="noopener noreferrer">
-                <Button label="Follow Us" icon="pi pi-instagram" severity="danger" className="p-button-sm" />
+              <a
+                href="https://chat.whatsapp.com/EMtoCcEhDWmHgwGThM3FDK"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  label="Join Our Community"
+                  icon="pi pi-whatsapp"
+                  severity="success"
+                  className="p-button-lg"
+                />
               </a>
-            </Card>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
